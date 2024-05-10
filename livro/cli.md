@@ -1152,8 +1152,8 @@ IP na notação CIDR. Você pode restringir o filtro a uma porta específica (po
 exemplo, `:80`). Você também pode configurá-la como `*` para ignorar o proxy
 para todas as requisições HTTP.
 
-[article-binaries]: artigos/vendor-binaries.md
-[article-scripts]: artigos/scripts.md
+[article-binaries]: ../articles/vendor-binaries.md
+[article-scripts]: ../articles/scripts.md
 [book-cache]: config.md#cache-dir
 [book-composer-home]: #composer-home
 [book-config]: config.md
