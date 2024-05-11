@@ -153,7 +153,7 @@ solicitado a se inscrever, caso ainda não o tenha feito, e então poderá envia
 URL do seu repositório VCS. A partir daí, o Packagist começará a pesquisá-lo.
 Feito isso, o seu pacote estará disponível para qualquer pessoa!
 
-[article-versions]: artigos/versions.md
+[article-versions]: ../articles/versions.md
 [book-install]: cli.md#install-i
 [book-name]: esquema.md#name
 [book-repos]: repositorios.md

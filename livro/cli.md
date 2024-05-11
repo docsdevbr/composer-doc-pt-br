@@ -862,13 +862,6 @@ pode usar PSR-0/4 por conveniência e mapas de classes por desempenho.
 * **--apcu-prefix:** usa um prefixo personalizado para o cache do autoloader da
   APCu. Habilita implicitamente `--apcu`.
 * **--no-dev:** desabilita as regras em `autoload-dev`.
-* **--ignore-platform-reqs:** ignora todos os requisitos de plataforma (`php`,
-  `hhvm`, `lib-*` e `ext-*`) e pula a [verificação de plataforma]
-[book-platform-check] para eles. Veja também a opção de configuração
-  [`platform`][book-platform].
-* **--ignore-platform-req:** ignora um requisito de plataforma específico
-  (`php`, `hhvm`, `lib-*` e `ext-*`) e pula a [verificação de plataforma]
-[book-platform-check] para ele.
 
 ## clear-cache / clearcache / cc
 
@@ -1152,8 +1145,8 @@ IP na notação CIDR. Você pode restringir o filtro a uma porta específica (po
 exemplo, `:80`). Você também pode configurá-la como `*` para ignorar o proxy
 para todas as requisições HTTP.
 
-[article-binaries]: artigos/vendor-binaries.md
-[article-scripts]: artigos/scripts.md
+[article-binaries]: ../articles/vendor-binaries.md
+[article-scripts]: ../articles/scripts.md
 [book-cache]: config.md#cache-dir
 [book-composer-home]: #composer-home
 [book-config]: config.md

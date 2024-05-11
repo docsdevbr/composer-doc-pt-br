@@ -289,8 +289,8 @@ Consulte também a documentação sobre [otimização do autoloader]
 > usá-lo, pode incluir os arquivos `vendor/composer/autoload_*.php`, que
 > retornam arrays associativos que permitem configurar o seu próprio autoloader.
 
-[article-autoloader]: artigos/autoloader-optimization.md
-[article-versions]: artigos/versions.md
+[article-autoloader]: ../articles/autoloader-optimization.md
+[article-versions]: ../articles/versions.md
 [book-autoload]: esquema.md#autoload
 [book-dump-autoload]: cli.md#dump-autoload-dumpautoload
 [book-install]: cli.md#install-i
