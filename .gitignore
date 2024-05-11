@@ -1,12 +1,3 @@
 ### local ###
 
-.DS_Store/
-.idea/
-.bashrc
-Thumbs.db
-
-### application ###
-
-build
-.deploy/local/.env
-.env.local
+/.idea/
