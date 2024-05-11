@@ -339,7 +339,7 @@ Consulte também a documentação sobre [otimização do carregador automático]
 
 [10]: https://semver.mwl.be/#?package=monolog%2Fmonolog&version=2.0.*
 
-[11]: ../artigos/versions.md
+[11]: ../articles/versions.md
 
 [12]: esquema.md
 
@@ -357,4 +357,4 @@ Consulte também a documentação sobre [otimização do carregador automático]
 
 [19]: cli.md#dump-autoload-dumpautoload
 
-[20]: ../artigos/autoloader-optimization.md
+[20]: ../articles/autoloader-optimization.md

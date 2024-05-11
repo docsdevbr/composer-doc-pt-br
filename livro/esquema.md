@@ -954,12 +954,12 @@ Então `composer show -s` retornará `versions : * dev-latest-testing`.
 
 Opcional.
 
-[art-aliases]: artigos/apelidos.md
-[art-autoloader]: artigos/autoloader-optimization.md
-[art-binaries]: artigos/vendor-binaries.md
-[art-installers]: artigos/custom-installers.md
-[art-scripts]: artigos/scripts.md
-[art-versions]: artigos/versions.md
+[art-aliases]: ../artigos/apelidos.md
+[art-autoloader]: ../articles/autoloader-optimization.md
+[art-binaries]: ../articles/vendor-binaries.md
+[art-installers]: ../articles/custom-installers.md
+[art-scripts]: ../articles/scripts.md
+[art-versions]: ../articles/versions.md
 [conf]: config.md
 [json-schema]: https://json-schema.org/
 [licenses]: https://spdx.org/licenses/
