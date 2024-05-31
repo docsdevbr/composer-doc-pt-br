@@ -1,0 +1,39 @@
+### config ###
+
+# See https://www.mkdocs.org/user-guide/configuration/.
+
+INHERIT: !ENV MKDOCS_BASE_CONFIG
+
+### navigation ###
+
+nav:
+  - index.md
+  - Livro:
+      - Introdução: livro/introducao.md
+      - "Uso básico": livro/uso-basico.md
+      - livro/bibliotecas.md
+      - "CLI / Comandos": livro/cli.md
+      - "Esquema do composer.json": livro/esquema.md
+      - livro/repositorios.md
+      - "Configuração": livro/config.md
+      - livro/comunidade.md
+  - Artigos:
+      - artigos/aliases.md
+      - articles/autoloader-optimization.md
+      - articles/custom-installers.md
+      - articles/handling-private-packages.md
+      - articles/http-basic-authentication.md
+      - articles/plugins.md
+      - articles/scripts.md
+      - articles/troubleshooting.md
+      - articles/vendor-binaries.md
+      - articles/versions.md
+  - FAQs:
+      - faqs/how-do-i-install-a-package-to-a-custom-path-for-my-framework.md
+      - faqs/how-to-install-composer-programmatically.md
+      - faqs/how-to-install-untrusted-packages-safely.md
+      - faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md
+      - faqs/which-version-numbering-system-does-composer-itself-use.md
+      - faqs/why-are-unbound-version-constraints-a-bad-idea.md
+      - faqs/why-are-version-constraints-combining-comparisons-and-wildcards-a-bad-idea.md
+      - faqs/why-cant-composer-load-repositories-recursively.md
