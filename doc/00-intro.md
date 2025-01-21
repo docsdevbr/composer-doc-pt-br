@@ -189,8 +189,8 @@ Composer version 2.4.0 2022-08-16 16:10:48
 
 ## Imagem do Docker
 
-O Composer é publicado como imagem do Docker em alguns lugares, veja a lista no
-[README do composer/docker][11].
+O Composer é publicado como imagem do Docker em alguns lugares, consulte a lista
+no [README do composer/docker][11].
 
 Exemplo de uso:
 
