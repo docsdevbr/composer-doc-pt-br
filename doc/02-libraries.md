@@ -156,7 +156,7 @@ Feito isso, o seu pacote estará disponível para qualquer pessoa!
 [article-versions]: ../articles/versions.md
 [book-install]: cli.md#install-i
 [book-name]: esquema.md#name
-[book-repos]: repositorios.md
+[book-repos]: 05-repositories.md
 [book-require]: esquema.md#require
 [page-monolog]: https://packagist.org/packages/monolog/monolog
 [page-packagist]: https://packagist.org/

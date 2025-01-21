@@ -1,6 +1,6 @@
 <!--
 tagline: Como reduzir o impacto no desempenho do carregador automático
-source_url: https://github.com/composer/composer/blob/2.6/doc/articles/autoloader-optimization.md
+source_url: https://github.com/composer/composer/blob/2.8.4/doc/articles/autoloader-optimization.md
 revision: 0d236858eca397f7d910533580b0d3a4944444dd
 status: wip
 -->

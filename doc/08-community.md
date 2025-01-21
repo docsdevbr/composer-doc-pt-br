@@ -1,3 +1,9 @@
+<!--
+source_url: https://github.com/composer/composer/blob/2.8.4/doc/08-community.md
+revision: 1c669428da698ace7657207088bbbbc906a9e4ff
+status: outdated
+-->
+
 # Comunidade
 
 Já existem muitas pessoas usando o Composer e muita delas estão contribuindo.

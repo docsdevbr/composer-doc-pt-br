@@ -9,29 +9,29 @@ INHERIT: !ENV MKDOCS_BASE_CONFIG
 nav:
   - index.md
   - Livro:
-      - Introdução: livro/introducao.md
-      - "Uso básico": livro/uso-basico.md
-      - livro/bibliotecas.md
-      - "CLI / Comandos": livro/cli.md
-      - "Esquema do composer.json": livro/esquema.md
-      - livro/repositorios.md
-      - "Configuração": livro/config.md
-      - "Utilitários do runtime do Composer": livro/runtime.md
-      - livro/comunidade.md
+      - Introdução: doc/00-intro.md
+      - "Uso básico": doc/01-basic-usage.md
+      - doc/02-libraries.md
+      - "CLI / Comandos": doc/03-cli.md
+      - "Esquema do composer.json": doc/04-schema.md
+      - doc/05-repositories.md
+      - "Configuração": doc/06-config.md
+      - "Utilitários do runtime do Composer": doc/07-runtime.md
+      - doc/08-community.md
   - Artigos:
-      - "Apelidos": artigos/apelidos.md
-      - "Autenticação para pacotes e repositórios privados": artigos/autenticacao-para-pacotes-privados.md
-      - "Otimização do carregador automático": artigos/otimizacao-do-carregador-automatico.md
-      - articles/composer-platform-dependencies.md
-      - articles/custom-installers.md
-      - articles/handling-private-packages.md
-      - articles/plugins.md
-      - articles/repository-priorities.md
-      - articles/resolving-merge-conflicts.md
-      - articles/scripts.md
-      - articles/troubleshooting.md
-      - articles/vendor-binaries.md
-      - articles/versions.md
+      - "Apelidos": doc/articles/aliases.md
+      - "Autenticação para pacotes e repositórios privados": doc/articles/authentication-for-private-packages.md
+      - "Otimização do carregador automático": doc/articles/autoloader-optimization.md
+      - doc/articles/composer-platform-dependencies.md
+      - doc/articles/custom-installers.md
+      - doc/articles/handling-private-packages.md
+      - doc/articles/plugins.md
+      - doc/articles/repository-priorities.md
+      - doc/articles/resolving-merge-conflicts.md
+      - doc/articles/scripts.md
+      - doc/articles/troubleshooting.md
+      - doc/articles/vendor-binaries.md
+      - doc/articles/versions.md
   - FAQs:
       - faqs/how-do-i-install-a-package-to-a-custom-path-for-my-framework.md
       - faqs/how-to-install-composer-programmatically.md

@@ -2,31 +2,31 @@
 
 ## Livro
 
-* [Introdução](livro/introducao.md)
-* [Uso básico](livro/uso-basico.md)
-* [Bibliotecas](livro/bibliotecas.md)
-* [CLI / Comandos](livro/cli.md)
-* [Esquema do `composer.json`](livro/esquema.md)
-* [Repositórios](livro/repositorios.md)
-* [Configuração](livro/config.md)
-* [Utilitários do runtime do Composer](livro/runtime.md)
-* [Comunidade](livro/comunidade.md)
+* [Introdução](doc/00-intro.md)
+* [Uso básico](doc/01-basic-usage.md)
+* [Bibliotecas](doc/02-libraries.md)
+* [CLI / Comandos](doc/03-cli.md)
+* [Esquema do `composer.json`](doc/04-schema.md)
+* [Repositórios](doc/05-repositories.md)
+* [Configuração](doc/06-config.md)
+* [Utilitários do runtime do Composer](doc/07-runtime.md)
+* [Comunidade](doc/08-community.md)
 
 ## Artigos
 
-* [Apelidos](artigos/apelidos.md)
-* [Autenticação para pacotes e repositórios privados](artigos/autenticacao-para-pacotes-privados.md)
-* [Otimização do carregador automático](artigos/otimizacao-do-carregador-automatico.md)
-* [Composer platform dependencies](articles/composer-platform-dependencies.md)
-* [Setting up and using custom installers](articles/custom-installers.md)
-* [Handling private packages](articles/handling-private-packages.md)
-* [Setting up and using plugins](articles/plugins.md)
-* [Repository priorities](articles/repository-priorities.md)
-* [Resolving merge conflicts](articles/resolving-merge-conflicts.md)
-* [Scripts](articles/scripts.md)
-* [Troubleshooting](articles/troubleshooting.md)
-* [Vendor binaries and the `vendor/bin` directory](articles/vendor-binaries.md)
-* [Versions and constraints](articles/versions.md)
+* [Apelidos](doc/articles/aliases.md)
+* [Autenticação para pacotes e repositórios privados](doc/articles/authentication-for-private-packages.md)
+* [Otimização do carregador automático](doc/articles/autoloader-optimization.md)
+* [Composer platform dependencies](doc/articles/composer-platform-dependencies.md)
+* [Setting up and using custom installers](doc/articles/custom-installers.md)
+* [Handling private packages](doc/articles/handling-private-packages.md)
+* [Setting up and using plugins](doc/articles/plugins.md)
+* [Repository priorities](doc/articles/repository-priorities.md)
+* [Resolving merge conflicts](doc/articles/resolving-merge-conflicts.md)
+* [Scripts](doc/articles/scripts.md)
+* [Troubleshooting](doc/articles/troubleshooting.md)
+* [Vendor binaries and the `vendor/bin` directory](doc/articles/vendor-binaries.md)
+* [Versions and constraints](doc/articles/versions.md)
 
 ## FAQs
 

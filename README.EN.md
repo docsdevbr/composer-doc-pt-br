@@ -3,21 +3,20 @@
 [![en][readme-badge-en]][readme-lang-en]
 [![pt-br][readme-badge-pt-br]][readme-lang-pt-br]
 
-## Apoio
+## Support
 
-Você pode apoiar o projeto através do [GitHub Sponsors][sponsor-github] ou
+You can support the project through [GitHub Sponsors][sponsor-github] or
 [Pix][sponsor-pix].
 
-## Licença
+## License
 
-Copyright (c) Nils Adermann, Jordi Boggiano
+Copyright (c) Nils Adermann, Jordi Boggiano.
 
-Licenciado sob a Licença MIT.
-A obra original foi traduzida do inglês para o português brasileiro.
+Licensed under the MIT License.
 
 [LICENSE](LICENSE)
 
-[portal-link]: https://docs.dev.br/pt-br/docs/composer/doc/
+[portal-link]: https://docs.dev.br/en/docs/composer/doc/
 
 [readme-badge-en]: https://img.shields.io/badge/lang-en-blue.svg
 
@@ -29,4 +28,4 @@ A obra original foi traduzida do inglês para o português brasileiro.
 
 [sponsor-github]: https://github.com/sponsors/docsdevbr
 
-[sponsor-pix]: https://docs.dev.br/pt-br/support-us
+[sponsor-pix]: https://docs.dev.br/en/support-us

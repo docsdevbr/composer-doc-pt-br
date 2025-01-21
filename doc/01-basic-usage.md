@@ -1,7 +1,7 @@
 <!--
-source_url: https://github.com/composer/composer/blob/2.6/doc/01-uso-basico.md
-revision: b608b8e87eeafec47fa04a8156ea44fc3f9745b0
-status: ready
+source_url: https://github.com/composer/composer/blob/2.8.4/doc/01-basic-usage.md
+revision: 5bc5c174a68a98fa3779ee4ab8f9c85f64d6b78c
+status: outdated
 -->
 
 # Uso básico
@@ -329,11 +329,11 @@ Consulte também a documentação sobre [otimização do carregador automático]
 
 [5]: #packagist
 
-[6]: repositorios.md
+[6]: 05-repositories.md
 
 [7]: https://packagist.org/
 
-[8]: bibliotecas.md
+[8]: 02-libraries.md
 
 [9]: #pacotes-de-plataforma
 
@@ -347,7 +347,7 @@ Consulte também a documentação sobre [otimização do carregador automático]
 
 [14]: cli.md#install-i
 
-[15]: bibliotecas.md#arquivo-de-travamento
+[15]: 02-libraries.md#arquivo-de-travamento
 
 [16]: cli.md#show
 
@@ -357,4 +357,4 @@ Consulte também a documentação sobre [otimização do carregador automático]
 
 [19]: cli.md#dump-autoload-dumpautoload
 
-[20]: ../artigos/otimizacao-do-carregador-automatico.md
+[20]: ../articles/autoloader-optimization.md

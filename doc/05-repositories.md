@@ -742,16 +742,16 @@ global:
 composer config -g repo.packagist false
 ```
 
-[art-aliases]: ../artigos/apelidos.md
+[art-aliases]: ../articles/aliases.md
 [art-satis]: ../articles/handling-private-packages.md
 [bitbucket]: https://bitbucket.org
 [bitbucket-oauth]: https://confluence.atlassian.com/bitbucket/oauth-on-bitbucket-cloud-238027431.html
 [composer-auth]: cli.md#composer-auth
-[conf-bitbucket]: config.md#bitbucket-oauth
+[conf-bitbucket]: 06-config.md#bitbucket-oauth
 [faq-recursive-repos]: ../faqs/why-cant-composer-load-repositories-recursively.md
 [github]: https://github.com
 [github-satis]: https://github.com/composer/satis
-[libraries]: bibliotecas.md
+[libraries]: 02-libraries.md
 [packages]: #packages
 [packagist]: https://packagist.com/
 [php-context]: https://www.php.net/manual/pt_BR/context.php
