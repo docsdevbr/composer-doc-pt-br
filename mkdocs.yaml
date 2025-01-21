@@ -7,38 +7,38 @@ INHERIT: !ENV MKDOCS_BASE_CONFIG
 ### navigation ###
 
 nav:
-  - doc/index.md
+  - index.md
   - Livro:
-      - Introdução: doc/00-intro.md
-      - "Uso básico": doc/01-basic-usage.md
-      - doc/02-libraries.md
-      - "CLI / Comandos": doc/03-cli.md
-      - "Esquema do composer.json": doc/04-schema.md
-      - doc/05-repositories.md
-      - "Configuração": doc/06-config.md
-      - "Utilitários do runtime do Composer": doc/07-runtime.md
-      - doc/08-community.md
+      - Introdução: 00-intro.md
+      - "Uso básico": 01-basic-usage.md
+      - 02-libraries.md
+      - "CLI / Comandos": 03-cli.md
+      - "Esquema do composer.json": 04-schema.md
+      - 05-repositories.md
+      - "Configuração": 06-config.md
+      - "Utilitários do runtime do Composer": 07-runtime.md
+      - 08-community.md
   - Artigos:
-      - "Apelidos": doc/articles/aliases.md
-      - "Autenticação para pacotes e repositórios privados": doc/articles/authentication-for-private-packages.md
-      - "Otimização do carregador automático": doc/articles/autoloader-optimization.md
-      - doc/articles/composer-platform-dependencies.md
-      - doc/articles/custom-installers.md
-      - doc/articles/handling-private-packages.md
-      - doc/articles/plugins.md
-      - doc/articles/repository-priorities.md
-      - doc/articles/resolving-merge-conflicts.md
-      - doc/articles/scripts.md
-      - doc/articles/troubleshooting.md
-      - doc/articles/vendor-binaries.md
-      - doc/articles/versions.md
+      - "Apelidos": articles/aliases.md
+      - "Autenticação para pacotes e repositórios privados": articles/authentication-for-private-packages.md
+      - "Otimização do carregador automático": articles/autoloader-optimization.md
+      - articles/composer-platform-dependencies.md
+      - articles/custom-installers.md
+      - articles/handling-private-packages.md
+      - articles/plugins.md
+      - articles/repository-priorities.md
+      - articles/resolving-merge-conflicts.md
+      - articles/scripts.md
+      - articles/troubleshooting.md
+      - articles/vendor-binaries.md
+      - articles/versions.md
   - FAQs:
-      - doc/faqs/how-do-i-install-a-package-to-a-custom-path-for-my-framework.md
-      - doc/faqs/how-to-install-composer-programmatically.md
-      - doc/faqs/how-to-install-untrusted-packages-safely.md
-      - doc/faqs/how-to-use-composer-behind-a-proxy.md
-      - doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md
-      - doc/faqs/which-version-numbering-system-does-composer-itself-use.md
-      - doc/faqs/why-are-unbound-version-constraints-a-bad-idea.md
-      - doc/faqs/why-are-version-constraints-combining-comparisons-and-wildcards-a-bad-idea.md
-      - doc/faqs/why-cant-composer-load-repositories-recursively.md
+      - faqs/how-do-i-install-a-package-to-a-custom-path-for-my-framework.md
+      - faqs/how-to-install-composer-programmatically.md
+      - faqs/how-to-install-untrusted-packages-safely.md
+      - faqs/how-to-use-composer-behind-a-proxy.md
+      - faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md
+      - faqs/which-version-numbering-system-does-composer-itself-use.md
+      - faqs/why-are-unbound-version-constraints-a-bad-idea.md
+      - faqs/why-are-version-constraints-combining-comparisons-and-wildcards-a-bad-idea.md
+      - faqs/why-cant-composer-load-repositories-recursively.md
