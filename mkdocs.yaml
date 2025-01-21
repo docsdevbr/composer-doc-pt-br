@@ -7,7 +7,7 @@ INHERIT: !ENV MKDOCS_BASE_CONFIG
 ### navigation ###
 
 nav:
-  - index.md
+  - doc/index.md
   - Livro:
       - Introdução: doc/00-intro.md
       - "Uso básico": doc/01-basic-usage.md
@@ -33,12 +33,12 @@ nav:
       - doc/articles/vendor-binaries.md
       - doc/articles/versions.md
   - FAQs:
-      - faqs/how-do-i-install-a-package-to-a-custom-path-for-my-framework.md
-      - faqs/how-to-install-composer-programmatically.md
-      - faqs/how-to-install-untrusted-packages-safely.md
-      - faqs/how-to-use-composer-behind-a-proxy.md
-      - faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md
-      - faqs/which-version-numbering-system-does-composer-itself-use.md
-      - faqs/why-are-unbound-version-constraints-a-bad-idea.md
-      - faqs/why-are-version-constraints-combining-comparisons-and-wildcards-a-bad-idea.md
-      - faqs/why-cant-composer-load-repositories-recursively.md
+      - doc/faqs/how-do-i-install-a-package-to-a-custom-path-for-my-framework.md
+      - doc/faqs/how-to-install-composer-programmatically.md
+      - doc/faqs/how-to-install-untrusted-packages-safely.md
+      - doc/faqs/how-to-use-composer-behind-a-proxy.md
+      - doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md
+      - doc/faqs/which-version-numbering-system-does-composer-itself-use.md
+      - doc/faqs/why-are-unbound-version-constraints-a-bad-idea.md
+      - doc/faqs/why-are-version-constraints-combining-comparisons-and-wildcards-a-bad-idea.md
+      - doc/faqs/why-cant-composer-load-repositories-recursively.md

@@ -197,12 +197,12 @@ Leia mais sobre isso na [documentação de binários dos fornecedores][5].
 Isso é definido pelo proxy binário e, como tal, não é disponibilizado para
 projetos pelo script `vendor/autoload.php` do Composer.
 
-[1]: uso-basico.md#autoloading
+[1]: 01-basic-usage.md#carregamento-automatico
 
 [2]: https://github.com/composer/composer/blob/main/src/Composer/InstalledVersions.php
 
 [3]: 06-config.md#platform-check
 
-[4]: ../articles/vendor-binaries.md#finding-the-composer-autoloader-from-a-binary
+[4]: articles/vendor-binaries.md#finding-the-composer-autoloader-from-a-binary
 
-[5]: ../articles/vendor-binaries.md#finding-the-composer-bin-dir-from-a-binary
+[5]: articles/vendor-binaries.md#finding-the-composer-bin-dir-from-a-binary
