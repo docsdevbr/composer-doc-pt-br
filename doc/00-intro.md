@@ -37,8 +37,8 @@ O Composer:
    instala (o que significa que ele as baixa para seu projeto).
 5. Você pode atualizar todas as suas dependências em um comando.
 
-Consulte o capítulo [Uso básico][4] mais detalhes sobre a declaração de
-dependências.
+Consulte o capítulo [Uso básico][4] para obter mais detalhes sobre a declaração
+de dependências.
 
 ## Requisitos de sistema
 
