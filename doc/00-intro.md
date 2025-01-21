@@ -1,5 +1,5 @@
 <!--
-source_url: https://github.com/composer/composer/blob/2.8.4/doc/00-intro.md
+source_url: https://github.com/composer/composer/blob/-/doc/00-intro.md
 revision: 69746f699f01f7b33d411cd4ddceeeb3e26b5139
 status: ready
 -->
@@ -10,12 +10,12 @@ O Composer é uma ferramenta para gerenciamento de dependências em PHP.
 Ele permite que as bibliotecas das quais o projeto depende sejam declaradas e
 gerenciadas (instaladas/atualizadas).
 
-## Gerenciamento de Dependências
+## Gerenciamento de dependências
 
 O Composer **não** é um gerenciador de pacotes no mesmo sentido que o Yum ou
 Apt.
 Sim, ele lida com "pacotes" ou bibliotecas, mas os gerencia separadamente
-por projeto, instalando-os em um diretório (por exemplo, `vendor`) dentro do
+por projeto, instalando-os em um diretório (por exemplo, `vendor`) dentro do seu
 projeto.
 Por padrão, ele não instala nada globalmente.
 Portanto, ele é um gerenciador de dependências.
@@ -27,38 +27,37 @@ e pelo [bundler][3] do ruby.
 
 Suponha que:
 
-1. Há um projeto que depende de várias bibliotecas.
-2. Algumas destas bibliotecas dependem de outras bibliotecas.
+1. Você tem um projeto que depende de várias bibliotecas.
+2. Algumas dessas bibliotecas dependem de outras bibliotecas.
 
 O Composer:
 
-1. Permite declarar as bibliotecas das quais o projeto depende.
-2. Descobre quais versões de quais pacotes podem e precisam ser instaladas, e as
-   instala (o que significa que elas são baixadas no projeto).
-3. Todas as dependências podem ser atualizadas em um comando.
+1. Permite que você declare as bibliotecas das quais depende.
+2. Descobre quais versões de quais pacotes podem e precisam ser instaladas e as
+   instala (o que significa que ele as baixa para seu projeto).
+5. Você pode atualizar todas as suas dependências em um comando.
 
-Consulte o capítulo [Uso básico][4] para obter detalhes sobre a declaração de
+Consulte o capítulo [Uso básico][4] mais detalhes sobre a declaração de
 dependências.
 
 ## Requisitos de sistema
 
-A versão mais recente do Composer requer o PHP 7.2.5 para executar.
-Uma versão de suporte de longo prazo (2.2.x) ainda oferece suporte ao PHP
+O Composer em sua versão mais recente requer o PHP 7.2.5 para ser executado.
+Uma versão de suporte de longo prazo (2.2.x) ainda oferece suporte para PHP
 5.3.2+, caso seja necessário usar uma versão legada do PHP.
-Algumas configurações sensíveis e flags de compilação do PHP também são
-necessárias, mas ao usar o instalador, será possível saber de quaisquer
+Algumas configurações sensíveis e sinalizadores de compilação do PHP também são
+necessários, mas ao usar o instalador, será possível saber de quaisquer
 incompatibilidades.
 
-O Composer precisa de várias aplicações de suporte para funcionar de forma
-eficaz, tornando mais eficiente o processo de tratamento de dependências de
-pacotes.
-Para descompactar arquivos, o Composer conta com ferramentas como
-`7z` (ou `7zz`), `gzip`, `tar`, `unrar`, `unzip` e `xz`.
+O Composer precisa de várias aplicações de suporte para funcionar efetivamente,
+tornando o processo de tratamento de dependências de pacotes mais eficiente.
+Para descompactar arquivos, o Composer conta com ferramentas como `7z` (ou
+`7zz`), `gzip`, `tar`, `unrar`, `unzip` e `xz`.
 Quanto aos sistemas de controle de versão, o Composer integra-se perfeitamente
 com Fossil, Git, Mercurial, Perforce e Subversion, garantindo assim o bom
 funcionamento da aplicação e o gerenciamento dos repositórios de bibliotecas.
-Antes de usar o Composer, certifique-se de que estas dependências estejam
-instaladas corretamente no sistema.
+Antes de usar o Composer, certifique-se de que essas dependências estejam
+instaladas corretamente no seu sistema.
 
 O Composer é multiplataforma e nos esforçamos para fazê-lo funcionar igualmente
 bem no Windows, Linux e macOS.
@@ -69,17 +68,17 @@ bem no Windows, Linux e macOS.
 
 O Composer oferece um instalador conveniente que pode ser executado diretamente
 da linha de comando.
-Sinta-se à vontade para [baixar o instalador][5] ou revisá-lo no [GitHub][6], se
+Sinta-se à vontade para [baixar este arquivo][5] ou revisá-lo no [GitHub][6], se
 desejar saber mais sobre o funcionamento interno do instalador.
 O código-fonte é PHP puro.
 
 Em resumo, existem duas formas de instalar o Composer.
-Localmente como parte do projeto, ou globalmente como um executável disponível
-em todo o sistema.
+Localmente como parte do seu projeto, ou globalmente como um executável
+disponível em todo o sistema.
 
 #### Localmente
 
-Para instalar o Composer localmente, execute o instalador no diretório do
+Para instalar o Composer localmente, execute o instalador no diretório do seu
 projeto.
 Consulte [a página de download][7] para obter instruções.
 
@@ -91,10 +90,10 @@ executado na linha de comando, entre outras coisas.
 
 Agora execute `php composer.phar` para executar o Composer.
 
-O Composer pode ser instalado em um diretório específico usando a opção
+Você pode instalar o Composer em um diretório específico usando a opção
 `--install-dir` e, adicionalmente, também pode ser renomeado usando a opção
 `--filename`.
-Ao executar o instalador, seguindo [as instruções da página de download][7],
+Ao executar o instalador seguindo [as instruções da página de download][7],
 adicione os seguintes parâmetros:
 
 ```shell
@@ -105,13 +104,14 @@ Agora execute `php bin/composer` para executar o Composer.
 
 #### Globalmente
 
-O PHAR do Composer pode ser colocado em qualquer lugar que desejar.
-Se ele for colocado em um diretório que faça parte da variável de ambiente
-`PATH`, poderá ser acessado globalmente.
-Nos sistemas Unix, ele poderá até ser executado sem usar diretamente o
-interpretador `php`.
+Você pode colocar o PHAR do Composer em qualquer lugar que desejar.
+Se você colocá-lo em um diretório que faça parte da variável de ambiente `PATH`,
+poderá acessá-lo globalmente.
+Nos sistemas Unix, você pode até mesmo torná-lo executável e invocá-lo sem usar
+diretamente o interpretador `php`.
 
-Após executar o instalador seguindo [as instruções da página de download][7],
+Depois de executar o instalador seguindo
+[as instruções da página de download][7],
 este comando pode ser executado para mover o `composer.phar` para um diretório
 que esteja na variável `PATH`:
 
@@ -119,11 +119,11 @@ que esteja na variável `PATH`:
 mv composer.phar /usr/local/bin/composer
 ```
 
-Se deseja instalar o Composer apenas para um usuário e evitar a necessidade de
+Se você quiser instalá-lo apenas para seu usuário e evitar a necessidade de
 permissões de administrador, use `~/.local/bin`, que está disponível por padrão
 em algumas distribuições Linux.
 
-> **Nota:** Se o comando acima falhar devido a permissões, pode ser necessário
+> **Nota:** Se o comando acima falhar devido a permissões, você pode precisar
 > executá-lo novamente com `sudo`.
 
 > **Nota:** Em algumas versões do macOS, o diretório `/usr` não existe por
@@ -133,7 +133,7 @@ em algumas distribuições Linux.
 > `mkdir -p /usr/local/bin`.
 
 > **Nota:** Para obter informações sobre como alterar a variável `PATH`, leia o
-> [artigo da Wikipedia][8] ou use um mecanismo de pesquisa.
+> [artigo da Wikipedia][8] ou use um mecanismo de busca.
 
 Agora execute `composer` para executar o Composer em vez de `php composer.phar`.
 
@@ -141,7 +141,7 @@ Agora execute `composer` para executar o Composer em vez de `php composer.phar`.
 
 ### Usando o instalador
 
-Esta é a maneira mais fácil de configurar o Composer na máquina.
+Esta é a maneira mais fácil de configurar o Composer na sua máquina.
 
 Baixe e execute o binário [Composer-Setup.exe][9].
 Ele instalará a versão mais recente do Composer e configurará a variável `PATH`
@@ -162,7 +162,7 @@ Crie um novo arquivo `composer.bat` junto ao `composer.phar`:
 Usando `cmd.exe`:
 
 ```shell
-C:\bin>echo @php "%~dp0composer.phar" %*>composer.bat
+C:\bin> echo @php "%~dp0composer.phar" %*>composer.bat
 ```
 
 Usando PowerShell:
@@ -174,7 +174,7 @@ PS C:\bin> Set-Content composer.bat '@php "%~dp0composer.phar" %*'
 Adicione o diretório à variável de ambiente `PATH`, se ainda não tiver
 adicionado.
 Para obter informações sobre como alterar a variável `PATH`, consulte [este
-artigo][10] ou use um mecanismo de pesquisa.
+artigo][10] ou use um mecanismo de busca.
 
 Feche o terminal atual.
 Teste o uso em um novo terminal:
@@ -199,8 +199,8 @@ docker pull composer/composer
 docker run --rm -it -v "$(pwd):/app" composer/composer install
 ```
 
-Para adicionar o Composer a um **Dockerfile** existente, o arquivo binário
-simplesmente pode ser copiado de imagens pré-construídas de tamanho reduzido:
+Para adicionar o Composer a um **Dockerfile** existente, você pode simplesmente
+copiar o arquivo binário de imagens pré-construídas de tamanho reduzido:
 
 ```Dockerfile
 # Última versão
@@ -210,23 +210,25 @@ COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 COPY --from=composer/composer:2-bin /composer /usr/bin/composer
 ```
 
-Leia a [descrição da imagem][12] para obter informações de uso.
+Leia a [descrição da imagem][12] para obter mais informações de uso.
 
-**Nota:** Problemas específicos do Docker devem ser informados [no repositório
-composer/docker][13].
+> **Nota:** Problemas específicos do Docker devem ser registrados
+> [no repositório composer/docker][13].
 
-**Nota:** `composer` também pode ser usado em vez de `composer/composer` como
-nome da imagem acima.
-É mais curto e é uma imagem oficial do Docker, mas não é publicado diretamente
-por nós e por isso costuma receber novos lançamentos com atraso de alguns dias.
-**Importante**: imagens com apelidos curtos não possuem equivalentes apenas com
-binários, então para a abordagem `COPY --from` é melhor usar
-`composer/composer`.
+> **Nota:** Você também pode usar `composer` em vez de `composer/composer` como
+> nome da imagem acima.
+> É mais curto e é uma imagem oficial do Docker, mas não é publicada diretamente
+> por nós e, por isso, costuma receber novos lançamentos com atraso de alguns
+> dias.
+
+> **Importante**: Imagens com apelidos curtos não têm equivalentes apenas com
+> binários, então para a abordagem `COPY --from` é melhor usar
+> `composer/composer`.
 
 ## Usando o Composer
 
-Agora que o Composer foi instalado, está tudo pronto para usá-lo!
-Leia o próximo capítulo para uma breve demonstração.
+Agora que você instalou o Composer, já pode usá-lo!
+Vá para o próximo capítulo para uma breve demonstração.
 
 [1]: 03-cli.md#global
 
