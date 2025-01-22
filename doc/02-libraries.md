@@ -1,17 +1,25 @@
+<!--
+source_url: https://github.com/composer/composer/blob/-/doc/02-libraries.md
+revision: 83212118cbaf7ab44b51f8afcd45a7540275e639
+status: ready
+-->
+
 # Bibliotecas
 
-Este capítulo mostrará como tornar a sua biblioteca instalável através do
+Este capítulo lhe dirá como tornar sua biblioteca instalável através do
 Composer.
 
-## Todo Projeto É um Pacote
+## Todo projeto é um pacote
 
-Assim que você tiver um arquivo `composer.json` num diretório, esse diretório
-será um pacote. Ao adicionar um [`require`][book-require] a um projeto, você
-está criando um pacote que depende de outros pacotes. A única diferença entre o
-seu projeto e uma biblioteca é que o seu projeto é um pacote sem nome.
+Assim que você tiver um arquivo `composer.json` em um diretório, esse diretório
+será um pacote.
+Quando você adiciona um [`require`][1] a um projeto, você está criando um pacote
+que depende de outros pacotes.
+A única diferença entre seu projeto e uma biblioteca é que seu projeto é um
+pacote sem nome.
 
-Para tornar esse pacote instalável, você precisa dar um nome a ele. Você faz
-isso adicionando a propriedade [`name`][book-name] ao `composer.json`:
+Para tornar esse pacote instalável, você precisa dar um nome a ele.
+Você faz isso adicionando a propriedade [`name`][2] ao `composer.json`:
 
 ```json
 {
@@ -22,26 +30,27 @@ isso adicionando a propriedade [`name`][book-name] ao `composer.json`:
 }
 ```
 
-Nesse caso, o nome do projeto é `acme/ola-mundo`, onde `acme` é o nome do
-vendor. Fornecer o nome do vendor é obrigatório.
+Neste caso, o nome do projeto é `acme/ola-mundo`, onde `acme` é o nome do
+fornecedor.
+Fornecer um nome de fornecedor é obrigatório.
 
-> **Nota:** Se você não sabe o que usar como nome do vendor, o seu nome de
-> usuário do GitHub geralmente é uma boa aposta. Embora os nomes de pacotes não
-> façam distinção entre maiúsculas e minúsculas, a convenção é usar apenas
-> minúsculas e hífen para separar as palavras.
+> **Nota:** Se você não sabe o que usar como nome de fornecedor, seu nome de
+> usuário do GitHub geralmente é uma boa aposta.
+> Os nomes dos pacotes devem estar em letras minúsculas, e a convenção é usar
+> traços para separação de palavras.
 
-## Versionamento de Biblioteca
+## Versionamento de biblioteca
 
-Na grande maioria dos casos, você manterá a sua biblioteca usando algum tipo de
-sistema de controle de versão como git, svn, hg ou fossil. Nesses casos, o
-Composer deduz as versões a partir do seu VCS e você **não deve** especificar
-uma versão no arquivo `composer.json`. (Consulte o [artigo sobre versões]
-[article-versions] para saber como o Composer usa branches e tags do VCS para
-resolver as restrições de versão.)
+Na grande maioria dos casos, você manterá sua biblioteca usando algum tipo de
+sistema de controle de versão como git, svn, hg ou fossil.
+Nesses casos, o Composer infere as versões a partir do seu VCS e você **não
+deve** especificar uma versão no seu arquivo `composer.json`.
+(Consulte o [artigo sobre versões][3] para saber como o Composer usa branches e
+tags do VCS para resolver restrições de versão.)
 
 Se você estiver mantendo pacotes manualmente (ou seja, sem um VCS), precisará
 especificar a versão explicitamente, adicionando uma propriedade `version` no
-arquivo `composer.json`:
+seu arquivo `composer.json`:
 
 ```json
 {
@@ -50,43 +59,49 @@ arquivo `composer.json`:
 ```
 
 > **Nota:** Quando você adiciona uma versão fixa no código ao VCS, a versão
-> entrará em conflito com os nomes das tags. O Composer não será capaz de
-> determinar o número da versão.
+> entrará em conflito com os nomes das tags.
+> O Composer não poderá determinar o número da versão.
 
 ### Versionamento do VCS
 
 O Composer usa as tags e branches do VCS para resolver as restrições de versão
-que você especifica no campo [`require`][book-require] para conjuntos
-específicos de arquivos. Ao determinar as versões válidas disponíveis, o
-Composer examina todas as suas tags e branches, e converte os seus nomes para
-uma lista interna de opções que, em seguida, compara com a restrição de versão
-que você forneceu.
+que você especifica no campo [`require`][1] para conjuntos específicos de
+arquivos.
+Ao determinar as versões válidas disponíveis, o Composer examina todas as suas
+tags e branches, e converte os seus nomes para uma lista interna de opções que
+ele então compara com a restrição de versão que você forneceu.
 
-Para saber mais sobre como o Composer trata tags e branches e como ele resolve
-as restrições de versão de pacote, leia o artigo sobre [versões]
-[article-versions].
+Para mais informações sobre como o Composer trata tags e branches e como ele
+resolve restrições de versão de pacote, leia o artigo sobre [versões][3].
 
-## Arquivo Lock
+## Arquivo de travamento
 
-Para a sua biblioteca, você pode fazer o commit do arquivo `composer.lock`, se
-desejar. Isso pode ajudar o seu time a testar sempre as mesmas versões das
-dependências. No entanto, esse arquivo lock não terá nenhum efeito em outros
-projetos que dependem da sua biblioteca. Ele só afeta o projeto principal.
+Para sua biblioteca, você pode fazer o commit do arquivo `composer.lock`, se
+quiser.
+Isso pode ajudar o seu time a testar sempre com as mesmas versões das
+dependências.
+No entanto, esse arquivo de travamento não terá nenhum efeito em outros projetos
+que dependem da sua biblioteca.
+Ele só tem efeito no projeto principal.
 
-Se você não deseja fazer o commit do arquivo lock e estiver usando o git,
-adicione-o ao `.gitignore`.
+Se você não quiser fazer o commit do arquivo de travamento e estiver usando o
+git, adicione-o ao `.gitignore`.
 
 ## Publicando em um VCS
 
-Após ter um repositório VCS (sistema de controle de versão, por exemplo, git)
-contendo um arquivo `composer.json`, sua biblioteca já pode ser instalada pelo
-Composer. Neste exemplo, publicaremos a biblioteca `acme/ola-mundo` no GitHub em
+Depois de ter um repositório VCS (sistema de controle de versão, por exemplo,
+git) contendo um arquivo `composer.json`, sua biblioteca já pode ser instalada
+pelo Composer.
+Neste exemplo, publicaremos a biblioteca `acme/ola-mundo` no GitHub em
 `github.com/<usuario>/ola-mundo`.
 
-Agora, para testar a instalação do pacote `acme/ola-mundo`, criaremos um projeto
-localmente. Iremos chamá-lo `acme/blog`. Este blog dependerá do
-`acme/ola-mundo`, que depende do `monolog/monolog`. Podemos fazer isso criando
-um novo diretório `blog` em algum lugar, contendo um `composer.json`:
+Agora, para testar a instalação do pacote `acme/ola-mundo`, criamos um projeto
+localmente.
+Vamos chamá-lo de `acme/blog`.
+Este blog dependerá de `acme/ola-mundo`, que por sua vez depende de
+`monolog/monolog`.
+Podemos fazer isso criando um novo diretório `blog` em algum lugar, contendo um
+`composer.json`:
 
 ```json
 {
@@ -98,12 +113,13 @@ um novo diretório `blog` em algum lugar, contendo um `composer.json`:
 ```
 
 O nome não é necessário neste caso, pois não queremos publicar o blog como uma
-biblioteca. Ele é adicionado aqui para esclarecer qual `composer.json` está
-sendo descrito.
+biblioteca.
+Ele é adicionado aqui para esclarecer qual `composer.json` está sendo descrito.
 
 Agora precisamos informar à aplicação do blog onde encontrar a dependência
-`ola-mundo`. Fazemos isso adicionando uma especificação de repositório de
-pacotes ao `composer.json` do blog:
+`ola-mundo`.
+Fazemos isso adicionando uma especificação de repositório de pacotes ao
+`composer.json` do blog:
 
 ```json
 {
@@ -120,43 +136,79 @@ pacotes ao `composer.json` do blog:
 }
 ```
 
-Para obter mais detalhes sobre como os repositórios de pacotes funcionam e quais
-outros tipos estão disponíveis, consulte [Repositórios][book-repos].
+Para mais detalhes sobre como os repositórios de pacotes funcionam e quais
+outros tipos estão disponíveis, consulte [Repositórios][4].
 
 Isso é tudo. Agora você pode instalar as dependências executando o comando
-[`install`][book-install] do Composer!
+[`install`][5] do Composer!
 
-**Recapitulando:** Qualquer repositório git/svn/hg/fossil que contenha um
+**Recapitulando:** qualquer repositório git/svn/hg/fossil que contenha um
 `composer.json` pode ser adicionado ao seu projeto especificando o repositório
-do pacote e declarando a dependência no campo [`require`][book-require].
+do pacote e declarando a dependência no campo [`require`][1].
 
 ## Publicando no Packagist
 
-Tudo bem, agora você pode publicar pacotes. Mas especificar o repositório VCS o
-tempo todo é complicado. Você não quer forçar todos os seus usuários a fazer
-isso.
+Tudo bem, agora você pode publicar pacotes.
+Mas especificar o repositório VCS o tempo todo é trabalhoso.
+Você não quer forçar todas as suas pessoas usuárias a fazer isso.
 
 A outra coisa que você deve ter notado é que não especificamos um repositório de
-pacotes para o `monolog/monolog`. Como isso funcionou? A resposta é Packagist.
+pacotes para o `monolog/monolog`.
+Como isso funcionou?
+A resposta é Packagist.
 
-O [Packagist][page-packagist] é o principal repositório de pacotes do Composer e
-está habilitado por padrão. Tudo o que é publicado no Packagist está disponível
-automaticamente através do Composer. Como o [Monolog está no Packagist]
-[page-monolog], podemos depender dele sem precisar especificar repositórios
-adicionais.
+O [Packagist][6] é o principal repositório de pacotes do Composer e está
+habilitado por padrão.
+Tudo o que é publicado no Packagist fica disponível automaticamente através do
+Composer.
+Como o [Monolog está no Packagist][7], podemos depender dele sem precisar
+especificar nenhum repositório adicional.
 
 Se quiséssemos compartilhar o `ola-mundo` com o mundo, também iríamos publicá-lo
 no Packagist.
 
-Você acessa o [Packagist][page-packagist] e clica no botão “Submit”. Você será
-solicitado a se inscrever, caso ainda não o tenha feito, e então poderá enviar o
-URL do seu repositório VCS. A partir daí, o Packagist começará a pesquisá-lo.
-Feito isso, o seu pacote estará disponível para qualquer pessoa!
+Você acessa o [Packagist][6] e clica no botão "Submit".
+Você será solicitado a se inscrever, caso ainda não tenha feito isso, e então
+poderá enviar a URL do seu repositório VCS, momento no qual o Packagist começará
+a rastreá-lo.
+Feito isso, seu pacote estará disponível para qualquer pessoa!
 
-[article-versions]: articles/versions.md
-[book-install]: 03-cli.md#install-i
-[book-name]: 04-schema.md#name
-[book-repos]: 05-repositories.md
-[book-require]: 04-schema.md#require
-[page-monolog]: https://packagist.org/packages/monolog/monolog
-[page-packagist]: https://packagist.org/
+## Pacotes de distribuição leves
+
+Algumas informações inúteis como o diretório `.github`, ou grandes exemplos,
+dados de teste, etc., normalmente não devem ser incluídas em pacotes
+distribuídos.
+
+O arquivo `.gitattributes` é um arquivo específico do git, que assim como
+`.gitignore`, fica no diretório raiz da sua biblioteca.
+Ele substitui a configuração local e global (`.git/config` e `~/.gitconfig`,
+respectivamente) quando presente e rastreado pelo git.
+
+Use `.gitattributes` para evitar que arquivos indesejados inchem os pacotes de
+distribuição zip.
+
+```text
+// .gitattributes
+/demo export-ignore
+phpunit.xml.dist export-ignore
+/.github/ export-ignore
+```
+
+Teste inspecionando o arquivo zip gerado manualmente:
+
+```shell
+git archive <branch> --format zip -o file.zip
+```
+
+> **Nota:** os arquivos ainda seriam rastreados pelo git, mas não incluídos na
+> distribuição zip.
+> Isso só funciona para pacotes instalados de `dist` (ou seja, lançamentos com
+> tag) vindos do GitHub, GitLab ou Bitbucket.
+
+[1]: 04-schema.md#require
+[2]: 04-schema.md#name
+[3]: articles/versions.md
+[4]: 05-repositories.md
+[5]: 03-cli.md#install-i
+[6]: https://packagist.org/
+[7]: https://packagist.org/packages/monolog/monolog
