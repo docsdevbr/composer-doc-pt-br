@@ -73,7 +73,7 @@ Consulte [pacotes de plataforma][9] abaixo.)
 No nosso exemplo, estamos solicitando o pacote Monolog com a restrição de versão
 [`2.0.*`][10].
 Isso significa qualquer versão no branch de desenvolvimento `2.0`, ou qualquer
-versão que seja maior ou igual a `2.0` e menor que `2.1` (`>=2.0 <2.1`).
+versão maior ou igual a `2.0` e menor que `2.1` (`>=2.0 <2.1`).
 
 Leia o [artigo sobre versões][11] para obter informações mais detalhadas sobre
 versões, como as versões se relacionam entre si e sobre restrições de versão.
@@ -98,8 +98,8 @@ versões, como as versões se relacionam entre si e sobre restrições de versã
 > Por padrão, apenas versões estáveis são levadas em consideração ao pesquisar
 > versões de pacotes válidas no seu VCS.
 >
-> Você pode se deparar com isso se estiver tentando exigir versões `dev`,
-> `alpha`, `beta` ou `RC` de um pacote.
+> Você pode se deparar com essa situação se estiver tentando exigir versões
+> `dev`, `alpha`, `beta` ou `RC` de um pacote.
 > Leia mais sobre sinalizadores de estabilidade e a chave `minimum-stability` na
 > [página do esquema][12].
 
