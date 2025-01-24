@@ -1,7 +1,9 @@
 # [composer-doc-pt-br][portal-link]
 
-[![en][readme-badge-en]][readme-lang-en]
-[![pt-br][readme-badge-pt-br]][readme-lang-pt-br]
+[![Arquivo README em inglês][readme-badge-en]][readme-lang-en]
+[![Arquivo README em português brasileiro][readme-badge-pt-br]][readme-lang-pt-br]
+
+Tradução da Documentação do Composer para português brasileiro.
 
 ## Apoio
 
@@ -12,10 +14,10 @@ Você pode apoiar o projeto através do [GitHub Sponsors][sponsor-github] ou
 
 Copyright (c) Nils Adermann, Jordi Boggiano
 
-Licenciado sob a Licença MIT.
+Licenciado sob a [Licença MIT][license-mit].<br>
 A obra original foi traduzida do inglês para o português brasileiro.
 
-[LICENSE](LICENSE)
+[license-mit]: LICENSE
 
 [portal-link]: https://docs.dev.br/pt-br/docs/composer/doc/
 

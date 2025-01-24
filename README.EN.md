@@ -1,7 +1,9 @@
 # [composer-doc-pt-br][portal-link]
 
-[![en][readme-badge-en]][readme-lang-en]
-[![pt-br][readme-badge-pt-br]][readme-lang-pt-br]
+[![README file in English][readme-badge-en]][readme-lang-en]
+[![README file in Brazilian Portuguese][readme-badge-pt-br]][readme-lang-pt-br]
+
+Translation of Composer Documentation into Brazilian Portuguese.
 
 ## Support
 
@@ -12,11 +14,11 @@ You can support the project through [GitHub Sponsors][sponsor-github] or
 
 Copyright (c) Nils Adermann, Jordi Boggiano.
 
-Licensed under the MIT License.
+Licensed under the [MIT License][license-mit].
 
-[LICENSE](LICENSE)
+[license-mit]: LICENSE
 
-[portal-link]: https://docs.dev.br/en/docs/composer/doc/
+[portal-link]: https://docs.dev.br/pt-br/docs/composer/doc/
 
 [readme-badge-en]: https://img.shields.io/badge/lang-en-blue.svg
 
@@ -28,4 +30,4 @@ Licensed under the MIT License.
 
 [sponsor-github]: https://github.com/sponsors/docsdevbr
 
-[sponsor-pix]: https://docs.dev.br/en/support-us
+[sponsor-pix]: https://docs.dev.br/pt-br/support-us
