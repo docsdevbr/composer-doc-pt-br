@@ -10,18 +10,18 @@ nav:
   - index.md
   - Livro:
       - Introdução: 00-intro.md
-      - "Uso básico": 01-basic-usage.md
-      - 02-libraries.md
-      - "CLI / Comandos": 03-cli.md
-      - "Esquema do composer.json": 04-schema.md
-      - 05-repositories.md
-      - "Configuração": 06-config.md
-      - "Utilitários do runtime do Composer": 07-runtime.md
-      - 08-community.md
+      - Uso básico: 01-basic-usage.md
+      - Bibliotecas: 02-libraries.md
+      - CLI / Comandos: 03-cli.md
+      - Esquema do composer.json: 04-schema.md
+      - Repositórios: 05-repositories.md
+      - Configuração: 06-config.md
+      - Utilitários do tempo de execução do Composer: 07-runtime.md
+      - Comunidade: 08-community.md
   - Artigos:
-      - "Apelidos": articles/aliases.md
-      - "Autenticação para pacotes e repositórios privados": articles/authentication-for-private-packages.md
-      - "Otimização do carregador automático": articles/autoloader-optimization.md
+      - Apelidos: articles/aliases.md
+      - Autenticação para pacotes e repositórios privados: articles/authentication-for-private-packages.md
+      - Otimização do carregador automático: articles/autoloader-optimization.md
       - articles/composer-platform-dependencies.md
       - articles/custom-installers.md
       - articles/handling-private-packages.md
