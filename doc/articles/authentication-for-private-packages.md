@@ -408,7 +408,7 @@ php composer.phar config [--global] --editor --auth
 }
 ```
 
-[1]: ../articles/handling-private-packages.md
+[1]: handling-private-packages.md
 
 [2]: #autenticacao-com-http-basic
 
@@ -426,7 +426,7 @@ php composer.phar config [--global] --editor --auth
 
 [9]: #autenticacao-com-bitbucket-oauth
 
-[10]: ../livro/cli.md#composer-home
+[10]: ../03-cli#composer-home
 
 [11]: #autenticacao-com-http-basic-na-linha-de-comando
 
@@ -460,11 +460,11 @@ php composer.phar config [--global] --editor --auth
 
 [26]: #autenticacao-manual-com-bitbucket-oauth
 
-[27]: ../livro/cli.md#composer-auth
+[27]: ../03-cli#composer-auth
 
 [28]: http://www.faqs.org/rfcs/rfc3986.html
 
-[29]: ../livro/config.md#gitlab-domains
+[29]: ../06-config#gitlab-domains
 
 [30]: https://gitlab.com/-/profile/personal_access_tokens
 

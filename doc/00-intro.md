@@ -228,13 +228,13 @@ binários, então para a abordagem `COPY --from` é melhor usar
 Agora que o Composer foi instalado, está tudo pronto para usá-lo!
 Leia o próximo capítulo para uma breve demonstração.
 
-[1]: cli.md#global
+[1]: 03-cli.md#global
 
 [2]: https://www.npmjs.com/
 
 [3]: https://bundler.io/
 
-[4]: uso-basico.md
+[4]: 01-basic-usage.md
 
 [5]: https://getcomposer.org/installer
 

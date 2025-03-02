@@ -116,5 +116,5 @@ como `1.0.x-dev`.
 > o repositório original.
 > Isso ajuda a evitar problemas para os usuários do pacote.
 
-[root-package]: ../livro/esquema.md#pacote-raiz
+[root-package]: ../04-schema#pacote-raiz
 [page-github-monolog]: https://github.com/Seldaek/monolog

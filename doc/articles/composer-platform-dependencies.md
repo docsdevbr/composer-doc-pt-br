@@ -7,13 +7,13 @@
 ## What are platform dependencies
 
 Composer makes information about the environment Composer runs in available as virtual packages. This allows other
-packages to define dependencies ([require](../livro/esquema.md#require), [conflict](../livro/esquema.md#conflict),
-[provide](../livro/esquema.md#provide), [replace](../livro/esquema.md#replace)) on different aspects of the platform, like PHP,
+packages to define dependencies ([require](../04-schema#require), [conflict](../04-schema#conflict),
+[provide](../04-schema#provide), [replace](../04-schema#replace)) on different aspects of the platform, like PHP,
 extensions or system libraries, including version constraints.
 
 When you require one of the platform packages no code is installed. The version numbers of platform packages are
 derived from the environment Composer is executed in and they cannot be updated or removed. They can however be
-overwritten for the purposes of dependency resolution with a [platform configuration](../livro/config.md#platform).
+overwritten for the purposes of dependency resolution with a [platform configuration](../06-config#platform).
 
 **For example:** If you are executing `composer update` with a PHP interpreter in version
 `7.4.42`, then Composer automatically adds a package to the pool of available packages
@@ -58,7 +58,7 @@ When applications which were installed with Composer are run (either on CLI or t
 `vendor/autoload.php` file, typically as one of the first lines of executed code. Invocations of the Composer
 autoloader are considered the application "runtime".
 
-Starting with version 2.0, Composer makes [additional features](../livro/runtime.md) (besides registering the class autoloader) available to the application runtime environment.
+Starting with version 2.0, Composer makes [additional features](../07-runtime) (besides registering the class autoloader) available to the application runtime environment.
 
 Similar to `composer-plugin-api`, not every Composer release adds new runtime features,
 thus the version of `composer-runtimeapi` is also increased independently from Composer's version.
