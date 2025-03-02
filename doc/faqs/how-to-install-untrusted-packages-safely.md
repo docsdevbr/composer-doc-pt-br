@@ -21,5 +21,5 @@ to install untrusted dependencies you should sandbox them completely in a contai
 
 Also note that the `exec` command will always run third party code as the user which runs `composer`.
 
-See [Environment variable - COMPOSER_ALLOW_SUPERUSER](../livro/cli.md#composer-allow-superuser)
+See [Environment variable - COMPOSER_ALLOW_SUPERUSER](../03-cli.md#composer-allow-superuser)
 for more info on how to disable warning

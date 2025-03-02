@@ -337,7 +337,7 @@ in another location than they actually are.
 Because Composer plugins can be used to perform actions which are necessary for installing
 a working application, like modifying which path files get stored in, skipping required
 plugins unintentionally can result in broken applications. So, in non-interactive mode,
-Composer will fail if a new plugin is not listed in ["allow-plugins"](../livro/config.md#allow-plugins)
+Composer will fail if a new plugin is not listed in ["allow-plugins"](../06-config.md#allow-plugins)
 to force users to decide if they want to execute the plugin, to avoid silent failures.
 
 As of Composer 2.5.3, you can use the setting `{"extra": {"plugin-optional": true}}` on
@@ -353,13 +353,13 @@ depend on other packages can function correctly, a runtime autoloader is created
 a plugin is loaded. That autoloader is only configured to load with the plugin dependencies,
 so you may not have access to all the packages which are installed.
 
-[1]: ../livro/esquema.md#type
-[2]: ../livro/esquema.md#extra
+[1]: ../04-schema.md#type
+[2]: ../04-schema.md#extra
 [3]: https://github.com/composer/composer/blob/main/src/Composer/Plugin/PluginInterface.php
 [4]: https://github.com/composer/composer/blob/main/src/Composer/Composer.php
 [5]: https://github.com/composer/composer/blob/main/src/Composer/IO/IOInterface.php
 [6]: https://github.com/composer/composer/blob/main/src/Composer/EventDispatcher/EventSubscriberInterface.php
-[7]: ../livro/uso-basico.md#package-versions
+[7]: ../01-basic-usage.md#package-versions
 [8]: https://github.com/composer/composer/blob/main/src/Composer/Plugin/Capable.php
 [9]: https://github.com/composer/composer/blob/main/src/Composer/Plugin/Capability/CommandProvider.php
 [10]: https://symfony.com/doc/current/components/console.html

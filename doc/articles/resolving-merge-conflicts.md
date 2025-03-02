@@ -56,7 +56,7 @@ as `^1.2.0` and locked as `1.2.0`, it might get updated when branch 2 is used as
 constraint allows when possible. There might be a version 1.3.0 for that package available by now, which
 will now be used instead.
 
-Choosing the correct [version constraints](../articles/versions.md) and making sure the packages adhere
+Choosing the correct [version constraints]() and making sure the packages adhere
 to [semantic versioning](https://semver.org/) when using
 [next significant release operators](versions.md#next-significant-release-operators) should make sure
 that merging branches does not break anything by accidentally updating a dependency.

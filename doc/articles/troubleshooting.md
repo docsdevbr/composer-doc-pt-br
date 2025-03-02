@@ -9,9 +9,9 @@ This is a list of common pitfalls on using Composer, and how to avoid them.
 ## General
 
 1. When facing any kind of problems using Composer, be sure to **work with the
-   latest version**. See [self-update](../livro/cli.md#self-update) for details.
+   latest version**. See [self-update](../03-cli.md#self-update) for details.
 
-2. Before asking anyone, run [`composer diagnose`](../livro/cli.md#diagnose) to check
+2. Before asking anyone, run [`composer diagnose`](../03-cli.md#diagnose) to check
    for common problems. If it all checks out, proceed to the next steps.
 
 3. Make sure you have no problems with your setup by running the installer's
@@ -31,7 +31,7 @@ This is a list of common pitfalls on using Composer, and how to avoid them.
    branches and tag names.
 
 2. Be sure to **set the right
-   [minimum-stability](../livro/esquema.md#minimum-stability)**. To get started or be
+   [minimum-stability](../04-schema.md#minimum-stability)**. To get started or be
    sure this is no issue, set `minimum-stability` to "dev".
 
 3. Packages **not coming from [Packagist](https://packagist.org/)** should
@@ -61,7 +61,7 @@ When your root package depends on a package which ends up depending (directly or
 indirectly) back on the root package itself, issues can occur in two cases:
 
 1. During development, if you are on a branch like `dev-main` and the branch has no
-   [branch-alias](../artigos/aliases.md#branch-alias) defined, and the dependency on the root package
+   [branch-alias](aliases.md#branch-alias) defined, and the dependency on the root package
    requires version `^2.0` for example, the `dev-main` version will not satisfy it.
    The best solution here is to make sure you first define a branch alias.
 
@@ -93,7 +93,7 @@ indirectly) back on the root package itself, issues can occur in two cases:
 
 ## I have a dependency which contains a "repositories" definition in its composer.json, but it seems to be ignored.
 
-The [`repositories`](../livro/esquema.md#repositories) configuration property is defined as [root-only](../livro/esquema.md#root-package). It is not inherited. You can read more about the reasons behind this in the "[why can't
+The [`repositories`](../04-schema.md#repositories) configuration property is defined as [root-only](../04-schema.md#root-package). It is not inherited. You can read more about the reasons behind this in the "[why can't
 Composer load repositories recursively?](../faqs/why-cant-composer-load-repositories-recursively.md)" article.
 The simplest work-around to this limitation, is moving or duplicating the `repositories` definition into your root
 composer.json.
@@ -102,7 +102,7 @@ composer.json.
 ## I have locked a dependency to a specific commit but get unexpected results.
 
 While Composer supports locking dependencies to a specific commit using the `#commit-ref` syntax, there are certain
-caveats that one should take into account. The most important one is [documented](../livro/esquema.md#package-links), but
+caveats that one should take into account. The most important one is [documented](../04-schema.md#package-links), but
 frequently overlooked:
 
 > **Note:** While this is convenient at times, it should not be how you use
@@ -133,7 +133,7 @@ composer.json:
 }
 ```
 
-See [aliases](../artigos/aliases.md) for more information.
+See [aliases](aliases.md) for more information.
 
 
 ## Figuring out where a config value came from

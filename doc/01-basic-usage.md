@@ -289,23 +289,23 @@ Consulte também a documentação sobre [otimização do autoloader]
 > usá-lo, pode incluir os arquivos `vendor/composer/autoload_*.php`, que
 > retornam arrays associativos que permitem configurar o seu próprio autoloader.
 
-[article-autoloader]: ../articles/autoloader-optimization.md
-[article-versions]: ../articles/versions.md
-[book-autoload]: esquema.md#autoload
-[book-dump-autoload]: cli.md#dump-autoload-dumpautoload
-[book-install]: cli.md#install-i
-[book-intro]: introducao.md
-[book-libs]: bibliotecas.md
-[book-locally]: introducao.md#localmente
-[book-lock-file]: bibliotecas.md#arquivo-lock
+[article-autoloader]: articles/autoloader-optimization.md
+[article-versions]: articles/versions.md
+[book-autoload]: 04-schema.md#autoload
+[book-dump-autoload]: 03-cli.md#dump-autoload-dumpautoload
+[book-install]: 03-cli.md#install-i
+[book-intro]: 00-intro.md
+[book-libs]: 02-libraries.md
+[book-locally]: 00-intro.md#localmente
+[book-lock-file]: 02-libraries.md#arquivo-lock
 [book-packagist]: #packagist
 [book-platform-packages]: #pacotes-de-plataforma
-[book-repos]: repositorios.md
-[book-repositories]: esquema.md#repositories
-[book-require]: esquema.md#require
-[book-schema]: esquema.md
-[book-show]: cli.md#show
-[book-update]: cli.md#update-u
+[book-repos]: 05-repositories.md
+[book-repositories]: 04-schema.md#repositories
+[book-require]: 04-schema.md#require
+[book-schema]: 04-schema.md
+[book-show]: 03-cli.md#show
+[book-update]: 03-cli.md#update-u
 [page-packagist]: https://packagist.org/
 [page-psr4]: https://www.php-fig.org/psr/psr-4/
 [page-semver-monolog]: https://semver.mwl.be/#?package=monolog%2Fmonolog&version=1.0.*

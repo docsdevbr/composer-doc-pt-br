@@ -106,7 +106,7 @@ section or directly in the repository definition.
 
 The final option to supply Composer with credentials is to use the `COMPOSER_AUTH` environment variable.
 These variables can be either passed as command line variables or set in actual environment variables.
-Read more about the usage of this environment variable [here](../livro/cli.md#composer-auth).
+Read more about the usage of this environment variable [here](../03-cli.md#composer-auth).
 
 # Authentication methods
 
@@ -196,7 +196,7 @@ php composer.phar config [--global] --editor
 ## gitlab-oauth
 
 > **Note:** For the gitlab authentication to work on private gitlab instances, the
-> [`gitlab-domains`](../livro/config.md#gitlab-domains) section should also contain the url.
+> [`gitlab-domains`](../06-config.md#gitlab-domains) section should also contain the url.
 
 ### Command line gitlab-oauth
 
@@ -221,7 +221,7 @@ php composer.phar config [--global] --editor --auth
 ## gitlab-token
 
 > **Note:** For the gitlab authentication to work on private gitlab instances, the
-> [`gitlab-domains`](../livro/config.md#gitlab-domains) section should also contain the url.
+> [`gitlab-domains`](../06-config.md#gitlab-domains) section should also contain the url.
 
 To create a new access token, go to your [access tokens section on GitLab](https://gitlab.com/-/profile/personal_access_tokens)
 (or the equivalent URL on your private instance) and create a new token. See also [the GitLab access token documentation](https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html#creating-a-personal-access-token) for more information.

@@ -35,10 +35,10 @@ packages, or your own. You can get it from
 For example let's assume you have a few packages you want to reuse across your
 company but don't really want to open-source. You would first define a Satis
 configuration: a json file with an arbitrary name that lists your curated
-[repositories](../livro/repositorios.md).
+[repositories](../05-repositories.md).
 
 Here is an example configuration, you see that it holds a few VCS repositories,
-but those could be any types of [repositories](../livro/repositorios.md). Then it
+but those could be any types of [repositories](../05-repositories.md). Then it
 uses `"require-all": true` which selects all versions of all packages in the
 repositories you defined.
 
@@ -336,5 +336,5 @@ is set to true.
 [ssh2 context options]: https://secure.php.net/manual/en/wrappers.ssh2.php#refsect1-wrappers.ssh2-options
 [ssl context options]: https://secure.php.net/manual/en/context.ssl.php
 [Twig]: https://twig.sensiolabs.org/
-[config schema]: ../livro/esquema.md#config
-[notify-batch]: ../livro/repositorios.md#notify-batch
+[config schema]: ../04-schema.md#config
+[notify-batch]: ../05-repositories.md#notify-batch

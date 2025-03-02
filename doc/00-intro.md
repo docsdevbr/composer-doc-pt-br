@@ -162,8 +162,8 @@ Composer version 1.0.0 2016-01-10 20:34:53
 Agora que você instalou o Composer, está tudo pronto para usá-lo! Leia o próximo
 capítulo para uma breve demonstração.
 
-[book-global]: cli.md#global
-[book-usage]: uso-basico.md
+[book-global]: 03-cli.md#global
+[book-usage]: 01-basic-usage.md
 [page-bundler]: https://bundler.io/
 [page-download]: https://getcomposer.org/download/
 [page-github]: https://github.com/composer/getcomposer.org/blob/master/web/installer
