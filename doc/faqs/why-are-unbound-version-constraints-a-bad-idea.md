@@ -17,5 +17,5 @@ versions up to `3.999` but does not include `4.0` and above. The `^` operator
 works very well with libraries following [semantic versioning](https://semver.org).
 
 **Note:** As a package maintainer, you can help your users
-by providing an [alias version](../artigos/apelidos.md) for your development
+by providing an [alias version](../articles/apelidos.md) for your development
 branch to allow it to match bound constraints.

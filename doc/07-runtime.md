@@ -1,5 +1,5 @@
 <!--
-source_url: https://github.com/composer/composer/blob/2.6/doc/07-runtime.md
+source_url: https://github.com/composer/composer/blob/2.6/doc/07-07-runtime.md
 revision: 31c7474cde1abe5bb5ea5bc9623c399797ba2f8e
 status: ready
 -->
@@ -197,11 +197,11 @@ Leia mais sobre isso na [documentação de binários dos fornecedores][5].
 Isso é definido pelo proxy binário e, como tal, não é disponibilizado para
 projetos pelo script `vendor/autoload.php` do Composer.
 
-[1]: uso-basico.md#autoloading
+[1]: 01-basic-usage.md#autoloading
 
 [2]: https://github.com/composer/composer/blob/main/src/Composer/InstalledVersions.php
 
-[3]: config.md#platform-check
+[3]: 06-config.md#platform-check
 
 [4]: ../articles/vendor-binaries.md#finding-the-composer-autoloader-from-a-binary
 

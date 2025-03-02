@@ -16,7 +16,7 @@ specific logic.
 ## Alternative to custom installers with Composer 2.1+
 
 As of Composer 2.1, the `Composer\InstalledVersions` class has a
-[`getInstalledPackagesByType`](https://getcomposer.org/doc/07-runtime.md#knowing-which-packages-of-a-given-type-are-installed)
+[`getInstalledPackagesByType`](https://getcomposer.org/doc/07-07-runtime.md#knowing-which-packages-of-a-given-type-are-installed)
 method which can let you figure out at runtime which plugins/modules/extensions are installed.
 
 It is highly recommended to use that instead of building new custom
@@ -207,8 +207,8 @@ different installation path.
 > _Instead of being installed in `/vendor` any package installed using this
 > Installer will be put in the `/data/templates/<stripped name>` folder._
 
-[1]: ../livro/esquema.md#type
-[2]: ../livro/esquema.md#extra
+[1]: ../doc/04-schema.md#type
+[2]: ../doc/04-schema.md#extra
 [3]: https://github.com/composer/composer/blob/main/src/Composer/Plugin/PluginInterface.php
 [4]: https://github.com/composer/composer/blob/main/src/Composer/Installer/InstallerInterface.php
 [5]: https://github.com/composer/composer/blob/main/src/Composer/Installer/LibraryInstaller.php

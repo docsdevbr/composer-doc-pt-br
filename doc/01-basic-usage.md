@@ -1,5 +1,5 @@
 <!--
-source_url: https://github.com/composer/composer/blob/2.6/doc/01-uso-basico.md
+source_url: https://github.com/composer/composer/blob/2.6/doc/01-01-basic-usage.md
 revision: b608b8e87eeafec47fa04a8156ea44fc3f9745b0
 status: ready
 -->
@@ -323,17 +323,17 @@ Consulte também a documentação sobre [otimização do carregador automático]
 
 [2]: introducao.md#localmente
 
-[3]: esquema.md#require
+[3]: 04-schema.md#require
 
-[4]: esquema.md#repositories
+[4]: 04-schema.md#repositories
 
 [5]: #packagist
 
-[6]: repositorios.md
+[6]: 05-repositories.md
 
 [7]: https://packagist.org/
 
-[8]: bibliotecas.md
+[8]: 02-libraries.md
 
 [9]: #pacotes-de-plataforma
 
@@ -341,20 +341,20 @@ Consulte também a documentação sobre [otimização do carregador automático]
 
 [11]: ../articles/versions.md
 
-[12]: esquema.md
+[12]: 04-schema.md
 
-[13]: cli.md#update-u
+[13]: 03-cli.md#update-u
 
-[14]: cli.md#install-i
+[14]: 03-cli.md#install-i
 
-[15]: bibliotecas.md#arquivo-de-travamento
+[15]: 02-libraries.md#arquivo-de-travamento
 
-[16]: cli.md#show
+[16]: 03-cli.md#show
 
-[17]: esquema.md#autoload
+[17]: 04-schema.md#autoload
 
 [18]: https://www.php-fig.org/psr/psr-4/
 
-[19]: cli.md#dump-autoload-dumpautoload
+[19]: 03-cli.md#dump-autoload-dumpautoload
 
-[20]: ../artigos/otimizacao-do-carregador-automatico.md
+[20]: ../articles/otimizacao-do-carregador-automatico.md

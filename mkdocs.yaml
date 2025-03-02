@@ -9,19 +9,19 @@ INHERIT: !ENV MKDOCS_BASE_CONFIG
 nav:
   - index.md
   - Livro:
-      - Introdução: livro/introducao.md
-      - "Uso básico": livro/uso-basico.md
-      - livro/bibliotecas.md
-      - "CLI / Comandos": livro/cli.md
-      - "Esquema do composer.json": livro/esquema.md
-      - livro/repositorios.md
-      - "Configuração": livro/config.md
-      - "Utilitários do runtime do Composer": livro/runtime.md
-      - livro/comunidade.md
+      - Introdução: 00-intro.md
+      - Uso básico: 01-basic-usage.md
+      - Bibliotecas: 02-libraries.md
+      - CLI / Comandos: 03-cli.md
+      - Esquema do composer.json: 04-schema.md
+      - Repositórios: 05-repositories.md
+      - Configuração: 06-config.md
+      - Utilitários do runtime do Composer: 07-runtime.md
+      - Comunidade: 08-community.md
   - Artigos:
-      - "Apelidos": artigos/apelidos.md
-      - "Autenticação para pacotes e repositórios privados": artigos/autenticacao-para-pacotes-privados.md
-      - "Otimização do carregador automático": artigos/otimizacao-do-carregador-automatico.md
+      - Apelidos: articles/aliases.md
+      - Autenticação para pacotes e repositórios privados: articles/authentication-for-private-packages.md
+      - Otimização do carregador automático: articles/autoloader-optimization.md
       - articles/composer-platform-dependencies.md
       - articles/custom-installers.md
       - articles/handling-private-packages.md

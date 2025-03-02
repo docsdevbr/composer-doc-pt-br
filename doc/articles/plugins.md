@@ -286,7 +286,7 @@ Now the `custom-plugin-command` is available alongside Composer commands.
 Plugins for an event can be run manually by the `run-script` command. This works the same way as
 [running scripts manually](scripts.md#running-scripts-manually).
 
-If it is another type of plugin the best way to test it is probably using a [path repository](../livro/repositorios.md#path)
+If it is another type of plugin the best way to test it is probably using a [path repository](../doc/05-repositories.md#path)
 to require the plugin in a test project. If you are developing locally and want to test frequently, you can make sure the path repository uses symlinks, as changes are updated immediately. Otherwise, you'll have to run `rm -rf vendor && composer update`
 every time you want to install/run it again.
 
@@ -343,7 +343,7 @@ in another location than they actually are.
 Because Composer plugins can be used to perform actions which are necessary for installing
 a working application, like modifying which path files get stored in, skipping required
 plugins unintentionally can result in broken applications. So, in non-interactive mode,
-Composer will fail if a new plugin is not listed in ["allow-plugins"](../livro/config.md#allow-plugins)
+Composer will fail if a new plugin is not listed in ["allow-plugins"](../doc/06-config.md#allow-plugins)
 to force users to decide if they want to execute the plugin, to avoid silent failures.
 
 As of Composer 2.5.3, you can use the setting `{"extra": {"plugin-optional": true}}` on
@@ -378,13 +378,13 @@ includes:
 // your remaining config..
 ```
 
-[1]: ../livro/esquema.md#type
-[2]: ../livro/esquema.md#extra
+[1]: ../doc/04-schema.md#type
+[2]: ../doc/04-schema.md#extra
 [3]: https://github.com/composer/composer/blob/main/src/Composer/Plugin/PluginInterface.php
 [4]: https://github.com/composer/composer/blob/main/src/Composer/Composer.php
 [5]: https://github.com/composer/composer/blob/main/src/Composer/IO/IOInterface.php
 [6]: https://github.com/composer/composer/blob/main/src/Composer/EventDispatcher/EventSubscriberInterface.php
-[7]: ../livro/uso-basico.md#package-versions
+[7]: ../doc/01-basic-usage.md#package-versions
 [8]: https://github.com/composer/composer/blob/main/src/Composer/Plugin/Capable.php
 [9]: https://github.com/composer/composer/blob/main/src/Composer/Plugin/Capability/CommandProvider.php
 [10]: https://symfony.com/doc/current/components/console.html
