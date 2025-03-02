@@ -10,7 +10,7 @@ can be given:
 
 - If you run interactively, Composer will prompt if you are sure that you want to continue
   running as root. If you run non-interactively, plugins will be disabled, unless..
-- If you set the [COMPOSER_ALLOW_SUPERUSER](../livro/cli.md#composer-allow-superuser) environment
+- If you set the [COMPOSER_ALLOW_SUPERUSER](../03-cli.md#composer-allow-superuser) environment
   variable to `1`, this also indicates that you intended to run Composer as root and are accepting
   the risks of doing so.
 
@@ -37,5 +37,5 @@ to install untrusted dependencies you should sandbox them completely in a contai
 
 Also note that the `exec` command will always run third party code as the user which runs `composer`.
 
-See the [COMPOSER_ALLOW_SUPERUSER](../livro/cli.md#composer-allow-superuser) environment variable for
+See the [COMPOSER_ALLOW_SUPERUSER](../03-cli.md#composer-allow-superuser) environment variable for
 more info on how to disable the warnings.
