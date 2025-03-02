@@ -7,11 +7,11 @@ This is a list of common pitfalls on using Composer, and how to avoid them.
 
 ## General
 
-1. Before asking anyone, run [`composer diagnose`](../livro/cli.md#diagnose) to check
+1. Before asking anyone, run [`composer diagnose`](../03-cli.md#diagnose) to check
    for common problems. If it all checks out, proceed to the next steps.
 
 2. When facing any kind of problems using Composer, be sure to **work with the
-   latest version**. See [self-update](../livro/cli.md#self-update) for details.
+   latest version**. See [self-update](../03-cli.md#self-update) for details.
 
 3. Make sure you have no problems with your setup by running the installer's
    checks via `curl -sS https://getcomposer.org/installer | php -- --check`.
@@ -29,7 +29,7 @@ This is a list of common pitfalls on using Composer, and how to avoid them.
    branches and tag names.
 
 2. Be sure to **set the right
-   [minimum-stability](../livro/esquema.md#minimum-stability)**. To get started or be
+   [minimum-stability](../04-schema.md#minimum-stability)**. To get started or be
    sure this is no issue, set `minimum-stability` to "dev".
 
 3. Packages **not coming from [Packagist](https://packagist.org/)** should
@@ -76,7 +76,7 @@ This is a list of common pitfalls on using Composer, and how to avoid them.
 
 ## I have a dependency which contains a "repositories" definition in its composer.json, but it seems to be ignored.
 
-The [`repositories`](../livro/esquema.md#repositories) configuration property is defined as [root-only](../livro/esquema.md#root-package). It is not inherited. You can read more about the reasons behind this in the "[why can't
+The [`repositories`](../04-schema.md#repositories) configuration property is defined as [root-only](../04-schema.md#root-package). It is not inherited. You can read more about the reasons behind this in the "[why can't
 composer load repositories recursively?](../faqs/why-cant-composer-load-repositories-recursively.md)" article.
 The simplest work-around to this limitation, is moving or duplicating the `repositories` definition into your root
 composer.json.
@@ -84,7 +84,7 @@ composer.json.
 ## I have locked a dependency to a specific commit but get unexpected results.
 
 While Composer supports locking dependencies to a specific commit using the `#commit-ref` syntax, there are certain
-caveats that one should take into account. The most important one is [documented](../livro/esquema.md#package-links), but
+caveats that one should take into account. The most important one is [documented](../04-schema.md#package-links), but
 frequently overlooked:
 
 > **Note:** While this is convenient at times, it should not be how you use
@@ -114,7 +114,7 @@ composer.json:
 }
 ```
 
-See [aliases](../artigos/aliases.md) for more information.
+See [aliases](aliases.md) for more information.
 
 ## Memory limit errors
 

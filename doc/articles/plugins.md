@@ -278,13 +278,13 @@ local project plugins are loaded.
 > installed plugins. This may be particularly helpful if any of the plugins
 > causes errors and you wish to update or uninstall it.
 
-[1]: ../livro/esquema.md#type
-[2]: ../livro/esquema.md#extra
+[1]: ../04-schema.md#type
+[2]: ../04-schema.md#extra
 [3]: https://github.com/composer/composer/blob/master/src/Composer/Plugin/PluginInterface.php
 [4]: https://github.com/composer/composer/blob/master/src/Composer/Composer.php
 [5]: https://github.com/composer/composer/blob/master/src/Composer/IO/IOInterface.php
 [6]: https://github.com/composer/composer/blob/master/src/Composer/EventDispatcher/EventSubscriberInterface.php
-[7]: ../livro/uso-basico.md#package-versions
+[7]: ../01-basic-usage.md#package-versions
 [8]: https://github.com/composer/composer/blob/master/src/Composer/Plugin/Capable.php
 [9]: https://github.com/composer/composer/blob/master/src/Composer/Plugin/Capability/CommandProvider.php
 [10]: https://symfony.com/doc/current/components/console.html

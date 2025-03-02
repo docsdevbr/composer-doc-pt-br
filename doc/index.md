@@ -2,18 +2,18 @@
 
 ## Livro
 
-* [Introdução](livro/introducao.md)
-* [Uso básico](livro/uso-basico.md)
-* [Bibliotecas](livro/bibliotecas.md)
-* [CLI / Comandos](livro/cli.md)
-* [Esquema do `composer.json`](livro/esquema.md)
-* [Repositórios](livro/repositorios.md)
-* [Configuração](livro/config.md)
-* [Comunidade](livro/comunidade.md)
+* [Introdução](00-intro.md)
+* [Uso básico](01-basic-usage.md)
+* [Bibliotecas](02-libraries.md)
+* [CLI / Comandos](03-cli.md)
+* [Esquema do `composer.json`](04-schema.md)
+* [Repositórios](05-repositories.md)
+* [Configuração](06-config.md)
+* [Comunidade](07-community.md)
 
 ## Artigos
 
-* [Apelidos](artigos/aliases.md)
+* [Apelidos](articles/aliases.md)
 * [Otimização do carregador automático](articles/autoloader-optimization.md)
 * [Setting up and using custom installers](articles/custom-installers.md)
 * [Handling private packages](articles/handling-private-packages.md)
