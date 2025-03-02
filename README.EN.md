@@ -3,7 +3,7 @@
 [![README file in English][readme-badge-en]][readme-lang-en]
 [![README file in Brazilian Portuguese][readme-badge-pt-br]][readme-lang-pt-br]
 
-Translation of Composer Documentation into Brazilian Portuguese.
+Translation of the Composer Documentation into Brazilian Portuguese.
 
 ## Support
 
