@@ -301,10 +301,10 @@ Exemplo:
 O padrão é `true`. Se definida como `false`, O Composer não criará arquivos
 `.htaccess` nos diretórios inicial, de cache e de dados do Composer.
 
-[art-troubleshooting]: ../articles/troubleshooting.md#api-rate-limit-and-oauth-tokens
+[art-troubleshooting]: articles/troubleshooting.md#api-rate-limit-and-oauth-tokens
 [atlassian-oauth]: https://confluence.atlassian.com/bitbucket/oauth-on-bitbucket-cloud-238027431.html
-[cli-composer-home]: cli.md#composer-home
+[cli-composer-home]: 03-cli.md#composer-home
 [gitlab-domains]: #gitlab-domains
 [letsencrypt]: https://letsencrypt.org/
-[schema]: esquema.md
+[schema]: 04-schema.md
 [secure-http]: #secure-http

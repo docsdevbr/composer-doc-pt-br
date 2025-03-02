@@ -99,7 +99,7 @@ plugin is loaded.
 
 To register a method to an event, implement the method `getSubscribedEvents()`
 and have it return an array. The array key must be the
-[event name](../articles/scripts.md#event-names)
+[event name](#event-names)
 and the value is the name of the method in this class to be called.
 
 > **Note:** If you don't know which event to listen to, you can run a Composer
@@ -323,13 +323,13 @@ hint to Composer that the plugin should be installed on its own before proceedin
 the rest of the package downloads. This slightly slows down the overall installation
 process however, so do not use it in plugins which do not absolutely require it.
 
-[1]: ../livro/esquema.md#type
-[2]: ../livro/esquema.md#extra
+[1]: ../04-schema.md#type
+[2]: ../04-schema.md#extra
 [3]: https://github.com/composer/composer/blob/main/src/Composer/Plugin/PluginInterface.php
 [4]: https://github.com/composer/composer/blob/main/src/Composer/Composer.php
 [5]: https://github.com/composer/composer/blob/main/src/Composer/IO/IOInterface.php
 [6]: https://github.com/composer/composer/blob/main/src/Composer/EventDispatcher/EventSubscriberInterface.php
-[7]: ../livro/uso-basico.md#package-versions
+[7]: ../01-basic-usage.md#package-versions
 [8]: https://github.com/composer/composer/blob/main/src/Composer/Plugin/Capable.php
 [9]: https://github.com/composer/composer/blob/main/src/Composer/Plugin/Capability/CommandProvider.php
 [10]: https://symfony.com/doc/current/components/console.html

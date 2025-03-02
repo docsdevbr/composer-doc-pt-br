@@ -1152,19 +1152,19 @@ IP na notação CIDR. Você pode restringir o filtro a uma porta específica (po
 exemplo, `:80`). Você também pode configurá-la como `*` para ignorar o proxy
 para todas as requisições HTTP.
 
-[article-binaries]: ../articles/vendor-binaries.md
-[article-scripts]: ../articles/scripts.md
-[book-cache]: config.md#cache-dir
+[article-binaries]: articles/vendor-binaries.md
+[article-scripts]: articles/scripts.md
+[book-cache]: 06-config.md#cache-dir
 [book-composer-home]: #composer-home
-[book-config]: config.md
-[book-discard-changes]: config.md#discard-changes
-[book-gitlab]: config.md#gitlab-oauth
-[book-globally]: introducao.md#globalmente
-[book-libs]: bibliotecas.md
-[book-platform]: config.md#platform
-[book-platform-check]: runtime.md#platform-check
-[book-repos]: repositorios.md
-[book-repositories]: esquema.md#repositories
+[book-config]: 06-config.md
+[book-discard-changes]: 06-config.md#discard-changes
+[book-gitlab]: 06-config.md#gitlab-oauth
+[book-globally]: 00-intro.md#globalmente
+[book-libs]: 02-libraries.md
+[book-platform]: 06-config.md#platform
+[book-platform-check]: 07-runtime.md#platform-check
+[book-repos]: 05-repositories.md
+[book-repositories]: 04-schema.md#repositories
 [page-autocomplete]: https://github.com/bamarni/symfony-console-autocomplete
 [page-basedir]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 [page-console]: https://github.com/symfony/console
