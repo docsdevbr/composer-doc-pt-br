@@ -33,12 +33,12 @@ or [Docker](https://github.com/composer/satis?tab=readme-ov-file#run-as-docker-c
 For example let's assume you have a few packages you want to reuse across your
 company but don't really want to open-source. You would first define a Satis
 configuration: a json file that lists your curated
-[repositories](../doc/05-repositories.md).
+[repositories](../05-repositories.md).
 
 The default file name is satis.json but it could be anything you like.
 
 Here is an example configuration, you see that it holds a few VCS repositories,
-but those could be any types of [repositories](../doc/05-repositories.md). Then it
+but those could be any types of [repositories](../05-repositories.md). Then it
 uses `"require-all": true` which selects all versions of all packages in the
 repositories you defined.
 
@@ -213,7 +213,7 @@ Example using a custom HTTP Header field for token authentication:
 
 ### Authentication
 
-Authentication can be handled in [several different ways](../articles/autenticacao-para-pacotes-privados.md).
+Authentication can be handled in [several different ways](authentication-for-private-packages.md).
 
 ### Downloads
 

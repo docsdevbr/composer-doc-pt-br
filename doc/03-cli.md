@@ -1152,14 +1152,14 @@ IP na notação CIDR. Você pode restringir o filtro a uma porta específica (po
 exemplo, `:80`). Você também pode configurá-la como `*` para ignorar o proxy
 para todas as requisições HTTP.
 
-[article-binaries]: ../articles/vendor-binaries.md
-[article-scripts]: ../articles/scripts.md
+[article-binaries]: articles/vendor-binaries.md
+[article-scripts]: articles/scripts.md
 [book-cache]: 06-config.md#cache-dir
 [book-composer-home]: #composer-home
 [book-config]: 06-config.md
 [book-discard-changes]: 06-config.md#discard-changes
 [book-gitlab]: 06-config.md#gitlab-oauth
-[book-globally]: introducao.md#globalmente
+[book-globally]: 00-intro.md#globalmente
 [book-libs]: 02-libraries.md
 [book-platform]: 06-config.md#platform
 [book-platform-check]: 07-runtime.md#platform-check

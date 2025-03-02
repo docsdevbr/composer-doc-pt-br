@@ -203,6 +203,6 @@ projetos pelo script `vendor/autoload.php` do Composer.
 
 [3]: 06-config.md#platform-check
 
-[4]: ../articles/vendor-binaries.md#finding-the-composer-autoloader-from-a-binary
+[4]: articles/vendor-binaries.md#finding-the-composer-autoloader-from-a-binary
 
-[5]: ../articles/vendor-binaries.md#finding-the-composer-bin-dir-from-a-binary
+[5]: articles/vendor-binaries.md#finding-the-composer-bin-dir-from-a-binary

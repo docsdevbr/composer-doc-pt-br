@@ -319,9 +319,9 @@ Consulte também a documentação sobre [otimização do carregador automático]
 > `vendor/composer/autoload_*.php`, que retornam arrays associativos que
 > permitem configurar o seu próprio carregador automático.
 
-[1]: introducao.md
+[1]: 00-intro.md
 
-[2]: introducao.md#localmente
+[2]: 00-intro.md#localmente
 
 [3]: 04-schema.md#require
 
@@ -339,7 +339,7 @@ Consulte também a documentação sobre [otimização do carregador automático]
 
 [10]: https://semver.mwl.be/#?package=monolog%2Fmonolog&version=2.0.*
 
-[11]: ../articles/versions.md
+[11]: articles/versions.md
 
 [12]: 04-schema.md
 
@@ -357,4 +357,4 @@ Consulte também a documentação sobre [otimização do carregador automático]
 
 [19]: 03-cli.md#dump-autoload-dumpautoload
 
-[20]: ../articles/otimizacao-do-carregador-automatico.md
+[20]: articles/autoloader-optimization.md

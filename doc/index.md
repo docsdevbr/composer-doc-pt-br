@@ -14,9 +14,9 @@
 
 ## Artigos
 
-* [Apelidos](articles/apelidos.md)
-* [Autenticação para pacotes e repositórios privados](articles/autenticacao-para-pacotes-privados.md)
-* [Otimização do carregador automático](articles/otimizacao-do-carregador-automatico.md)
+* [Apelidos](articles/aliases.md)
+* [Autenticação para pacotes e repositórios privados](articles/authentication-for-private-packages.md)
+* [Otimização do carregador automático](articles/autoloader-optimization.md)
 * [Composer platform dependencies](articles/composer-platform-dependencies.md)
 * [Setting up and using custom installers](articles/custom-installers.md)
 * [Handling private packages](articles/handling-private-packages.md)

@@ -9,9 +9,9 @@ This is a list of common pitfalls on using Composer, and how to avoid them.
 ## General
 
 1. When facing any kind of problems using Composer, be sure to **work with the
-   latest version**. See [self-update](../doc/03-cli.md#self-update) for details.
+   latest version**. See [self-update](../03-cli.md#self-update) for details.
 
-2. Before asking anyone, run [`composer diagnose`](../doc/03-cli.md#diagnose) to check
+2. Before asking anyone, run [`composer diagnose`](../03-cli.md#diagnose) to check
    for common problems. If it all checks out, proceed to the next steps.
 
 3. Make sure you have no problems with your setup by running the installer's
@@ -31,7 +31,7 @@ This is a list of common pitfalls on using Composer, and how to avoid them.
    branches and tag names.
 
 2. Be sure to **set the right
-   [minimum-stability](../doc/04-schema.md#minimum-stability)**. To get started or be
+   [minimum-stability](../04-schema.md#minimum-stability)**. To get started or be
    sure this is no issue, set `minimum-stability` to "dev".
 
 3. Packages **not coming from [Packagist](https://packagist.org/)** should
@@ -61,7 +61,7 @@ When your root package depends on a package which ends up depending (directly or
 indirectly) back on the root package itself, issues can occur in two cases:
 
 1. During development, if you are on a branch like `dev-main` and the branch has no
-   [branch-alias](../articles/apelidos.md#branch-alias) defined, and the dependency on the root package
+   [branch-alias](aliases.md#branch-alias) defined, and the dependency on the root package
    requires version `^2.0` for example, the `dev-main` version will not satisfy it.
    The best solution here is to make sure you first define a branch alias.
 
@@ -137,7 +137,7 @@ value in your php.ini to something higher.
 
 ## I have a dependency which contains a "repositories" definition in its composer.json, but it seems to be ignored.
 
-The [`repositories`](../doc/04-schema.md#repositories) configuration property is defined as [root-only](../doc/04-schema.md#root-package). It is not inherited. You can read more about the reasons behind this in the "[why can't
+The [`repositories`](../04-schema.md#repositories) configuration property is defined as [root-only](../04-schema.md#root-package). It is not inherited. You can read more about the reasons behind this in the "[why can't
 Composer load repositories recursively?](../faqs/why-cant-composer-load-repositories-recursively.md)" article.
 The simplest work-around to this limitation, is moving or duplicating the `repositories` definition into your root
 composer.json.
@@ -146,7 +146,7 @@ composer.json.
 ## I have locked a dependency to a specific commit but get unexpected results.
 
 While Composer supports locking dependencies to a specific commit using the `#commit-ref` syntax, there are certain
-caveats that one should take into account. The most important one is [documented](../doc/04-schema.md#package-links), but
+caveats that one should take into account. The most important one is [documented](../04-schema.md#package-links), but
 frequently overlooked:
 
 > **Note:** While this is convenient at times, it should not be how you use
@@ -177,7 +177,7 @@ composer.json:
 }
 ```
 
-See [aliases](../articles/apelidos.md) for more information.
+See [aliases](aliases.md) for more information.
 
 
 ## Figuring out where a config value came from
@@ -253,7 +253,7 @@ Because of GitHub's rate limits on their API it can happen that Composer prompts
 for authentication asking your username and password so it can go ahead with its work.
 
 If you would prefer not to provide your GitHub credentials to Composer you can
-manually create a token using the [procedure documented here](../articles/autenticacao-para-pacotes-privados.md#github-oauth).
+manually create a token using the [procedure documented here](authentication-for-private-packages.md#github-oauth).
 
 Now Composer should install/update without asking for authentication.
 
@@ -337,7 +337,7 @@ following workarounds:
 
 **Generic Workaround:**
 
-Set the [`COMPOSER_IPRESOLVE=4`](../doc/03-cli.md#composer-ipresolve) environment variable which will force curl to resolve
+Set the [`COMPOSER_IPRESOLVE=4`](../03-cli.md#composer-ipresolve) environment variable which will force curl to resolve
 domains using IPv4. This only works when the curl extension is used for downloads.
 
 **Workaround Linux:**
