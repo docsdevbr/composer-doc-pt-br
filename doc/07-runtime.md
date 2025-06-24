@@ -1,5 +1,11 @@
 <!--
-source_url: https://github.com/composer/composer/blob/2.8.4/doc/07-runtime.md
+[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+
+[//]: # Licensed under the MIT License.
+[//]: # The original work was translated from English into Brazilian Portuguese.
+[//]: # https://github.com/composer/composer/blob/main/LICENSE
+
+source_url: https://github.com/composer/composer/blob/2.8/doc/07-runtime.md
 revision: 31c7474cde1abe5bb5ea5bc9623c399797ba2f8e
 status: ready
 -->

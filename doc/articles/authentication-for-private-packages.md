@@ -1,6 +1,13 @@
 <!--
+[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+
+[//]: # Licensed under the MIT License.
+[//]: # The original work was translated from English into Brazilian Portuguese.
+[//]: # https://github.com/composer/composer/blob/main/LICENSE
+
 tagline: Acesse pacotes e repositórios privados
-source_url: https://github.com/composer/composer/blob/2.8.4/doc/articles/authentication-for-private-packages.md
+
+source_url: https://github.com/composer/composer/blob/2.8/doc/articles/authentication-for-private-packages.md
 revision: de3698f53588cff7a803137f4fc5b36f54574487
 status: wip
 -->

@@ -1,3 +1,11 @@
+<!--
+[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+
+[//]: # Licensed under the MIT License.
+[//]: # The original work was translated from English into Brazilian Portuguese.
+[//]: # https://github.com/composer/composer/blob/main/LICENSE
+-->
+
 # How do I install untrusted packages safely? Is it safe to run Composer as superuser or root?
 
 ## Why am I seeing a "Do not run Composer as root/super user" warning/error?

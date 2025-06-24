@@ -1,3 +1,11 @@
+<!--
+[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+
+[//]: # Licensed under the MIT License.
+[//]: # The original work was translated from English into Brazilian Portuguese.
+[//]: # https://github.com/composer/composer/blob/main/LICENSE
+-->
+
 # How to use Composer behind a proxy
 
 Composer, like many other tools, uses environment variables to control the use of a proxy server and

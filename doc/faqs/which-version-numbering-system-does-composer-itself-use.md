@@ -1,3 +1,11 @@
+<!--
+[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+
+[//]: # Licensed under the MIT License.
+[//]: # The original work was translated from English into Brazilian Portuguese.
+[//]: # https://github.com/composer/composer/blob/main/LICENSE
+-->
+
 # Which version numbering system does Composer itself use?
 
 Composer uses [Semantic Versioning (aka SemVer)

@@ -1,3 +1,11 @@
+<!--
+[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+
+[//]: # Licensed under the MIT License.
+[//]: # The original work was translated from English into Brazilian Portuguese.
+[//]: # https://github.com/composer/composer/blob/main/LICENSE
+-->
+
 # Should I commit the dependencies in my vendor directory?
 
 The general recommendation is **no**. The vendor directory (or wherever your

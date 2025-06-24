@@ -1,5 +1,11 @@
 <!--
-    tagline: Expose command-line scripts from packages
+[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+
+[//]: # Licensed under the MIT License.
+[//]: # The original work was translated from English into Brazilian Portuguese.
+[//]: # https://github.com/composer/composer/blob/main/LICENSE
+
+tagline: Expose command-line scripts from packages
 -->
 
 # Vendor binaries and the `vendor/bin` directory

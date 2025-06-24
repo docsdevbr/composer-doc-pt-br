@@ -1,6 +1,13 @@
 <!--
-    tagline: Solving problems
+[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+
+[//]: # Licensed under the MIT License.
+[//]: # The original work was translated from English into Brazilian Portuguese.
+[//]: # https://github.com/composer/composer/blob/main/LICENSE
+
+tagline: Solving problems
 -->
+
 # Troubleshooting
 
 This is a list of common pitfalls on using Composer, and how to avoid them.

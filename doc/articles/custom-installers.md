@@ -1,5 +1,11 @@
 <!--
-    tagline: Modify the way certain types of packages are installed
+[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+
+[//]: # Licensed under the MIT License.
+[//]: # The original work was translated from English into Brazilian Portuguese.
+[//]: # https://github.com/composer/composer/blob/main/LICENSE
+
+tagline: Modify the way certain types of packages are installed
 -->
 
 # Setting up and using custom installers

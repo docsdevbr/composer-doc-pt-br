@@ -1,5 +1,11 @@
 <!--
-    tagline: Configure which packages are found in which repositories
+[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+
+[//]: # Licensed under the MIT License.
+[//]: # The original work was translated from English into Brazilian Portuguese.
+[//]: # https://github.com/composer/composer/blob/main/LICENSE
+
+tagline: Configure which packages are found in which repositories
 -->
 
 # Repository priorities

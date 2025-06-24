@@ -1,3 +1,11 @@
+<!--
+[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+
+[//]: # Licensed under the MIT License.
+[//]: # The original work was translated from English into Brazilian Portuguese.
+[//]: # https://github.com/composer/composer/blob/main/LICENSE
+-->
+
 # How do I install a package to a custom path for my framework?
 
 Each framework may have one or many different required package installation

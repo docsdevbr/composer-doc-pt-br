@@ -1,34 +1,61 @@
-# [composer-doc-pt-br][portal-link]
+# [composer-doc-pt-br][page]
 
-[![Arquivo README em inglês][readme-badge-en]][readme-lang-en]
-[![Arquivo README em português brasileiro][readme-badge-pt-br]][readme-lang-pt-br]
+[![Arquivo README em inglês][badge-readme-en]][readme-en]
+[![Arquivo README em português brasileiro][badge-readme-pt-br]][readme-pt-br]
+[![Licença: MIT][badge-license]][license]
+[![Pessoas contribuidoras][badge-contributors]][contributors]
+[![GitHub Sponsors][badge-github-sponsors]][github-sponsors]
 
 Tradução da Documentação do Composer para português brasileiro.
 
+## Contribuindo
+
+Contribuições são bem-vindas!
+Leia nosso [Guia de Contribuição][contributing] para saber como você pode ajudar
+com traduções, revisões e melhorias.
+
+## Código de Conduta
+
+Temos o comprometimento de fornecer uma comunidade acolhedora.
+Leia nosso [Código de Conduta][code-of-conduct] para entender nossos padrões de
+comunidade.
+
 ## Apoio
 
-Você pode apoiar o projeto através do [GitHub Sponsors][sponsor-github] ou
-[Pix][sponsor-pix].
+Você pode apoiar o projeto através do [GitHub Sponsors][github-sponsors] ou
+[Pix][sponsor].
 
 ## Licença
 
 Copyright (c) Nils Adermann, Jordi Boggiano.
 
-Licenciado sob a [Licença MIT][license-mit].<br>
+Licenciado sob a [Licença MIT][license].<br>
 A obra original foi traduzida do inglês para o português brasileiro.
 
-[license-mit]: LICENSE
+[badge-contributors]: https://img.shields.io/github/contributors/docsdevbr/composer-doc-pt-br
 
-[portal-link]: https://docs.dev.br/pt-br/docs/composer/doc/
+[badge-github-sponsors]: https://img.shields.io/github/sponsors/docsdevbr
 
-[readme-badge-en]: https://img.shields.io/badge/lang-en-blue.svg
+[badge-license]: https://img.shields.io/github/license/docsdevbr/composer-doc-pt-br
 
-[readme-badge-pt-br]: https://img.shields.io/badge/lang-pt--br-dark--green.svg
+[badge-readme-en]: https://img.shields.io/badge/lang-en-blue
 
-[readme-lang-en]: README.EN.md
+[badge-readme-pt-br]: https://img.shields.io/badge/lang-pt--br-blue
 
-[readme-lang-pt-br]: README.md
+[code-of-conduct]: https://github.com/docsdevbr/.github/blob/main/CODE_OF_CONDUCT.md
 
-[sponsor-github]: https://github.com/sponsors/docsdevbr
+[contributing]: https://github.com/docsdevbr/.github/blob/main/CONTRIBUTING.md
 
-[sponsor-pix]: https://docs.dev.br/pt-br/support-us
+[contributors]: https://github.com/docsdevbr/composer-doc-pt-br/graphs/contributors
+
+[github-sponsors]: https://github.com/sponsors/docsdevbr
+
+[license]: LICENSE
+
+[page]: https://docs.dev.br/docs/composer/doc/
+
+[readme-en]: README.EN.md
+
+[readme-pt-br]: README.md
+
+[sponsor]: https://docs.dev.br/apoie-o-projeto

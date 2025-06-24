@@ -1,5 +1,11 @@
 <!--
-    tagline: Script are callbacks that are called before/after installing packages
+[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+
+[//]: # Licensed under the MIT License.
+[//]: # The original work was translated from English into Brazilian Portuguese.
+[//]: # https://github.com/composer/composer/blob/main/LICENSE
+
+tagline: Script are callbacks that are called before/after installing packages
 -->
 
 # Scripts

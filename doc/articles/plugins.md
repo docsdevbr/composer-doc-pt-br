@@ -1,5 +1,11 @@
 <!--
-    tagline: Modify and extend Composer's functionality
+[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+
+[//]: # Licensed under the MIT License.
+[//]: # The original work was translated from English into Brazilian Portuguese.
+[//]: # https://github.com/composer/composer/blob/main/LICENSE
+
+tagline: Modify and extend Composer's functionality
 -->
 
 # Setting up and using plugins

@@ -1,5 +1,11 @@
 <!--
-source_url: https://github.com/composer/composer/blob/2.8.4/doc/08-community.md
+[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+
+[//]: # Licensed under the MIT License.
+[//]: # The original work was translated from English into Brazilian Portuguese.
+[//]: # https://github.com/composer/composer/blob/main/LICENSE
+
+source_url: https://github.com/composer/composer/blob/2.8/doc/08-community.md
 revision: 1c669428da698ace7657207088bbbbc906a9e4ff
 status: outdated
 -->
