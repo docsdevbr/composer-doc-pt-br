@@ -1,7 +1,7 @@
 <!--
 [//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
 
-[//]: # Licensed under the MIT License.
+[//]: # Documentation licensed under the MIT License.
 [//]: # The original work was translated from English into Brazilian Portuguese.
 [//]: # https://github.com/composer/composer/blob/main/LICENSE
 

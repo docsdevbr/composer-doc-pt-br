@@ -29,7 +29,7 @@ You can support the project through [GitHub Sponsors][github-sponsors] or
 
 Copyright (c) Nils Adermann, Jordi Boggiano.
 
-Licensed under the [MIT License][license].<br>
+Documentation licensed under the [MIT License][license].<br>
 The original work was translated from English into Brazilian Portuguese.
 
 [badge-contributors]: https://img.shields.io/github/contributors/docsdevbr/composer-doc-pt-br

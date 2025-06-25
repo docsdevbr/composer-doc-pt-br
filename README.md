@@ -29,7 +29,7 @@ Você pode apoiar o projeto através do [GitHub Sponsors][github-sponsors] ou
 
 Copyright (c) Nils Adermann, Jordi Boggiano.
 
-Licenciado sob a [Licença MIT][license].<br>
+Documentação licenciada sob a [Licença MIT][license].<br>
 A obra original foi traduzida do inglês para o português brasileiro.
 
 [badge-contributors]: https://img.shields.io/github/contributors/docsdevbr/composer-doc-pt-br
