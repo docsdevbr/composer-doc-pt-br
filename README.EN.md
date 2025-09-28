@@ -52,10 +52,10 @@ The original work was translated from English into Brazilian Portuguese.
 
 [license]: LICENSE
 
-[page]: https://docs.dev.br/docs/composer/doc/
+[page]: https://pt.docs.dev.br/p/composer/docs/
 
 [readme-en]: README.EN.md
 
 [readme-pt-br]: README.md
 
-[sponsor]: https://docs.dev.br/apoie-o-projeto
+[sponsor]: https://pt.docs.dev.br/sponsor
