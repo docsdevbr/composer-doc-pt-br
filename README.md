@@ -41,7 +41,7 @@ A obra original foi traduzida do inglês para o português brasileiro.
 
 [badge-readme-en]: https://img.shields.io/badge/lang-en-blue
 
-[badge-readme-pt-br]: https://img.shields.io/badge/lang-pt--br-blue
+[badge-readme-pt-br]: https://img.shields.io/badge/lang-pt--br-dark--green
 
 [badge-reuse]: https://api.reuse.software/badge/github.com/docsdevbr/composer-doc-pt-br
 
