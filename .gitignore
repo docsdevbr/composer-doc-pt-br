@@ -1,4 +1,4 @@
 ### local ###
 
-/.code/
-/.idea/
+.idea/
+.vscode/
