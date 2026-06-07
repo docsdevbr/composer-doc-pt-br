@@ -7,7 +7,7 @@
 [![Pessoas contribuidoras][badge-contributors]][contributors]
 [![GitHub Sponsors][badge-github-sponsors]][github-sponsors]
 
-Tradução da Documentação do Composer para português brasileiro.
+Tradução da documentação do Composer para português brasileiro.
 
 ## Contribuindo
 
@@ -23,14 +23,14 @@ comunidade.
 
 ## Apoio
 
-Você pode apoiar o projeto através do [GitHub Sponsors][github-sponsors] ou
-[Pix][sponsor].
+Visite nossa [página para pessoas apoiadoras][sponsor] para saber como você pode
+apoiar o projeto.
 
 ## Licença
 
 Copyright (c) Nils Adermann, Jordi Boggiano.
 
-Documentação licenciada sob a [Licença MIT][license].<br>
+Documentação licenciada sob a [Licença MIT][license].<br/>
 A obra original foi traduzida do inglês para o português brasileiro.
 
 [badge-contributors]: https://img.shields.io/github/contributors/docsdevbr/composer-doc-pt-br
@@ -55,7 +55,7 @@ A obra original foi traduzida do inglês para o português brasileiro.
 
 [license]: LICENSES/MIT.txt
 
-[page]: https://pt.docs.dev.br/p/composer/docs/
+[page]: https://pt.docs.dev.br/tech/c/composer/index.html
 
 [readme-en]: README.EN.md
 
@@ -63,4 +63,4 @@ A obra original foi traduzida do inglês para o português brasileiro.
 
 [reuse]: https://api.reuse.software/info/github.com/docsdevbr/composer-doc-pt-br
 
-[sponsor]: https://pt.docs.dev.br/sponsor
+[sponsor]: https://pt.docs.dev.br/sponsor.html

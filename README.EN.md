@@ -7,7 +7,7 @@
 [![Contributors][badge-contributors]][contributors]
 [![GitHub Sponsors][badge-github-sponsors]][github-sponsors]
 
-Translation of the Composer Documentation into Brazilian Portuguese.
+Translation of the Composer documentation into Brazilian Portuguese.
 
 ## Contributing
 
@@ -21,16 +21,16 @@ We are committed to providing a welcoming community.
 Please read our [Code of Conduct][code-of-conduct] to understand our community
 standards.
 
-## Support
+## Sponsor
 
-You can support the project through [GitHub Sponsors][github-sponsors] or
-[Pix][sponsor].
+Please visit our [sponsor page][sponsor] to know how you can support the
+project.
 
 ## License
 
 Copyright (c) Nils Adermann, Jordi Boggiano.
 
-Documentation licensed under the [MIT License][license].<br>
+Documentation licensed under the [MIT License][license].<br/>
 The original work was translated from English into Brazilian Portuguese.
 
 [badge-contributors]: https://img.shields.io/github/contributors/docsdevbr/composer-doc-pt-br
@@ -55,7 +55,7 @@ The original work was translated from English into Brazilian Portuguese.
 
 [license]: LICENSES/MIT.txt
 
-[page]: https://pt.docs.dev.br/p/composer/docs/
+[page]: https://pt.docs.dev.br/tech/c/composer/index.html
 
 [readme-en]: README.EN.md
 
@@ -63,4 +63,4 @@ The original work was translated from English into Brazilian Portuguese.
 
 [reuse]: https://api.reuse.software/info/github.com/docsdevbr/composer-doc-pt-br
 
-[sponsor]: https://pt.docs.dev.br/sponsor
+[sponsor]: https://en.docs.dev.br/sponsor.html
