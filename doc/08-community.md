@@ -1,9 +1,10 @@
 <!--
 [//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
-
-[//]: # Documentation licensed under the MIT License.
-[//]: # The original work was translated from English into Brazilian Portuguese.
-[//]: # https://github.com/composer/composer/blob/main/LICENSE
+#
+# SPDX-License-Identifier: MIT
+# Documentation licensed under the MIT License.
+# The original work was translated from English into Brazilian Portuguese.
+# https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
 
 source_url: https://github.com/composer/composer/blob/2.8/doc/08-community.md
 revision: 1c669428da698ace7657207088bbbbc906a9e4ff

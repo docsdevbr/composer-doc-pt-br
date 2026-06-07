@@ -36,7 +36,7 @@ The original work was translated from English into Brazilian Portuguese.
 
 [badge-github-sponsors]: https://img.shields.io/github/sponsors/docsdevbr
 
-[badge-license]: https://img.shields.io/github/license/docsdevbr/composer-doc-pt-br
+[badge-license]: https://img.shields.io/badge/license-MIT-blue
 
 [badge-readme-en]: https://img.shields.io/badge/lang-en-blue
 
@@ -50,7 +50,7 @@ The original work was translated from English into Brazilian Portuguese.
 
 [github-sponsors]: https://github.com/sponsors/docsdevbr
 
-[license]: LICENSE
+[license]: LICENSES/MIT.txt
 
 [page]: https://pt.docs.dev.br/p/composer/docs/
 

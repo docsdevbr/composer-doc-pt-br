@@ -1,9 +1,10 @@
 <!--
 [//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
-
-[//]: # Documentation licensed under the MIT License.
-[//]: # The original work was translated from English into Brazilian Portuguese.
-[//]: # https://github.com/composer/composer/blob/main/LICENSE
+#
+# SPDX-License-Identifier: MIT
+# Documentation licensed under the MIT License.
+# The original work was translated from English into Brazilian Portuguese.
+# https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
 
 tagline: Cria apelidos de nomes de branch para versões
 version: ceec6ff8e2a2cdf5becf5eab25a3d379181c9115
