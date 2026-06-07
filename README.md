@@ -3,6 +3,7 @@
 [![Arquivo README em inglês][badge-readme-en]][readme-en]
 [![Arquivo README em português brasileiro][badge-readme-pt-br]][readme-pt-br]
 [![Licença: MIT][badge-license]][license]
+[![Status do REUSE][badge-reuse]][reuse]
 [![Pessoas contribuidoras][badge-contributors]][contributors]
 [![GitHub Sponsors][badge-github-sponsors]][github-sponsors]
 
@@ -42,6 +43,8 @@ A obra original foi traduzida do inglês para o português brasileiro.
 
 [badge-readme-pt-br]: https://img.shields.io/badge/lang-pt--br-blue
 
+[badge-reuse]: https://api.reuse.software/badge/github.com/docsdevbr/composer-doc-pt-br
+
 [code-of-conduct]: https://github.com/docsdevbr/.github/blob/main/CODE_OF_CONDUCT.md
 
 [contributing]: https://github.com/docsdevbr/.github/blob/main/CONTRIBUTING.md
@@ -57,5 +60,7 @@ A obra original foi traduzida do inglês para o português brasileiro.
 [readme-en]: README.EN.md
 
 [readme-pt-br]: README.md
+
+[reuse]: https://api.reuse.software/info/github.com/docsdevbr/composer-doc-pt-br
 
 [sponsor]: https://pt.docs.dev.br/sponsor
