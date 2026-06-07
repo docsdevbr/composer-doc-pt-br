@@ -1,5 +1,5 @@
-<!--
-[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+---
+# SPDX-FileCopyrightText: Nils Adermann, Jordi Boggiano.
 #
 # SPDX-License-Identifier: MIT
 # Documentation licensed under the MIT License.
@@ -11,7 +11,7 @@ tagline: Como reduzir o impacto no desempenho do carregador automático
 source_url: https://github.com/composer/composer/blob/2.8/doc/articles/autoloader-optimization.md
 revision: 0d236858eca397f7d910533580b0d3a4944444dd
 status: wip
--->
+---
 
 # Otimização do carregador automático
 

@@ -1,5 +1,5 @@
-<!--
-[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+---
+# SPDX-FileCopyrightText: Nils Adermann, Jordi Boggiano.
 #
 # SPDX-License-Identifier: MIT
 # Documentation licensed under the MIT License.
@@ -11,7 +11,7 @@ tagline: Acesse pacotes e repositórios privados
 source_url: https://github.com/composer/composer/blob/2.8/doc/articles/authentication-for-private-packages.md
 revision: de3698f53588cff7a803137f4fc5b36f54574487
 status: wip
--->
+---
 
 # Autenticação para pacotes e repositórios privados
 

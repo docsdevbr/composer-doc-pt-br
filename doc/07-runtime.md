@@ -1,5 +1,5 @@
-<!--
-[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+---
+# SPDX-FileCopyrightText: Nils Adermann, Jordi Boggiano.
 #
 # SPDX-License-Identifier: MIT
 # Documentation licensed under the MIT License.
@@ -9,7 +9,7 @@
 source_url: https://github.com/composer/composer/blob/2.8/doc/07-runtime.md
 revision: 31c7474cde1abe5bb5ea5bc9623c399797ba2f8e
 status: ready
--->
+---
 
 # Utilitários do runtime do Composer
 

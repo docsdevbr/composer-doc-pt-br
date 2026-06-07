@@ -1,5 +1,5 @@
-<!--
-[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+---
+# SPDX-FileCopyrightText: Nils Adermann, Jordi Boggiano.
 #
 # SPDX-License-Identifier: MIT
 # Documentation licensed under the MIT License.
@@ -7,7 +7,7 @@
 # https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
 
 tagline: Modify the way certain types of packages are installed
--->
+---
 
 # Setting up and using custom installers
 

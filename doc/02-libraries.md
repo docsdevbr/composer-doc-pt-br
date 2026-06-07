@@ -1,5 +1,5 @@
-<!--
-[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+---
+# SPDX-FileCopyrightText: Nils Adermann, Jordi Boggiano.
 #
 # SPDX-License-Identifier: MIT
 # Documentation licensed under the MIT License.
@@ -9,7 +9,7 @@
 source_url: https://github.com/composer/composer/blob/2.8/doc/02-libraries.md
 revision: 83212118cbaf7ab44b51f8afcd45a7540275e639
 status: ready
--->
+---
 
 # Bibliotecas
 

@@ -1,5 +1,5 @@
-<!--
-[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+---
+# SPDX-FileCopyrightText: Nils Adermann, Jordi Boggiano.
 #
 # SPDX-License-Identifier: MIT
 # Documentation licensed under the MIT License.
@@ -9,7 +9,7 @@
 source_url: https://github.com/composer/composer/blob/2.8/doc/00-intro.md
 revision: 69746f699f01f7b33d411cd4ddceeeb3e26b5139
 status: ready
--->
+---
 
 # Introdução
 

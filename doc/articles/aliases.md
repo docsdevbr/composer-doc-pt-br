@@ -1,5 +1,5 @@
-<!--
-[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+---
+# SPDX-FileCopyrightText: Nils Adermann, Jordi Boggiano.
 #
 # SPDX-License-Identifier: MIT
 # Documentation licensed under the MIT License.
@@ -8,7 +8,7 @@
 
 tagline: Cria apelidos de nomes de branch para versões
 version: ceec6ff8e2a2cdf5becf5eab25a3d379181c9115
--->
+---
 
 # Apelidos
 

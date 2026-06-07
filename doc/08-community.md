@@ -1,5 +1,5 @@
-<!--
-[//]: # Copyright (c) Nils Adermann, Jordi Boggiano.
+---
+# SPDX-FileCopyrightText: Nils Adermann, Jordi Boggiano.
 #
 # SPDX-License-Identifier: MIT
 # Documentation licensed under the MIT License.
@@ -9,7 +9,7 @@
 source_url: https://github.com/composer/composer/blob/2.8/doc/08-community.md
 revision: 1c669428da698ace7657207088bbbbc906a9e4ff
 status: outdated
--->
+---
 
 # Comunidade
 
