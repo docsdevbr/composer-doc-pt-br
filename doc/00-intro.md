@@ -80,7 +80,7 @@ linha de comando.
 Sinta-se à vontade para [baixar este arquivo](https://getcomposer.org/installer)
 ou revisá-lo no
 [GitHub](https://github.com/composer/getcomposer.org/blob/main/web/installer) se
-desejar saber mais sobre o funcionamento interno do instalador.
+quiser saber mais sobre o funcionamento interno do instalador.
 O código-fonte é PHP puro.
 
 Existem, resumidamente, duas formas de instalar o Composer.
@@ -229,7 +229,7 @@ COPY --from=composer/composer:2-bin /composer /usr/bin/composer
 ```
 
 **Nota:** você precisa instalar manualmente outras dependências de tempo de
-execução dentro da sua imagem ao usar este método; consulte também
+execução dentro da sua imagem ao usar este método; veja também
 https://github.com/composer/composer/blob/main/README.md#binary-dependencies.
 
 Leia a [descrição da imagem](https://hub.docker.com/r/composer/composer) para

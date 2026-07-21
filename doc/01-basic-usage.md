@@ -163,7 +163,7 @@ dessas dependências desde então.
 (Veja a nota abaixo sobre o uso do comando `update`.)
 
 > **Nota:** Para bibliotecas, não é necessário fazer o commit do arquivo lock;
-> consulte também: [Bibliotecas - Arquivo lock](02-libraries.md#arquivo-lock).
+> veja também: [Bibliotecas - Arquivo lock](02-libraries.md#arquivo-lock).
 
 ### Instalando a partir do `composer.lock`
 
@@ -333,7 +333,7 @@ classes e o carregamento automático de arquivos.
 Consulte a referência de [`autoload`](04-schema.md#autoload) para obter mais
 informações.
 
-Consulte também a documentação sobre
+Veja também a documentação sobre
 [otimização do carregador automático](articles/autoloader-optimization.md).
 
 > **Nota:** O Composer fornece seu próprio carregador automático.
@@ -341,4 +341,4 @@ Consulte também a documentação sobre
 > `vendor/composer/autoload_*.php`, que retornam arrays associativos que
 > permitem que você configure seu próprio carregador automático.
 
-&larr; [Introdução](00-intro.md)  |  [Bibliotecas](02-libraries.md) &rarr;
+&larr; [Introdução](00-intro.md) | [Bibliotecas](02-libraries.md) &rarr;
