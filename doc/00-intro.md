@@ -6,7 +6,7 @@
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
 
-source_url: https://github.com/composer/composer/blob/2.10.1/doc/00-intro.md
+source_url: https://github.com/composer/composer/blob/2.10.2/doc/00-intro.md
 source_revision: ceb88f194775cb689a3792a9d856f311b47febea
 translation_status: ready
 ---
@@ -252,3 +252,5 @@ obter mais informações de uso.
 
 Agora que você instalou o Composer, já pode usá-lo!
 Vá para o próximo capítulo para uma breve demonstração.
+
+[Uso básico](01-basic-usage.md) &rarr;
