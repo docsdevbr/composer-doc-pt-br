@@ -6,7 +6,7 @@
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
 
-source_url: https://github.com/composer/composer/blob/2.10.1/doc/01-basic-usage.md
+source_url: https://github.com/composer/composer/blob/2.10.2/doc/01-basic-usage.md
 source_revision: fb3e9282979ef69fda7ace6ceadb85afe339e6bc
 translation_status: ready
 ---
@@ -340,3 +340,5 @@ Consulte também a documentação sobre
 > Se você não quiser usá-lo, pode incluir os arquivos
 > `vendor/composer/autoload_*.php`, que retornam arrays associativos que
 > permitem que você configure seu próprio carregador automático.
+
+&larr; [Introdução](00-intro.md)  |  [Bibliotecas](02-libraries.md) &rarr;
