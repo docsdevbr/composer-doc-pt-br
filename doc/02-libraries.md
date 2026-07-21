@@ -6,27 +6,28 @@
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
 
-source_url: https://github.com/composer/composer/blob/2.8/doc/02-libraries.md
-revision: 83212118cbaf7ab44b51f8afcd45a7540275e639
-status: ready
+source_url: https://github.com/composer/composer/blob/2.10.2/doc/02-libraries.md
+source_revision: 83212118cbaf7ab44b51f8afcd45a7540275e639
+translation_status: ready
 ---
 
 # Bibliotecas
 
-Este capítulo lhe dirá como tornar sua biblioteca instalável através do
+Este capítulo te ensinará como tornar sua biblioteca instalável através do
 Composer.
 
 ## Todo projeto é um pacote
 
 Assim que você tiver um arquivo `composer.json` em um diretório, esse diretório
 será um pacote.
-Quando você adiciona um [`require`][1] a um projeto, você está criando um pacote
-que depende de outros pacotes.
+Quando você adiciona um [`require`](04-schema.md#require) a um projeto, você
+está criando um pacote que depende de outros pacotes.
 A única diferença entre seu projeto e uma biblioteca é que seu projeto é um
 pacote sem nome.
 
 Para tornar esse pacote instalável, você precisa dar um nome a ele.
-Você faz isso adicionando a propriedade [`name`][2] ao `composer.json`:
+Você faz isso adicionando a propriedade [`name`](04-schema.md#name) ao
+`composer.json`:
 
 ```json
 {
@@ -43,7 +44,7 @@ Fornecer um nome de fornecedor é obrigatório.
 
 > **Nota:** Se você não sabe o que usar como nome de fornecedor, seu nome de
 > usuário do GitHub geralmente é uma boa aposta.
-> Os nomes dos pacotes devem estar em letras minúsculas, e a convenção é usar
+> Os nomes dos pacotes devem estar em letras minúsculas e a convenção é usar
 > traços para separação de palavras.
 
 ## Versionamento de biblioteca
@@ -52,8 +53,8 @@ Na grande maioria dos casos, você manterá sua biblioteca usando algum tipo de
 sistema de controle de versão como git, svn, hg ou fossil.
 Nesses casos, o Composer infere as versões a partir do seu VCS e você **não
 deve** especificar uma versão no seu arquivo `composer.json`.
-(Consulte o [artigo sobre versões][3] para saber como o Composer usa branches e
-tags do VCS para resolver restrições de versão.)
+(Consulte o [artigo sobre versões](articles/versions.md) para saber como o
+Composer usa branches e tags do VCS para resolver restrições de versão.)
 
 Se você estiver mantendo pacotes manualmente (ou seja, sem um VCS), precisará
 especificar a versão explicitamente, adicionando uma propriedade `version` no
@@ -72,33 +73,34 @@ seu arquivo `composer.json`:
 ### Versionamento do VCS
 
 O Composer usa as tags e branches do VCS para resolver as restrições de versão
-que você especifica no campo [`require`][1] para conjuntos específicos de
-arquivos.
+que você especifica no campo [`require`](04-schema.md#require) para conjuntos
+específicos de arquivos.
 Ao determinar as versões válidas disponíveis, o Composer examina todas as suas
 tags e branches, e converte os seus nomes para uma lista interna de opções que
 ele então compara com a restrição de versão que você forneceu.
 
 Para mais informações sobre como o Composer trata tags e branches e como ele
-resolve restrições de versão de pacote, leia o artigo sobre [versões][3].
+resolve restrições de versão de pacote, leia o artigo sobre
+[versões](articles/versions.md).
 
-## Arquivo de travamento
+## Arquivo lock
 
 Para sua biblioteca, você pode fazer o commit do arquivo `composer.lock`, se
 quiser.
 Isso pode ajudar o seu time a testar sempre com as mesmas versões das
 dependências.
-No entanto, esse arquivo de travamento não terá nenhum efeito em outros projetos
-que dependem da sua biblioteca.
+No entanto, esse arquivo lock não terá nenhum efeito em outros projetos que
+dependem da sua biblioteca.
 Ele só tem efeito no projeto principal.
 
-Se você não quiser fazer o commit do arquivo de travamento e estiver usando o
-git, adicione-o ao `.gitignore`.
+Se você não quiser fazer o commit do arquivo lock e estiver usando o git,
+adicione-o ao `.gitignore`.
 
 ## Publicando em um VCS
 
-Depois de ter um repositório VCS (sistema de controle de versão, por exemplo,
-git) contendo um arquivo `composer.json`, sua biblioteca já pode ser instalada
-pelo Composer.
+Após ter um repositório VCS (sistema de controle de versão, por exemplo, git)
+contendo um arquivo `composer.json`, sua biblioteca já pode ser instalada pelo
+Composer.
 Neste exemplo, publicaremos a biblioteca `acme/ola-mundo` no GitHub em
 `github.com/<usuario>/ola-mundo`.
 
@@ -144,14 +146,14 @@ Fazemos isso adicionando uma especificação de repositório de pacotes ao
 ```
 
 Para mais detalhes sobre como os repositórios de pacotes funcionam e quais
-outros tipos estão disponíveis, consulte [Repositórios][4].
+outros tipos estão disponíveis, consulte [Repositórios](05-repositories.md).
 
 Isso é tudo. Agora você pode instalar as dependências executando o comando
-[`install`][5] do Composer!
+[`install`](03-cli.md#install) do Composer!
 
 **Recapitulando:** qualquer repositório git/svn/hg/fossil que contenha um
 `composer.json` pode ser adicionado ao seu projeto especificando o repositório
-do pacote e declarando a dependência no campo [`require`][1].
+do pacote e declarando a dependência no campo [`require`](04-schema.md#require).
 
 ## Publicando no Packagist
 
@@ -164,20 +166,21 @@ pacotes para o `monolog/monolog`.
 Como isso funcionou?
 A resposta é Packagist.
 
-O [Packagist][6] é o principal repositório de pacotes do Composer e está
-habilitado por padrão.
+O [Packagist](https://packagist.org/) é o principal repositório de pacotes do
+Composer e está habilitado por padrão.
 Tudo o que é publicado no Packagist fica disponível automaticamente através do
 Composer.
-Como o [Monolog está no Packagist][7], podemos depender dele sem precisar
-especificar nenhum repositório adicional.
+Como o
+[Monolog está no Packagist](https://packagist.org/packages/monolog/monolog),
+podemos depender dele sem precisar especificar nenhum repositório adicional.
 
 Se quiséssemos compartilhar o `ola-mundo` com o mundo, também iríamos publicá-lo
 no Packagist.
 
-Você acessa o [Packagist][6] e clica no botão "Submit".
-Você será solicitado a se inscrever, caso ainda não tenha feito isso, e então
-poderá enviar a URL do seu repositório VCS, momento no qual o Packagist começará
-a rastreá-lo.
+Você acessa o [Packagist](https://packagist.org) e clica no botão "Submit".
+O sistema solicitará que você faça um cadastro, caso ainda não o tenha feito, e
+permitirá que você envie a URL do seu repositório VCS, momento no qual o
+Packagist começará a processá-lo.
 Feito isso, seu pacote estará disponível para qualquer pessoa!
 
 ## Pacotes de distribuição leves
@@ -204,7 +207,7 @@ phpunit.xml.dist export-ignore
 Teste inspecionando o arquivo zip gerado manualmente:
 
 ```shell
-git archive <branch> --format zip -o file.zip
+git archive <branch> --format zip -o arquivo.zip
 ```
 
 > **Nota:** os arquivos ainda seriam rastreados pelo git, mas não incluídos na
@@ -212,10 +215,4 @@ git archive <branch> --format zip -o file.zip
 > Isso só funciona para pacotes instalados de `dist` (ou seja, lançamentos com
 > tag) vindos do GitHub, GitLab ou Bitbucket.
 
-[1]: 04-schema.md#require
-[2]: 04-schema.md#name
-[3]: articles/versions.md
-[4]: 05-repositories.md
-[5]: 03-cli.md#install-i
-[6]: https://packagist.org/
-[7]: https://packagist.org/packages/monolog/monolog
+&larr; [Uso básico](01-basic-usage.md) | [Interface de Linha de Comando](03-cli.md) &rarr;
