@@ -102,7 +102,7 @@ Após ter um repositório VCS (sistema de controle de versão, por exemplo, git)
 contendo um arquivo `composer.json`, sua biblioteca já pode ser instalada pelo
 Composer.
 Neste exemplo, publicaremos a biblioteca `acme/ola-mundo` no GitHub em
-`github.com/<usuario>/ola-mundo`.
+`github.com/<usuário>/ola-mundo`.
 
 Agora, para testar a instalação do pacote `acme/ola-mundo`, criamos um projeto
 localmente.
@@ -136,7 +136,7 @@ Fazemos isso adicionando uma especificação de repositório de pacotes ao
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/<usuario>/ola-mundo"
+            "url": "https://github.com/<usuário>/ola-mundo"
         }
     ],
     "require": {

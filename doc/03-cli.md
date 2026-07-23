@@ -971,7 +971,7 @@ todos os pacotes que dependem dos pacotes que causam o conflito.
 
 Você sempre deve executar o comando `validate` antes de fazer o commit do
 arquivo `composer.json` (e do `composer.lock`
-[se aplicável](01-basic-usage.md#commit-your-composer-lock-file-to-version-control))
+[se aplicável](01-basic-usage.md#faça-o-commit-do-arquivo-composer.lock-para-o-controle-de-versão))
 e antes de criar a tag de uma versão.
 
 Ele verificará se o seu `composer.json` é válido.
@@ -1634,8 +1634,8 @@ Esta variável controla a opção de configuração
 
 ### COMPOSER_FUND
 
-Se definida como `0`, esta variável de ambiente suprime os avisos de apoio
-financeiro durante a instalação.
+Se definida como `0`, esta variável de ambiente suprime os avisos de
+financiamento durante a instalação.
 
 ### COMPOSER_HOME
 

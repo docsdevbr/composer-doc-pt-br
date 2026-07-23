@@ -194,7 +194,7 @@ php composer.phar install
 O Composer possibilita compilações reproduzíveis por padrão.
 Isso significa que executar o mesmo comando várias vezes produzirá um diretório
 `vendor` contendo arquivos idênticos (exceto por suas datas e horas), incluindo
-os arquivos do carregador automático.
+os arquivos do autoloader.
 Isso é especialmente benéfico para ambientes que exigem processos de verificação
 rigorosos, bem como para distribuições Linux que visam empacotar aplicações PHP
 de forma segura e previsível.
@@ -269,10 +269,10 @@ Isso inclui o próprio PHP, extensões PHP e algumas bibliotecas do sistema.
 Você pode usar [`show --platform`](03-cli.md#show) para obter uma lista dos
 pacotes de plataforma disponíveis localmente.
 
-## Carregamento automático
+## Autoloading
 
-Para bibliotecas que especificam informações de carregamento automático, o
-Composer gera um arquivo `vendor/autoload.php`.
+Para bibliotecas que especificam informações de autoloading, o Composer gera um
+arquivo `vendor/autoload.php`.
 Você pode incluir esse arquivo e começar a usar as classes que essas bibliotecas
 fornecem sem nenhum trabalho extra:
 
@@ -284,8 +284,8 @@ $log->pushHandler(new Monolog\Handler\StreamHandler('app.log', Monolog\Logger::W
 $log->warning('Foo');
 ```
 
-Você pode até adicionar seu próprio código ao carregador automático, adicionando
-um campo [`autoload`](04-schema.md#autoload) ao `composer.json`.
+Você pode até adicionar seu próprio código ao autoloader, adicionando um campo
+[`autoload`](04-schema.md#autoload) ao `composer.json`.
 
 ```json
 {
@@ -297,8 +297,8 @@ um campo [`autoload`](04-schema.md#autoload) ao `composer.json`.
 }
 ```
 
-O Composer registrará um carregador automático
-[PSR-4](https://www.php-fig.org/psr/psr-4/) para o namespace `Acme`.
+O Composer registrará um autoloader [PSR-4](https://www.php-fig.org/psr/psr-4/)
+para o namespace `Acme`.
 
 Nesse caso, você definiu um mapeamento de namespaces para diretórios.
 O diretório `src` estaria na raiz do seu projeto, no mesmo nível do diretório
@@ -317,28 +317,28 @@ Esse comando gerará novamente o arquivo `vendor/autoload.php`.
 Consulte a seção [`dump-autoload`](03-cli.md#dump-autoload-dumpautoload) para
 mais informações.
 
-Incluir esse arquivo também retornará a instância do carregador automático,
-para que você possa armazenar o valor de retorno da chamada de inclusão em uma
-variável e então adicionar mais namespaces.
-Isso pode ser útil para fazer o carregamento automático de classes numa suíte de
-testes, por exemplo.
+Incluir esse arquivo também retornará a instância do autoloader, para que você
+possa armazenar o valor de retorno da chamada de inclusão em uma variável e
+então adicionar mais namespaces.
+Isso pode ser útil para fazer o autoloading de classes numa suíte de testes, por
+exemplo.
 
 ```php
 $loader = require __DIR__ . '/vendor/autoload.php';
 $loader->addPsr4('Acme\\Test\\', __DIR__);
 ```
 
-Além do carregamento automático PSR-4, o Composer também suporta PSR-0, mapas de
-classes e o carregamento automático de arquivos.
+Além do autoloading PSR-4, o Composer também suporta PSR-0, mapas de classes e o
+autoloading de arquivos.
 Consulte a referência de [`autoload`](04-schema.md#autoload) para obter mais
 informações.
 
 Veja também a documentação sobre
-[otimização do carregador automático](articles/autoloader-optimization.md).
+[otimização do autoloader](articles/autoloader-optimization.md).
 
-> **Nota:** O Composer fornece seu próprio carregador automático.
+> **Nota:** O Composer fornece seu próprio autoloader.
 > Se você não quiser usá-lo, pode incluir os arquivos
 > `vendor/composer/autoload_*.php`, que retornam arrays associativos que
-> permitem que você configure seu próprio carregador automático.
+> permitem que você configure seu próprio autoloader.
 
 &larr; [Introdução](00-intro.md) | [Bibliotecas](02-libraries.md) &rarr;

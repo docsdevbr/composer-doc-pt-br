@@ -5,65 +5,77 @@
 # Documentation licensed under the MIT License.
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
+
+source_url: https://github.com/composer/composer/blob/2.10.2/doc/04-schema.md
+source_revision: f414237dd8ec058d30d99f2fe4eb15a1aafb65b1
+translation_status: ready
 ---
 
-# O Esquema do composer.json
+# O esquema do composer.json
 
 Este capítulo explicará todos os campos disponíveis no `composer.json`.
 
 ## Esquema JSON
 
-Temos um [esquema JSON][json-schema] que documenta o formato e também pode ser
-usado para validar seu `composer.json`. De fato, ele é usado pelo comando
-`validate`. Você pode encontrá-lo no [site do Composer][schema-page].
+Nós temos um [esquema JSON](https://json-schema.org) que documenta o formato e
+também pode ser usado para validar seu `composer.json`.
+De fato, ele é usado pelo comando `validate`.
+Você pode encontrá-lo no
+[site do Composer](https://getcomposer.org/schema.json).
 
-## Pacote Raiz
+## Pacote raiz
 
-O pacote raiz é o pacote definido pelo `composer.json` na raiz do seu projeto. É
-o `composer.json` principal que define os requisitos do seu projeto.
+O pacote raiz é o pacote definido pelo `composer.json` na raiz do seu projeto.
+É o `composer.json` principal que define os requisitos do seu projeto.
 
-Certos campos se aplicam apenas no contexto do pacote raiz. Um exemplo disto é o
-campo `config`. Somente o pacote raiz pode definir a configuração. O campo
-`config` das dependências é ignorado. Isto faz do campo `config` um campo
-`root-only`.
+Certos campos se aplicam apenas no contexto do pacote raiz.
+Um exemplo disto é o campo `config`.
+Somente o pacote raiz pode definir a configuração.
+O campo `config` das dependências é ignorado.
+Isto faz do campo `config` um campo `root-only`.
 
-> **Nota:** Um pacote pode ser o pacote raiz ou não, dependendo do contexto. Por
-> exemplo, se seu projeto depende da biblioteca `monolog`, seu projeto é o
-> pacote raiz. No entanto, se você clonar o `monolog` no GitHub para corrigir um
-> erro, então o `monolog` é o pacote raiz.
+> **Nota:** Um pacote pode ser o pacote raiz ou não, dependendo do contexto.
+> Por exemplo, se seu projeto depende da biblioteca `monolog`, seu projeto é o
+> pacote raiz.
+> No entanto, se você clonar o `monolog` no GitHub para corrigir um erro, então
+> o `monolog` é o pacote raiz.
 
 ## Propriedades
 
 ### name
 
-O nome do pacote. Consiste no nome do vendor e no nome do projeto, separados por
-`/`. Exemplos:
+O nome do pacote.
+Consiste no nome do vendor e no nome do projeto, separados por `/`.
+Exemplos:
 
 * monolog/monolog
 * igorw/event-source
 
-O nome pode conter qualquer caractere, incluindo espaços em branco, e não
-diferencia maiúsculas de minúsculas (`foo/bar` e `Foo/Bar` são considerados o
-mesmo pacote). Para simplificar sua instalação, é recomendável definir um nome
-curto e em minúsculas que não inclua caracteres não alfanuméricos ou espaços em
-branco.
+O nome deve estar em letras minúsculas e consistir em palavras separadas por
+`-`, `.` ou `_`.
+O nome completo deve corresponder a
+`^[a-z0-9]([_.-]?[a-z0-9]+)*/[a-z0-9](([_.]|-{1,2})?[a-z0-9]+)*$`.
 
-Obrigatório para pacotes publicados (bibliotecas).
+A propriedade `name` é obrigatória para pacotes publicados (bibliotecas).
+
+> **Nota:** Antes da versão 2.0 do Composer, um nome podia conter qualquer
+> caractere, inclusive espaços em branco.
 
 ### description
 
-Uma breve descrição do pacote. Normalmente, tem apenas uma linha de comprimento.
+Uma breve descrição do pacote.
+Normalmente, tem apenas uma linha de comprimento.
 
 Obrigatório para pacotes publicados (bibliotecas).
 
 ### version
 
-A versão do pacote. Na maioria dos casos, não é necessária e deve ser omitida
-(veja abaixo).
+A versão do pacote.
+Geralmente, não é necessária e deve ser omitida (consulte abaixo).
 
 Ela deve seguir o formato `X.Y.Z` ou `vX.Y.Z` com um sufixo opcional `-dev`,
-`-patch` (`-p`), `-alpha` (`-a`), `-beta` (`-b`) ou `-RC`. Os sufixos patch,
-alpha, beta e RC podem ser seguidos por um número.
+`-patch` (`-p`), `-alpha` (`-a`), `-beta` (`-b`) ou `-RC`.
+Os sufixos patch, alpha, beta e RC podem ser seguidos por um número.
 
 Exemplos:
 
@@ -78,47 +90,58 @@ Exemplos:
 - v2.0.4-p1
 
 Opcional se o repositório do pacote puder inferir a versão de algum lugar, como
-o nome da tag no repositório VCS. Neste caso, também é recomendável omiti-la.
+o nome da tag no repositório VCS.
+Neste caso, também é recomendável omiti-la.
 
 > **Nota:** O Packagist usa repositórios VCS, portanto, a declaração acima
-> também é verdadeira para o Packagist. Especificar a versão por conta própria
-> provavelmente criará problemas em algum momento devido a erro humano.
+> também é verdadeira para o Packagist.
+> Especificar a versão por conta própria provavelmente criará problemas em algum
+> momento devido a erro humano.
 
 ### type
 
-O tipo do pacote. O padrão é `library`.
+O tipo do pacote.
+O padrão é `library`.
 
-Os tipos de pacote são usados para lógica de instalação personalizada. Se você
-tiver um pacote que precise de alguma lógica especial, você pode definir um tipo
-personalizado. Pode ser, por exemplo, `symfony-bundle`, `wordpress-plugin` ou
-`typo3-cms-extension`. Estes tipos serão específicos para determinados projetos
-e precisarão fornecer um instalador capaz de instalar pacotes deste tipo.
+Os tipos de pacote são usados para lógica de instalação personalizada.
+Se você tiver um pacote que precise de alguma lógica especial, você pode definir
+um tipo personalizado.
+Pode ser, por exemplo, `symfony-bundle`, `wordpress-plugin` ou
+`typo3-cms-extension`.
+Estes tipos serão específicos para determinados projetos e precisarão fornecer
+um instalador capaz de instalar pacotes deste tipo.
 
-Pronto para uso, o Composer suporta quatro tipos:
+Por padrão, o Composer oferece suporte a quatro tipos:
 
-- **library:** Este é o padrão. Ele simplesmente copiará os arquivos para
-  `vendor`.
-- **project:** Denota um projeto em vez de uma biblioteca. Por exemplo, shells
-  de aplicações como a [Edição Padrão do Symfony][sf-standard], CMSs como o
-  [instalador do SilverStripe][silverstripe-installer] ou aplicações completas
-  distribuídas como pacotes. Isto pode ser usado, por exemplo, pelas IDEs para
-  fornecer listagens de projetos a serem inicializados ao criar um novo
-  workspace.
-- **metapackage:** Um pacote vazio que contém requisitos e acionará suas
+- **library:** este é o padrão.
+  Ele simplesmente copiará os arquivos para `vendor`.
+- **project:** denota um projeto em vez de uma biblioteca.
+  Por exemplo, shells de aplicações como a
+  [Edição Padrão do Symfony](https://github.com/symfony/symfony-standard), CMSs
+  como o
+  [instalador do SilverStripe](https://github.com/silverstripe/silverstripe-installer)
+  ou aplicações completas distribuídas como pacotes.
+  Isto pode ser usado, por exemplo, pelas IDEs para fornecer listagens de
+  projetos a serem inicializados ao criar um novo workspace.
+- **metapackage:** um pacote vazio que contém requisitos e acionará suas
   instalações, mas não contém nenhum arquivo e não gravará nada no sistema de
-  arquivos. Sendo assim, não requer uma chave `dist` ou `source` para ser
-  instalável.
-- **composer-plugin:** Um pacote do tipo `composer-plugin` pode fornecer um
-  instalador para outros pacotes que possuem um tipo personalizado. Leia mais no
-  [artigo dedicado][art-installers].
+  arquivos.
+  Sendo assim, não requer uma chave `dist` ou `source` para ser instalável.
+- **composer-plugin:** um pacote do tipo `composer-plugin` pode fornecer um
+  instalador para outros pacotes que possuem um tipo personalizado.
+  Leia mais no [artigo dedicado](articles/custom-installers.md).
+- **php-ext** e **php-ext-zend**: estes nomes são reservados para pacotes de
+  extensão do PHP escritos em C.
+  Não use esses tipos para pacotes escritos em PHP.
 
 Use um tipo personalizado somente se precisar de lógica personalizada durante a
-instalação. É recomendável omitir este campo e usar o padrão `library`.
+instalação.
+É recomendável omitir este campo e usar o padrão `library`.
 
 ### keywords
 
-Um array de palavras-chave às quais o pacote está relacionado. Elas podem ser
-usadas para pesquisa e filtragem.
+Um array de palavras-chave às quais o pacote está relacionado.
+Elas podem ser usadas para pesquisa e filtragem.
 
 Exemplos:
 
@@ -128,17 +151,33 @@ Exemplos:
 - redis
 - templating
 
+> **Nota**: Algumas palavras-chave especiais acionam o `composer require` sem a
+> opção `--dev`, perguntando às pessoas usuárias se desejam adicionar esses
+> pacotes à seção `require-dev` em vez de `require`.
+> São elas: `dev`, `testing`, `static analysis`.
+
+> **Nota**: O conjunto de caracteres permitidos na string restringe-se a letras
+> ou números Unicode, espaço `" "`, ponto `.`, sublinhado `_` e hífen `-`.
+> (Regex: `'{^[\p{N}\p{L} ._-]+$}u'`)
+> O uso de outros caracteres gerará um aviso ao executar o `composer validate` e
+> fará com que a atualização do pacote falhe no Packagist.org.
+
 Opcional.
 
 ### homepage
 
-Um URL para o site do projeto.
+Uma URL para o site do projeto.
 
 Opcional.
 
 ### readme
 
-Um caminho relativo para o documento `README`.
+Um caminho relativo para o documento README.
+O padrão é `README.md`.
+
+Isso é útil principalmente para pacotes que não estão no GitHub, pois para
+pacotes do GitHub, o Packagist.org usará a API do README para buscar o arquivo
+detectado pelo GitHub.
 
 Opcional.
 
@@ -146,13 +185,14 @@ Opcional.
 
 Data de lançamento da versão.
 
-Deve estar no formato `YYYY-MM-DD` ou `YYYY-MM-DD HH:MM:SS`.
+Deve estar no formato `AAAA-MM-DD` ou `AAAA-MM-DD HH:MM:SS` no fuso horário UTC.
 
 Opcional.
 
 ### license
 
-A licença do pacote. Pode ser uma string ou um array de strings.
+A licença do pacote.
+Pode ser uma string ou um array de strings.
 
 A notação recomendada para as licenças mais comuns é (em ordem alfabética):
 
@@ -166,11 +206,12 @@ A notação recomendada para as licenças mais comuns é (em ordem alfabética):
 - LGPL-3.0-only / LGPL-3.0-or-later
 - MIT
 
-Opcional, mas é altamente recomendável fornecê-la. Mais identificadores estão
-listados no [Registro de Licenças de Código Aberto SPDX][licenses].
+Opcional, mas é altamente recomendável fornecê-la.
+Mais identificadores estão listados no
+[Registro de Licenças de Código Aberto SPDX](https://spdx.org/licenses/).
 
-Para software de código fechado, você pode usar `proprietary` como identificador
-da licença.
+> **Nota:** Para software de código fechado, você pode usar `"proprietary"` como
+> identificador de licença.
 
 Um exemplo:
 
@@ -208,14 +249,16 @@ conjuntivas"), elas devem ser separadas por `and` e colocadas entre parênteses;
 
 ### authors
 
-As pessoas que criaram o pacote, listadas em um array de objetos.
+As pessoas autoras do pacote.
+Trata-se de um array de objetos.
 
-Cada objeto de pessoa pode ter as seguintes propriedades:
+Cada objeto de pessoa autora pode ter as seguintes propriedades:
 
-* **name:** O nome da pessoa. Geralmente o nome verdadeiro.
-* **email:** O endereço de e-mail da pessoa.
-* **homepage:** Um URL para o site da pessoa.
-* **role:** A função da pessoa no projeto (por exemplo, desenvolvedora ou
+* **name:** o nome da pessoa.
+  Geralmente o nome verdadeiro.
+* **email:** o endereço de e-mail da pessoa.
+* **homepage:** um URL para o site da pessoa.
+* **role:** a função da pessoa no projeto (por exemplo, desenvolvedora ou
   tradutora).
 
 Um exemplo:
@@ -247,7 +290,7 @@ Várias informações para obter suporte para o projeto.
 
 As informações de suporte incluem as seguintes:
 
-* **email:** Endereço de e-mail para suporte.
+* **email:** endereço de e-mail para suporte.
 * **issues:** URL do sistema para acompanhamento de issues.
 * **forum:** URL do fórum.
 * **wiki:** URL da wiki.
@@ -256,13 +299,14 @@ As informações de suporte incluem as seguintes:
 * **docs:** URL da documentação.
 * **rss:** URL para o feed RSS.
 * **chat:** URL para o canal de chat.
+* **security:** URL para a política de divulgação de vulnerabilidades (VDP).
 
 Um exemplo:
 
 ```json
 {
     "support": {
-        "email": "suporte@exemplo.org.br",
+        "email": "suporte@exemplo.org",
         "irc": "irc://irc.freenode.org/composer"
     }
 }
@@ -270,11 +314,46 @@ Um exemplo:
 
 Opcional.
 
-### Links de Pacotes
+### funding
+
+Uma lista de URLs para fornecer financiamento às pessoas autoras do pacote para
+manutenção e desenvolvimento de novas funcionalidades.
+
+Cada entrada consiste no seguinte:
+
+* **type:** o tipo de financiamento ou a plataforma através da qual o
+  financiamento pode ser fornecido, por exemplo: patreon, opencollective,
+  tidelift ou github.
+* **url:** URL para um site com detalhes e uma forma de financiar o pacote.
+
+Um exemplo:
+
+```json
+{
+    "funding": [
+        {
+            "type": "patreon",
+            "url": "https://www.patreon.com/phpdoctrine"
+        },
+        {
+            "type": "tidelift",
+            "url": "https://tidelift.com/subscription/pkg/packagist-doctrine_doctrine-bundle"
+        },
+        {
+            "type": "other",
+            "url": "https://www.doctrine-project.org/sponsorship.html"
+        }
+    ]
+}
+```
+
+Opcional.
+
+### Links de pacotes
 
 Todos os itens a seguir recebem um objeto que mapeia nomes de pacotes para
-versões do pacote através de restrições de versão. Leia mais sobre versões
-[aqui][art-versions].
+versões do pacote por meio de restrições de versão.
+Leia mais sobre versões [aqui](articles/versions.md).
 
 Exemplo:
 
@@ -288,12 +367,13 @@ Exemplo:
 
 Todos os links são campos opcionais.
 
-`require` e `require-dev` também oferecem suporte a flags de estabilidade
-([root-only][root-package]). Elas permitem restringir ou expandir ainda mais a
-estabilidade de um pacote além do escopo da configuração [minimum-stability]
-[min-stability]. Você pode aplicá-las a uma restrição ou aplicá-las a uma
-restrição vazia, se desejar permitir pacotes instáveis de uma dependência, por
-exemplo.
+`require` e `require-dev` também oferecem suporte a _flags de estabilidade_
+([root-only](04-schema.md#root-package)).
+Elas assumem a forma "_restrição_@_flag de estabilidade_".
+Elas permitem restringir ou expandir ainda mais a estabilidade de um pacote além
+do escopo da configuração [minimum-stability](#minimum-stability).
+Você pode aplicá-las a uma restrição ou aplicá-las a uma restrição vazia, se
+desejar permitir pacotes instáveis de uma dependência, por exemplo.
 
 Exemplo:
 
@@ -326,12 +406,13 @@ desenvolvimento do pacote `doctrine/data-fixtures`:
 }
 ```
 
-Além disso, `require` e `require-dev` suportam referências explícitas (ou seja,
-commits) para versões de desenvolvimento para garantir que elas estejam travadas
-em um determinado estado, mesmo quando você executa a atualização. Elas
-funcionam apenas se você requisitar explicitamente uma versão de desenvolvimento
-e adicionar a referência com `#<ref>`. Este também é um recurso [root-only]
-[root-package] e será ignorado nas dependências.
+As seções `require` e `require-dev` também suportam referências explícitas (ou
+seja, commits) para versões de desenvolvimento, garantindo que elas fiquem
+fixadas em um estado específico, mesmo ao executar uma atualização.
+Isso só funciona se você solicitar explicitamente uma versão de desenvolvimento
+e acrescentar a referência usando `#<ref>`.
+Esse recurso é exclusivo do [pacote raiz](04-schema.md#root-package) e será
+ignorado em dependências.
 
 Exemplo:
 
@@ -346,15 +427,17 @@ Exemplo:
 
 > **Nota:** Esse recurso tem graves limitações técnicas, pois os metadados do
 > `composer.json` ainda serão lidos a partir do nome do branch que você
-> especificar antes do hash. Portanto, você deve usar isso apenas como uma
-> solução temporária durante o desenvolvimento para corrigir problemas
-> transitórios, até poder alternar para versões de tag. O time do Composer não
-> suporta ativamente esse recurso e não aceita relatórios de erros relacionados
-> a ele.
+> especificar antes do hash.
+> Portanto, você deve usar isso apenas como uma solução temporária durante o
+> desenvolvimento para corrigir problemas transitórios, até poder alternar para
+> versões de tag.
+> O time do Composer não suporta ativamente esse recurso e não aceita relatórios
+> de erros relacionados a ele.
 
 Também é possível criar um alias em linha de uma restrição de pacote, para que
-ela corresponda a uma restrição que de outra forma não corresponderia. Para
-obter mais informações, [consulte o artigo sobre aliases][art-aliases].
+ela corresponda a uma restrição que de outra forma não corresponderia.
+Para obter mais informações,
+[consulte o artigo sobre aliases](articles/aliases.md).
 
 `require` e `require-dev` também suportam referências a versões específicas do
 PHP e de extensões PHP que seu projeto precisa para executar com sucesso.
@@ -363,46 +446,50 @@ Exemplo:
 
 ```json
 {
-    "require" : {
-        "php" : "^5.5 || ^7.0",
+    "require": {
+        "php": ">=7.4",
         "ext-mbstring": "*"
     }
 }
 ```
 
-> **Nota:** É importante listar as extensões PHP que seu projeto requer. Nem
-> todas as instalações PHP são criadas da mesma forma: algumas podem não possuir
-> extensões que você pode considerar como padrão (como `ext-mysqli`, que não é
-> instalada por padrão nas instalações mínimas dos sistemas Fedora/CentOS).
-> Não listar as extensões PHP necessárias pode levar a uma experiência ruim do
-> usuário: o Composer instalará seu pacote sem erros, mas ele falhará em tempo
-> de execução. O comando `composer show --platform` lista todas as extensões PHP
-> disponíveis no seu sistema. Você pode usá-lo para te ajudar a compilar a lista
-> de extensões que você usa e precisa. Como alternativa, você pode usar
-> ferramentas de terceiros para analisar seu projeto para obter a lista de
-> extensões usadas.
+> **Nota:** É importante listar as extensões PHP que seu projeto requer.
+> Nem todas as instalações PHP são criadas da mesma forma: algumas podem não
+> possuir extensões que você pode considerar como padrão (como `ext-mysqli`, que
+> não é instalada por padrão nas instalações mínimas dos sistemas
+> Fedora/CentOS).
+> Não listar as extensões PHP necessárias pode levar a uma experiência ruim da
+> pessoa usuária: o Composer instalará seu pacote sem erros, mas ele falhará em
+> tempo de execução.
+> O comando `composer show --platform` lista todas as extensões PHP disponíveis
+> no seu sistema.
+> Você pode usá-lo para te ajudar a compilar a lista de extensões que você usa e
+> precisa.
+> Como alternativa, você pode usar ferramentas de terceiros para analisar seu
+> projeto para obter a lista de extensões usadas.
 
 #### require
 
-Lista os pacotes exigidos por este pacote. O pacote não será instalado, a menos
-que estes requisitos possam ser atendidos.
+Mapa de pacotes exigidos por este pacote.
+O pacote não será instalado a menos que esses requisitos possam ser atendidos.
 
-#### require-dev <span>([root-only][root-package])</span> {: #require-dev }
+#### require-dev <span>([root-only](04-schema.md#root-package))</span>
 
-Lista os pacotes necessários para desenvolver este pacote, executar testes, etc.
-Os requisitos de desenvolvimento do pacote raiz são instalados por padrão. Tanto
-`install` quanto `update` suportam a opção `--no-dev`, que impede a instalação
-das dependências de desenvolvimento.
+Mapa de pacotes necessários para desenvolver este pacote, executar testes, etc.
+As dependências de desenvolvimento do pacote raiz são instaladas por padrão.
+Tanto o comando `install` quanto o `update` suportam a opção `--no-dev`, que
+impede a instalação de dependências de desenvolvimento.
 
 #### conflict
 
-Lista os pacotes que entram em conflito com esta versão deste pacote. Eles não
-poderão ser instalados junto com o seu pacote.
+Mapa de pacotes incompatíveis com esta versão deste pacote.
+A instalação deles em conjunto com o seu pacote não será permitida.
 
-Observe que, ao especificar intervalos como `<1.0 >=1.1` em um link de
-`conflict`, isso indicará um conflito com todas as versões inferiores a 1.0 *e*
-iguais ou mais recentes que 1.1 ao mesmo tempo, o que provavelmente não é o que
-você deseja. Você provavelmente quer escolher `<1.0 || >=1.1`, neste caso.
+Observe que, ao especificar intervalos como `<1.0 >=1.1` em uma relação de
+conflito (`conflict`), isso indicará um conflito com todas as versões que
+sejam simultaneamente menores que 1.0 *e* iguais ou mais recentes que 1.1,
+o que provavelmente não é o que você deseja.
+Nesse caso, você provavelmente deveria utilizar `<1.0 || >=1.1`.
 
 #### replace
 
