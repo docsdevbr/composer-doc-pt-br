@@ -306,7 +306,7 @@ Um exemplo:
 ```json
 {
     "support": {
-        "email": "suporte@exemplo.org",
+        "email": "suporte@example.org",
         "irc": "irc://irc.freenode.org/composer"
     }
 }
@@ -368,7 +368,7 @@ Exemplo:
 Todos os links são campos opcionais.
 
 `require` e `require-dev` também oferecem suporte a _flags de estabilidade_
-([root-only](04-schema.md#root-package)).
+([root-only](#root-package)).
 Elas assumem a forma "_restrição_@_flag de estabilidade_".
 Elas permitem restringir ou expandir ainda mais a estabilidade de um pacote além
 do escopo da configuração [minimum-stability](#minimum-stability).
@@ -411,8 +411,8 @@ seja, commits) para versões de desenvolvimento, garantindo que elas fiquem
 fixadas em um estado específico, mesmo ao executar uma atualização.
 Isso só funciona se você solicitar explicitamente uma versão de desenvolvimento
 e acrescentar a referência usando `#<ref>`.
-Esse recurso é exclusivo do [pacote raiz](04-schema.md#root-package) e será
-ignorado em dependências.
+Esse recurso é exclusivo do [pacote raiz](#root-package) e será ignorado em
+dependências.
 
 Exemplo:
 
@@ -473,7 +473,7 @@ Exemplo:
 Mapa de pacotes exigidos por este pacote.
 O pacote não será instalado a menos que esses requisitos possam ser atendidos.
 
-#### require-dev <span>([root-only](04-schema.md#root-package))</span>
+#### require-dev <span>([root-only](#root-package))</span>
 
 Mapa de pacotes necessários para desenvolver este pacote, executar testes, etc.
 As dependências de desenvolvimento do pacote raiz são instaladas por padrão.
@@ -489,42 +489,57 @@ Observe que, ao especificar intervalos como `<1.0 >=1.1` em uma relação de
 conflito (`conflict`), isso indicará um conflito com todas as versões que
 sejam simultaneamente menores que 1.0 *e* iguais ou mais recentes que 1.1,
 o que provavelmente não é o que você deseja.
-Nesse caso, você provavelmente deveria utilizar `<1.0 || >=1.1`.
+Nesse caso, você provavelmente deveria usar `<1.0 || >=1.1`.
 
 #### replace
 
-Lista os pacotes que são substituídos por este pacote. Isso permite que você
-faça o fork de um pacote, publique-o com um nome diferente com seus próprios
-números de versão, enquanto os pacotes que exigem o pacote original continuam a
-funcionar com o seu fork, pois ele substitui o pacote original.
+Mapa dos pacotes substituídos por este pacote.
+Isso permite que você crie um fork de um pacote, publique-o com um nome
+diferente com seus próprios números de versão, enquanto os pacotes que exigem o
+pacote original continuam funcionando com o seu fork, pois ele substitui o
+pacote original.
 
-Isso também é útil para pacotes que contêm subpacotes, por exemplo, o pacote
+Isso também é útil para pacotes que contêm subpacotes; por exemplo, o pacote
 principal `symfony/symfony` contém todos os Componentes do Symfony que também
-estão disponíveis como pacotes individuais. Se você exigir o pacote principal,
-ele atenderá automaticamente a qualquer requisito de um dos componentes
-individuais, uma vez que os substitui.
+estão disponíveis como pacotes individuais.
+Se você exigir o pacote principal, ele atenderá automaticamente a qualquer
+requisito de um dos componentes individuais, já que os substitui.
 
 Recomenda-se cuidado ao usar `replace` para a finalidade de subpacote explicada
-acima. Em geral, você deve substituir apenas usando `self.version` como uma
+acima.
+Normalmente, você deve substituir apenas usando `self.version` como uma
 restrição de versão, para garantir que o pacote principal substitua apenas os
-subpacotes desta versão exata e de nenhuma outra versão, o que seria incorreto.
+subpacotes daquela versão específica, e não de qualquer outra versão, o que
+seria incorreto.
 
 #### provide
 
-Lista de outros pacotes que são fornecidos por este pacote. Isso é útil
-principalmente para interfaces comuns. Um pacote pode depender de algum pacote
-virtual `logger` e qualquer biblioteca que implemente esta interface `logger`
-simplesmente irá listá-la em `provide`.
+Mapa dos pacotes fornecidos por este pacote.
+Isso é especialmente útil para implementações de interfaces comuns.
+Um pacote pode depender de um pacote virtual, por exemplo,
+`psr/log-implementation`.
+Qualquer biblioteca que implemente essa interface de logger a listaria em
+`provide`.
+Os implementadores podem então ser
+[encontrados no Packagist.org](https://packagist.org/providers/psr/log-implementation).
+
+Usar `provide` com o nome de um pacote real em vez de um virtual implica que o
+código desse pacote também é distribuído, caso em que `replace` geralmente é uma
+escolha melhor.
+Uma convenção comum para pacotes que fornecem uma interface e dependem de outros
+pacotes para fornecer uma implementação (por exemplo, as interfaces PSR) é usar
+o sufixo `-implementation` para o nome do pacote virtual correspondente ao
+pacote da interface.
 
 #### suggest
 
-Pacotes sugeridos que podem melhorar ou funcionar bem com este pacote. Eles são
-informativos e são exibidos após a instalação do pacote, para dar às pessoas uma
-dica de que elas poderiam adicionar mais pacotes, mesmo que não sejam
+Pacotes sugeridos que podem aprimorar ou funcionar bem com este pacote.
+Eles são informativos e são exibidos após a instalação do pacote, para dar às
+pessoas uma dica de que elas podem adicionar mais pacotes, mesmo que não sejam
 estritamente necessários.
 
-O formato é como os links de pacotes acima, exceto que os valores são texto
-livre e não restrições de versão.
+O formato é semelhante aos links de pacotes acima, exceto que os valores são
+texto livre e não restrições de versão.
 
 Exemplo:
 
@@ -539,28 +554,29 @@ Exemplo:
 
 ### autoload
 
-Mapeamento de autoload para um autoloader PHP.
+Mapeamento de autoloading para um autoloader PHP.
 
-O autoloading [`PSR-4`][php-psr4] e [`PSR-0`][php-psr0], a geração de `classmap`
-e a inclusão de `files` são suportados.
+Os autoloadings [`PSR-4`][php-psr4] e [`PSR-0`][php-psr0], a geração de
+`classmap` e a inclusão de `files` são suportados.
 
-PSR-4 é a maneira recomendada, pois oferece maior facilidade de uso (não é
-necessário gerar o autoloader novamente ao adicionar classes).
+A PSR-4 é a maneira recomendada, pois oferece maior facilidade de uso (não há
+necessidade de regenerar o autoloader ao adicionar classes).
 
 #### PSR-4
 
-Usando a chave `psr-4`, você define um mapeamento de namespaces para caminhos
-relativos à raiz do pacote. Ao fazer o autoloading de uma classe como
-`Foo\\Bar\\Baz`, um prefixo de namespace `Foo\\` apontando para um diretório
-`src/` significa que o autoloader procurará por um arquivo chamado
-`src/Bar/Baz.php` e o incluirá, se ele existir. Observe que, ao contrário do
-antigo estilo PSR-0, o prefixo (`Foo\\`) **não** está presente no caminho do
-arquivo.
+Na chave `psr-4`, você define um mapeamento de namespaces para caminhos
+relativos à raiz do pacote.
+Ao fazer o autoloading de uma classe como `Foo\\Bar\\Baz`, um prefixo de
+namespace `Foo\\` apontando para um diretório `src/` significa que o autoloader
+procurará por um arquivo chamado `src/Bar/Baz.php` e o incluirá, se ele existir.
+Observe que, ao contrário do antigo estilo PSR-0, o prefixo (`Foo\\`) **não**
+está presente no caminho do arquivo.
 
 Os prefixos de namespace devem terminar em `\\` para evitar conflitos entre
-prefixos semelhantes. Por exemplo, `Foo` corresponderia às classes no namespace
-`FooBar`, por isso as barras invertidas à direita resolvem o problema: `Foo\\`
-e `FooBar\\` são distintos.
+prefixos semelhantes.
+Por exemplo, `Foo` corresponderia às classes no namespace `FooBar`, por isso as
+barras invertidas finais resolvem o problema: `Foo\\` e `FooBar\\` são
+distintos.
 
 As referências PSR-4 são todas combinadas, durante a instalação/atualização, em
 um único array associativo, que pode ser encontrado no arquivo
@@ -579,8 +595,8 @@ Exemplo:
 }
 ```
 
-Se você precisar procurar um mesmo prefixo em vários diretórios, poderá
-especificá-los como um array como:
+Se você precisar pesquisar o mesmo prefixo em vários diretórios, poderá
+especificá-los como um array, assim:
 
 ```json
 {
@@ -590,8 +606,8 @@ especificá-los como um array como:
 }
 ```
 
-Se você deseja ter um diretório alternativo onde qualquer namespace será
-procurado, use um prefixo vazio como:
+Se você quiser ter um diretório alternativo onde qualquer namespace será
+procurado, use um prefixo vazio, como:
 
 ```json
 {
@@ -603,14 +619,14 @@ procurado, use um prefixo vazio como:
 
 #### PSR-0
 
-Usando a chave `psr-0`, você define um mapeamento de namespaces para caminhos
-relativos à raiz do pacote. Observe que ele também suporta a convenção sem
-namespaces do estilo PEAR.
+Na chave `psr-0`, você define um mapeamento de namespaces para caminhos
+relativos à raiz do pacote.
+Observe que ele também suporta a convenção sem namespaces do estilo PEAR.
 
 Observe que as declarações de namespaces devem terminar em `\\` para garantir
-que o autoloader responda precisamente. Por exemplo, `Foo` corresponderia a
-`FooBar` então as barras invertidas à direita resolvem o problema: `Foo\\` e
-`FooBar\\` são distintos.
+que o autoloader responda corretamente.
+Por exemplo, `Foo` corresponderia a `FooBar`, portanto, as barras invertidas
+finais resolvem o problema: `Foo\\` e `FooBar\\` são distintos.
 
 As referências PSR-0 são todas combinadas, durante a instalação/atualização, em
 um único array associativo, que pode ser encontrado no arquivo
@@ -630,8 +646,8 @@ Exemplo:
 }
 ```
 
-Se você precisar procurar um mesmo prefixo em vários diretórios, poderá
-especificá-los como um array como:
+Se você precisar pesquisar um mesmo prefixo em vários diretórios, poderá
+especificá-los como um array, assim:
 
 ```json
 {
@@ -642,9 +658,10 @@ especificá-los como um array como:
 ```
 
 O estilo PSR-0 não se limita apenas às declarações de namespace, mas pode ser
-especificado até o nível da classe. Isso pode ser útil para bibliotecas com
-apenas uma classe no namespace global. Se o arquivo-fonte PHP também estiver
-localizado na raiz do pacote, por exemplo, ele poderá ser declarado assim:
+especificado até o nível da classe.
+Isso pode ser útil para bibliotecas com apenas uma classe no namespace global.
+Se o arquivo fonte PHP também estiver localizado na raiz do pacote, por exemplo,
+ele pode ser declarado assim:
 
 ```json
 {
@@ -654,8 +671,8 @@ localizado na raiz do pacote, por exemplo, ele poderá ser declarado assim:
 }
 ```
 
-Se você deseja ter um diretório alternativo onde qualquer namespace será
-procurado, use um prefixo vazio como:
+Se você quiser ter um diretório alternativo onde qualquer namespace será
+procurado, use um prefixo vazio, como:
 
 ```json
 {
@@ -669,13 +686,14 @@ procurado, use um prefixo vazio como:
 
 As referências em `classmap` são todas combinadas, durante a
 instalação/atualização, em um único array associativo, que pode ser encontrado
-no arquivo `vendor/composer/autoload_classmap.php` gerado. Esse mapa é
-construído pesquisando por classes em todos os arquivos `.php` e `.inc` nos
-diretórios/arquivos fornecidos.
+no arquivo `vendor/composer/autoload_classmap.php` gerado.
+Esse mapa é construído através da busca por classes em todos os arquivos `.php`
+e `.inc` nos diretórios/arquivos especificados.
 
 Você pode usar o suporte à geração de mapa de classes para definir o autoloading
-para todas as bibliotecas que não seguem as PSR-0/4. Para configurar isso, você
-especifica todos os diretórios ou arquivos onde procurar por classes.
+para todas as bibliotecas que não seguem as PSR-0/4.
+Para configurar isso, especifique todos os diretórios ou arquivos nos quais as
+classes devem ser procuradas.
 
 Exemplo:
 
@@ -687,11 +705,25 @@ Exemplo:
 }
 ```
 
+Caracteres curinga (`*`) também são suportados em caminhos de classmap e se
+expandem para corresponder a qualquer nome de diretório:
+
+Exemplo:
+
+```json
+{
+    "autoload": {
+        "classmap": ["src/addons/*/lib/", "3rd-party/*", "AlgumaCoisa.php"]
+    }
+}
+```
+
 #### Files
 
-Se você deseja exigir determinados arquivos explicitamente em todas as
-requisições, pode usar o mecanismo de autoloading `files`. Ele é útil se seu
-pacote incluir funções PHP que não podem ser carregadas automaticamente pelo PHP.
+Se você quiser carregar explicitamente determinados arquivos em todas as
+requisições, pode usar o mecanismo de autoloading `files`.
+Ele é útil caso o seu pacote inclua funções PHP que não podem ser carregadas
+automaticamente pelo PHP.
 
 Exemplo:
 
@@ -703,18 +735,35 @@ Exemplo:
 }
 ```
 
-#### Excluir Arquivos do Mapa de Classes
+As regras de autoloading de arquivos são incluídas sempre que
+`vendor/autoload.php` é incluído, logo após o registro do autoloader.
+A ordem de inclusão depende das dependências dos pacotes; assim, se o pacote A
+depende do pacote B, os arquivos do pacote B serão incluídos primeiro para
+garantir que o pacote B esteja totalmente inicializado e pronto para uso quando
+os arquivos do pacote A forem incluídos.
+
+Se dois pacotes tiverem a mesma quantidade de dependentes ou nenhuma
+dependência, a ordem será alfabética.
+
+Os arquivos do pacote raiz são sempre carregados por último, e você não pode
+usar o autoloading de arquivos para sobrescrever funções de suas dependências.
+Se quiser fazer isso, recomendamos incluir suas próprias funções *antes* de
+incluir o arquivo `vendor/autoload.php` do Composer.
+
+#### Excluir arquivos do mapa de classes
 
 Se você deseja excluir alguns arquivos ou pastas do mapa de classes, use a
-propriedade `exclude-from-classmap`. Isso pode ser útil para excluir as classes
-de teste em seu ambiente ativo, por exemplo, pois elas serão omitidas do mapa
-de classes, até mesmo ao criar um autoloader otimizado.
+propriedade `exclude-from-classmap`.
+Isso pode ser útil para excluir as classes de teste em seu ambiente ativo, por
+exemplo, pois elas serão omitidas do mapa de classes, até mesmo ao criar um
+autoloader otimizado.
 
 O gerador de mapa de classes ignorará todos os arquivos nos caminhos
-configurados aqui. Os caminhos são absolutos no diretório raiz do pacote (ou
-seja, o local do `composer.json`) e suportam `*` para corresponder a qualquer
-coisa, exceto uma barra, e `**` para corresponder a qualquer coisa. `**` é
-incluído implicitamente ao final dos caminhos.
+configurados aqui.
+Os caminhos são absolutos no diretório raiz do pacote (ou seja, o local do
+`composer.json`) e suportam `*` para corresponder a qualquer coisa, exceto uma
+barra, e `**` para corresponder a qualquer coisa.
+`**` é incluído implicitamente ao final dos caminhos.
 
 Exemplo:
 
@@ -726,23 +775,25 @@ Exemplo:
 }
 ```
 
-#### Otimizando o Autoloader
+#### Otimizando o autoloader
 
-O autoloader pode ter um impacto bastante substancial no tempo da requisição
-(50-100ms por requisição em frameworks grandes usando muitas classes). Consulte
-o [artigo sobre otimização do autoloader][art-autoloader] para obter mais
-detalhes sobre como reduzir esse impacto.
+O autoloader pode ter um impacto bastante significativo no tempo de
+processamento da requisição (50-100ms por requisição em grandes frameworks que
+usam muitas classes).
+Consulte o
+[artigo sobre otimização do autoloader](articles/autoloader-optimization.md)
+para mais detalhes sobre como reduzir esse impacto.
 
-### autoload-dev <span>([root-only][root-package])</span> {: #autoload-dev }
+### autoload-dev <span>([root-only](#root-package))</span>
 
-Esta seção permite definir regras de autoload para fins de desenvolvimento.
+Esta seção permite definir regras de autoloading para fins de desenvolvimento.
 
-As classes necessárias para executar a suíte de testes não devem ser
-incluídas nas regras principais de autoload para evitar poluir o autoloader em
-produção e quando outras pessoas usarem seu pacote como uma dependência.
+Classes necessárias para executar a suíte de testes não devem ser incluídas nas
+regras principais de autoloading, para evitar poluir o autoloader em produção e
+quando outras pessoas usarem seu pacote como dependência.
 
-Portanto, é uma boa ideia contar com um caminho dedicado para seus testes
-unitários e adicioná-lo na seção `autoload-dev`.
+Portanto, é recomendável usar um diretório dedicado para seus testes unitários
+e adicioná-lo à seção `autoload-dev`.
 
 Exemplo:
 
@@ -759,8 +810,9 @@ Exemplo:
 
 ### include-path
 
-> **OBSOLETA**: Esta propriedade está presente apenas para oferecer suporte a
-> projetos legados e todo código novo deve preferencialmente usar o autoloading.
+> **OBSOLETA**: Esta propriedade está presente apenas para dar suporte a
+> projetos legados, e todo código novo deve usar preferencialmente o
+> autoloading.
 > Como tal, é uma prática desaprovada, mas o recurso em si provavelmente não
 > desaparecerá do Composer.
 
@@ -778,20 +830,23 @@ Opcional.
 
 ### target-dir
 
-> **OBSOLETA**: Esta propriedade está presente apenas para oferecer suporte ao
-> autoloading no estilo PSR-0 legado e todo código novo deve preferencialmente
+> **OBSOLETA**: Esta propriedade está presente apenas para dar suporte ao
+> autoloading no estilo PSR-0 legado, e todo código novo deve preferencialmente
 > usar a PSR-4 sem `target-dir` e os projetos usando a PSR-0 com namespaces PHP
 > são encorajados a migrar para a PSR-4.
 
 Define o destino da instalação.
 
 Caso a raiz do pacote esteja abaixo da declaração do namespace, você não poderá
-fazer o autoload corretamente. `target-dir` resolve este problema.
+fazer o autoloading corretamente.
+`target-dir` resolve este problema.
 
-Um exemplo é o Symfony. Existem pacotes individuais para os componentes. O
-componente Yaml está em `Symfony\Component\Yaml`. A raiz do pacote é esse
-diretório `Yaml`. Para tornar o autoloading possível, precisamos garantir que
-ele não esteja instalado em `vendor/symfony/yaml`, mas sim em
+Um exemplo é o Symfony.
+Existem pacotes individuais para os componentes.
+O componente Yaml está em `Symfony\Component\Yaml`.
+A raiz do pacote é esse diretório `Yaml`.
+Para tornar o autoloading possível, precisamos garantir que ele não esteja
+instalado em `vendor/symfony/yaml`, mas sim em
 `vendor/symfony/yaml/Symfony/Component/Yaml`, para que o autoloader possa
 carregá-lo a partir de `vendor/symfony/yaml`.
 
@@ -808,60 +863,61 @@ Para fazer isso, `autoload` e `target-dir` são definidas da seguinte maneira:
 
 Opcional.
 
-### minimum-stability <span>([root-only][root-package])</span> {: #minimum-stability }
+### minimum-stability <span>([root-only](#root-package))</span>
 
-Isso define o comportamento padrão para filtrar pacotes pela estabilidade. O
-padrão é `stable`, portanto, se você depender de um pacote `dev`, especifique-o
-em seu arquivo para evitar surpresas.
+Isso define o comportamento padrão para filtrar pacotes por estabilidade.
+O padrão é `stable`, portanto, se você depender de um pacote `dev`,
+especifique-o em seu arquivo para evitar surpresas.
 
-Todas as versões de cada pacote são verificadas quanto à estabilidade, e as que
-são menos estáveis que a configuração `minimum-stability` serão ignoradas ao
-resolver as dependências do projeto. (Observe que você também pode especificar
-requisitos de estabilidade por pacote, usando flags de estabilidade nas
-restrições de versão especificadas em um bloco `require` (consulte os [links de
-pacotes][package-links] para obter mais detalhes).
+Todas as versões de cada pacote são verificadas quanto à estabilidade, e aquelas
+que são menos estáveis do que a configuração `minimum-stability` serão ignoradas
+ao resolver as dependências do projeto.
+(Observe que você também pode especificar requisitos de estabilidade para cada
+pacote individualmente usando flags de estabilidade nas restrições de versão que
+você especifica em um bloco `require` (consulte [package links](#package-links)
+para obter mais detalhes).
 
 As opções disponíveis (em ordem de estabilidade) são `dev`, `alpha`, `beta`,
 `RC` e `stable`.
 
-### prefer-stable <span>([root-only][root-package])</span> {: #prefer-stable }
+### prefer-stable <span>([root-only](#root-package))</span>
 
-Quando isso está habilitado, o Composer prefere pacotes mais estáveis do que os
-instáveis quando é possível encontrar pacotes estáveis compatíveis. Se você
-precisar de uma versão de desenvolvimento ou apenas versões alpha estiverem
-disponíveis para um pacote, elas ainda serão selecionadas, desde que a
+Quando esta opção está habilitada, o Composer dará preferência a pacotes mais
+estáveis em relação aos instáveis sempre que for possível encontrar pacotes
+estáveis compatíveis.
+Se você precisar de uma versão de desenvolvimento ou se apenas versões alpha
+estiverem disponíveis para um pacote, elas ainda serão selecionadas, desde que
 `minimum-stability` permita.
 
 Use `"prefer-stable": true` para habilitar.
 
-### repositories <span>([root-only][root-package])</span> {: #repositories }
+### repositories <span>([root-only](#root-package))</span>
 
 Repositórios de pacotes personalizados a serem usados.
 
-Por padrão, o Composer usa apenas o repositório Packagist. Ao especificar
-repositórios, você pode obter pacotes de outros lugares.
+Por padrão, o Composer usa apenas o repositório Packagist.
+Ao especificar repositórios, você pode obter pacotes de outros locais.
 
-Os repositórios não são resolvidos recursivamente. Você pode adicioná-los apenas
-ao seu `composer.json` principal. As declarações de repositórios do
-`composer.json` das dependências são ignoradas.
+Os repositórios não são resolvidos recursivamente.
+Você pode adicioná-los apenas ao seu arquivo `composer.json` principal.
+As declarações de repositórios dos arquivos `composer.json` das dependências são
+ignoradas.
 
 Os seguintes tipos de repositórios são suportados:
 
-* **composer:** Um repositório do Composer é simplesmente um arquivo
-  `packages.json` servido via rede (HTTP, FTP, SSH), que contém uma lista de
-  objetos `composer.json` com informações adicionais sobre `dist` e/ou `source`.
-  O arquivo `packages.json` é carregado usando um stream PHP. Você pode definir
-  opções extras para esse stream usando o parâmetro `options`.
-* **vcs:** O repositório do sistema de controle de versão pode buscar pacotes
-  nos repositórios do git, svn, fossil e hg.
-* **pear:** Com isso, você pode importar qualquer repositório PEAR para o seu
-  projeto Composer.
-* **package:** Se você depende de um projeto que não possui absolutamente nenhum
-  suporte ao Composer, você pode definir o pacote em linha usando um repositório
-  `package`. Você basicamente adiciona o objeto `composer.json` em linha.
+* **composer:** um repositório Composer é um arquivo `packages.json` servido via
+  rede (HTTP, FTP, SSH), que contém uma lista de objetos `composer.json` com
+  informações adicionais sobre `dist` e/ou `source`.
+  O arquivo `packages.json` é carregado usando um stream PHP.
+  Você pode definir opções extras para esse stream usando o parâmetro `options`.
+* **vcs:** o repositório do sistema de controle de versão pode buscar pacotes de
+  repositórios git, svn, fossil e hg.
+* **package:** se você depende de um projeto que não tem nenhum suporte para o
+  Composer, você pode definir o pacote em linha usando um repositório `package`.
+  Basicamente você adiciona o objeto `composer.json` em linha.
 
-Para obter mais informações sobre qualquer um deles, consulte [Repositórios]
-[repos].
+Para obter mais informações sobre qualquer um deles, consulte
+[Repositórios](05-repositories.md).
 
 Exemplo:
 
@@ -870,11 +926,11 @@ Exemplo:
     "repositories": [
         {
             "type": "composer",
-            "url": "http://packages.exemplo.com.br"
+            "url": "http://packages.example.com"
         },
         {
             "type": "composer",
-            "url": "https://packages.exemplo.com.br",
+            "url": "https://packages.example.com",
             "options": {
                 "ssl": {
                     "verify_peer": "true"
@@ -884,10 +940,6 @@ Exemplo:
         {
             "type": "vcs",
             "url": "https://github.com/Seldaek/monolog"
-        },
-        {
-            "type": "pear",
-            "url": "https://pear2.php.net"
         },
         {
             "type": "package",
@@ -909,45 +961,62 @@ Exemplo:
 }
 ```
 
-> **Nota:** Aqui a ordem é importante. Ao procurar um pacote, o Composer
-> procurará do primeiro repositório ao último e escolherá a primeira
-> correspondência. Por padrão, o Packagist é adicionado por último, o que
-> significa que os repositórios personalizados podem sobrescrever os pacotes
-> dele.
+> **Nota:** A ordem é importante aqui.
+> Ao procurar um pacote, o Composer procurará do primeiro repositório ao último
+> e escolherá a primeira correspondência.
+> Por padrão, o Packagist é adicionado por último, o que significa que
+> repositórios personalizados podem substituir pacotes dele.
 
-O uso da notação de objeto JSON também é possível. No entanto, os pares de
-chave/valor JSON devem ser considerados ignorando a ordem, então um
-comportamento consistente não pode ser garantido.
+Também é possível usar a notação de objeto JSON.
+No entanto, pares de chave/valor JSON devem ser considerados ignorando a ordem,
+portanto, um comportamento consistente não pode ser garantido e está obsoleto.
 
- ```json
+```json
 {
     "repositories": {
-         "foo": {
-             "type": "composer",
-             "url": "http://packages.foo.com"
-         }
+        "foo": {
+            "type": "composer",
+            "url": "http://packages.foo.com"
+        }
     }
 }
- ```
+```
 
-### config <span>([root-only][root-package])</span> {: #config }
+Será substituído pela propriedade `name`:
 
-Um conjunto de opções de configuração. É usada apenas para projetos. Consulte
-[Config][conf] para obter uma descrição de cada opção individual.
+```json
+{
+    "repositories": [
+        {
+            "name": "foo",
+            "type": "composer",
+            "url": "http://packages.foo.com"
+        }
+    ]
+}
+```
 
-### scripts <span>([root-only][root-package])</span> {: #scripts }
+### config <span>([root-only](#root-package))</span>
 
-O Composer permite conectar-se a várias partes do processo de instalação através
-do uso de scripts.
+Um conjunto de opções de configuração.
+É usado apenas para projetos.
+Consulte [Config](06-config.md) para obter uma descrição de cada opção
+individual.
 
-Consulte [Scripts][art-scripts] para obter detalhes e exemplos de eventos.
+### scripts <span>([root-only](#root-package))</span>
+
+O Composer permite que você interaja com várias partes do processo de instalação
+por meio do uso de scripts.
+
+Consulte [Scripts](articles/scripts.md) para obter detalhes e exemplos de
+eventos.
 
 ### extra
 
 Dados extras arbitrários para consumo por `scripts`.
 
-Isso pode ser praticamente qualquer coisa. Para acessá-los de dentro de um
-manipulador de eventos de script, você pode fazer:
+Pode ser praticamente qualquer coisa.
+Para acessá-los de um manipulador de eventos de script, você pode fazer:
 
 ```php
 $extra = $event->getComposer()->getPackage()->getExtra();
@@ -957,47 +1026,65 @@ Opcional.
 
 ### bin
 
-Um conjunto de arquivos que devem ser tratados como binários e ter links
-simbólicos no `bin-dir` (da configuração).
+Um conjunto de arquivos que devem ser tratados como binários e disponibilizados
+no diretório `bin-dir` (da configuração).
 
-Consulte os [Binários dos Vendors][art-binaries] para obter mais detalhes.
+Consulte [Binários dos fornecedores](articles/vendor-binaries.md) para obter
+mais detalhes.
 
 Opcional.
 
 ### archive
 
-Um conjunto de opções para criar arquivos de pacotes compactados.
+Um conjunto de opções para criar arquivos de pacotes.
 
 As seguintes opções são suportadas:
 
-* **exclude:** Permite configurar uma lista de padrões para caminhos excluídos.
-  A sintaxe do padrão corresponde aos arquivos `.gitignore`. Um ponto de
-  exclamação (`!`) inicial resultará na inclusão de todos os arquivos
-  correspondentes, mesmo que um padrão anterior os tenha excluído. Uma barra
-  inicial corresponderá apenas no início do caminho relativo do projeto. Um
-  asterisco não será expandido para um separador de diretório.
+* **name:** permite configurar o nome base para o arquivo.
+  Por padrão (se não configurado e `--file` não for passado como argumento da
+  linha de comando), `preg_replace('#[^a-z0-9-_]#i', '-', name)` é usado.
 
-Exemplo:
+  Exemplo:
 
-```json
-{
-    "archive": {
-        "exclude": ["/foo/bar", "baz", "/*.test", "!/foo/bar/baz"]
-    }
-}
-```
+  ```json
+  {
+      "name": "org/nomeEstranho",
+      "archive": {
+          "name": "Nome_estranho"
+      }
+  }
+  ```
 
-O exemplo incluirá `/dir/foo/bar/arquivo`, `/foo/bar/baz`, `/arquivo.php`,
-`/foo/meu.test`, mas excluirá `/foo/bar/qualquer`, `/foo/baz` e `/meu.test`.
+* **exclude:** permite configurar uma lista de padrões para caminhos excluídos.
+  A sintaxe do padrão corresponde aos arquivos `.gitignore`.
+  Um ponto de exclamação (`!`) inicial fará com que quaisquer arquivos
+  correspondentes sejam incluídos, mesmo que um padrão anterior os tenha
+  excluído.
+  Uma barra inicial corresponderá apenas no início do caminho relativo do
+  projeto.
+  Um asterisco não será expandido para um separador de diretório.
 
-Opcional.
+  Exemplo:
+
+  ```json
+  {
+      "archive": {
+          "exclude": ["/foo/bar", "baz", "/*.test", "!/foo/bar/baz"]
+      }
+  }
+  ```
+
+  O exemplo incluirá `/dir/foo/bar/arquivo`, `/foo/bar/baz`, `/arquivo.php`,
+  `/foo/meu.test`, mas excluirá `/foo/bar/qualquer`, `/foo/baz` e `/meu.test`.
+
+  Opcional.
 
 ### abandoned
 
 Indica se este pacote foi abandonado.
 
-Pode ser booleano ou um nome/URL de pacote apontando para uma alternativa
-recomendada.
+Pode ser um valor booleano ou um nome/URL de um pacote que aponta para uma
+alternativa recomendada.
 
 Exemplos:
 
@@ -1009,36 +1096,55 @@ O padrão é `false`.
 
 Opcional.
 
+### _comment
+
+Chave de nível superior usada para armazenar comentários (pode ser uma string ou
+um array de strings).
+
+```json
+{
+    "_comment": [
+        "O pacote foo/bar era necessário para a lógica de negócios",
+        "Remova o pacote foo/baz ao remover foo/bar"
+    ]
+}
+```
+
+O padrão é vazio.
+
+Opcional.
+
 ### non-feature-branches
 
 Uma lista de padrões de expressões regulares de nomes de branches não numéricos
-(por exemplo, "latest" ou algo parecido), que NÃO serão tratados como feature
-branches. É um array de strings.
+(por exemplo, "latest" ou algo semelhante), que NÃO serão tratados como branches
+de funcionalidade.
+É um array de strings.
 
 Se você tiver nomes de branches não numéricos, por exemplo, como "latest",
-"current", "latest-stable" ou algo parecido, que não se pareçam com um número de
-versão, o Composer tratará esses branches como feature branches. Isso significa
-que ele procurará por branches pai, que se parecem com uma versão ou terminam em
-branches especiais (como `master`) e o número da versão do pacote raiz se
-tornará a versão do branch pai ou, pelo menos, `master` ou algo parecido.
+"current", "latest-stable" ou algo semelhante, que não se parecem com um número
+de versão, o Composer os tratará como branches de funcionalidades.
+Isso significa que ele busca branches pai que se parecem com uma versão ou que
+terminam em branches especiais (como `master`), e o número da versão do pacote
+raiz se torna a versão do branch pai ou, pelo menos, `master` ou algo similar.
 
-Para tratar branches com nomes não numéricos como versões em vez de procurar por
-um branch pai com uma versão válida ou nome de branch especial como `master`,
-você pode definir padrões para nomes de branches, que devem ser tratados como
+Para tratar branches com nomes não numéricos como versões, em vez de buscar um
+branch pai com uma versão válida ou um nome de branch especial como `master`,
+você pode definir padrões para nomes de branches que devem ser tratados como
 branches de versões de desenvolvimento.
 
-Isso é realmente útil quando você tem dependências usando `self.version`, para
-que não o `dev-master`, mas o mesmo branch seja instalado (no exemplo:
+Isso é muito útil quando você tem dependências usando `self.version`, para não
+ser `dev-master`, mas o mesmo branch seja instalado (no exemplo:
 `latest-testing`).
 
-Um exemplo:
+Exemplo:
 
-Se você possui um branch `testing`, que é fortemente mantido durante uma fase de
-testes e é implantado em seu ambiente staging, normalmente `composer show -s`
-retornará `versions : * dev-master`.
+Se você tiver uma branch `testing`, que recebe manutenção intensiva durante a
+fase de testes e é implantado em seu ambiente de staging, normalmente
+`composer show -s` retornará `versions : * dev-master`.
 
-Se você configurar `"latest-.*"` como um padrão para `non-feature-branches`
-desta forma:
+Se você configurar `latest-.*` como um padrão para `non-feature-branches`, como
+neste exemplo:
 
 ```json
 {
@@ -1050,21 +1156,4 @@ Então `composer show -s` retornará `versions : * dev-latest-testing`.
 
 Opcional.
 
-[art-aliases]: articles/aliases.md
-[art-autoloader]: articles/autoloader-optimization.md
-[art-binaries]: articles/vendor-binaries.md
-[art-installers]: articles/custom-installers.md
-[art-scripts]: articles/scripts.md
-[art-versions]: articles/versions.md
-[conf]: 06-config.md
-[json-schema]: https://json-schema.org/
-[licenses]: https://spdx.org/licenses/
-[min-stability]: #minimum-stability
-[package-links]: #links-de-pacotes
-[php-psr0]: https://www.php-fig.org/psr/psr-0/
-[php-psr4]: https://www.php-fig.org/psr/psr-4/
-[repos]: 05-repositories.md
-[root-package]: #pacote-raiz
-[schema-page]: https://getcomposer.org/schema.json
-[sf-standard]: https://github.com/symfony/symfony-standard
-[silverstripe-installer]: https://github.com/silverstripe/silverstripe-installer
+&larr; [Interface de linha de comando](03-cli.md) | [Repositórios](05-repositories.md) &rarr;

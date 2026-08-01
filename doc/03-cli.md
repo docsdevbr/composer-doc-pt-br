@@ -1155,7 +1155,7 @@ Se o seu repositório exigir mais opções de configuração, você poderá pass
 sua representação JSON:
 
 ```shell
-php composer.phar config repositories.foo '{"type": "vcs", "url": "http://svn.exemplo.org/meu-projeto/", "trunk-path": "master"}'
+php composer.phar config repositories.foo '{"type": "vcs", "url": "http://svn.example.org/meu-projeto/", "trunk-path": "master"}'
 ```
 
 ### Modificando valores extras
