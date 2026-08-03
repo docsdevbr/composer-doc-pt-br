@@ -157,7 +157,7 @@ das dependências.
   Permite instalar pacotes com avisos de segurança ou que estejam abandonados.
   Veja também
   [COMPOSER_NO_SECURITY_BLOCKING](#composer-no-security-blocking).
-* **--no-blocking:** desativa todo o bloqueio de dependências baseado em
+* **--no-blocking:** desabilita todo o bloqueio de dependências baseado em
   políticas durante a execução deste comando.
   Veja também [COMPOSER_NO_BLOCKING](#composer-no-blocking).
 * **--optimize-autoloader (-o):** converte o autoloading PSR-0/4 em um mapa de
@@ -270,7 +270,7 @@ php composer.phar update vendor/pacote:2.0.1 vendor/pacote2:3.0.*
   Permite instalar pacotes com avisos de segurança ou que estejam abandonados.
   Veja também
   [COMPOSER_NO_SECURITY_BLOCKING](#composer-no-security-blocking).
-* **--no-blocking:** desativa todo o bloqueio de dependências baseado em
+* **--no-blocking:** desabilita todo o bloqueio de dependências baseado em
   políticas durante a execução deste comando.
   Veja também [COMPOSER_NO_BLOCKING](#composer-no-blocking).
 * **--lock:** sobrescreve o hash do arquivo lock para suprimir o aviso de que o
@@ -412,7 +412,7 @@ com `--no-update`.
   Permite instalar pacotes com avisos de segurança ou que estejam abandonados.
   Veja também
   [COMPOSER_NO_SECURITY_BLOCKING](#composer-no-security-blocking).
-* **--no-blocking:** desativa todo o bloqueio de dependências baseado em
+* **--no-blocking:** desabilita todo o bloqueio de dependências baseado em
   políticas durante a execução deste comando.
   Veja também [COMPOSER_NO_BLOCKING](#composer-no-blocking).
 * **--update-no-dev:** executa a atualização de dependências com a opção
@@ -492,7 +492,7 @@ Após remover os requisitos, os requisitos modificados serão desinstalados.
   Permite instalar pacotes com avisos de segurança ou que estejam abandonados.
   Veja também
   [COMPOSER_NO_SECURITY_BLOCKING](#composer-no-security-blocking).
-* **--no-blocking:** desativa todo o bloqueio de dependências baseado em
+* **--no-blocking:** desabilita todo o bloqueio de dependências baseado em
   políticas durante a execução deste comando.
   Veja também [COMPOSER_NO_BLOCKING](#composer-no-blocking).
 * **--update-no-dev:** executa a atualização de dependências com a opção
@@ -1347,7 +1347,7 @@ Por padrão, o comando procura por pacotes no [Packagist](https://packagist.org)
   Permite instalar pacotes com avisos de segurança ou que estejam abandonados.
   Veja também
   [COMPOSER_NO_SECURITY_BLOCKING](#composer-no-security-blocking).
-* **--no-blocking:** desativa todo o bloqueio de dependências baseado em
+* **--no-blocking:** desabilita todo o bloqueio de dependências baseado em
   políticas durante a execução deste comando.
   Veja também [COMPOSER_NO_BLOCKING](#composer-no-blocking).
 * **--ignore-platform-reqs:** ignora todos os requisitos de plataforma (`php`,
@@ -1794,8 +1794,9 @@ Não tem efeito quando `policy.abandoned` está definido como `false` no
 ### COMPOSER_POLICY
 
 Interruptor principal da política de dependências.
-Defina como `0` para desativar a aplicação de todas as políticas de dependência
-durante atualizações, instalações e auditorias, ou como `1` para ativá-la.
+Defina como `0` para desabilitar a aplicação de todas as políticas de
+dependência durante atualizações, instalações e auditorias, ou como `1` para
+ativá-la.
 Definir essa variável como `1` fará com que a configuração de política do
 `composer.json` seja usada.
 Se quiser alterar o valor da configuração, use `composer config policy 1` em vez
@@ -1803,13 +1804,13 @@ disso.
 
 Quando definida como `0`, todas as substituições específicas de política
 listadas abaixo são ignoradas — toda a configuração de política de dependência é
-desativada.
+desabilitada.
 
 ### COMPOSER_NO_BLOCKING
 
 Se definida como `1`, equivale a passar a opção `--no-blocking` para um comando
 `require`, `update`, `remove`, `install` ou `create-project`.
-Isso desativa todos os bloqueios de dependências baseados em políticas.
+Isso desabilita todos os bloqueios de dependências baseados em políticas.
 Essa opção substitui a configuração `block` de cada política de dependência
 configurada, como, por exemplo, [policy.advisories.block](06-config.md#block).
 

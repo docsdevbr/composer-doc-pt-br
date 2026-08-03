@@ -409,7 +409,7 @@ desenvolvimento do pacote `doctrine/data-fixtures`:
 As seções `require` e `require-dev` também suportam referências explícitas (ou
 seja, commits) para versões de desenvolvimento, garantindo que elas fiquem
 fixadas em um estado específico, mesmo ao executar uma atualização.
-Isso só funciona se você solicitar explicitamente uma versão de desenvolvimento
+Isso só funciona se você requisitar explicitamente uma versão de desenvolvimento
 e acrescentar a referência usando `#<ref>`.
 Esse recurso é exclusivo do [pacote raiz](#root-package) e será ignorado em
 dependências.
@@ -1117,13 +1117,13 @@ Opcional.
 ### non-feature-branches
 
 Uma lista de padrões de expressões regulares de nomes de branches não numéricos
-(por exemplo, "latest" ou algo semelhante), que NÃO serão tratados como branches
-de funcionalidade.
+(por exemplo, "latest" ou algo semelhante), que NÃO serão tratados como feature
+branches.
 É um array de strings.
 
 Se você tiver nomes de branches não numéricos, por exemplo, como "latest",
 "current", "latest-stable" ou algo semelhante, que não se parecem com um número
-de versão, o Composer os tratará como branches de funcionalidades.
+de versão, o Composer os tratará como feature branches.
 Isso significa que ele busca branches pai que se parecem com uma versão ou que
 terminam em branches especiais (como `master`), e o número da versão do pacote
 raiz se torna a versão do branch pai ou, pelo menos, `master` ou algo similar.
@@ -1139,7 +1139,7 @@ ser `dev-master`, mas o mesmo branch seja instalado (no exemplo:
 
 Exemplo:
 
-Se você tiver uma branch `testing`, que recebe manutenção intensiva durante a
+Se você tiver um branch `testing`, que recebe manutenção intensiva durante a
 fase de testes e é implantado em seu ambiente de staging, normalmente
 `composer show -s` retornará `versions : * dev-master`.
 

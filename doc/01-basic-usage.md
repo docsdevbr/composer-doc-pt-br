@@ -80,7 +80,8 @@ Consulte [pacotes de plataforma](#pacotes-de-plataforma) abaixo.)
 
 ### Restrições de versão do pacote
 
-No nosso exemplo, estamos solicitando o pacote Monolog com a restrição de versão
+No nosso exemplo, estamos requisitando o pacote Monolog com a restrição de
+versão
 [`2.0.*`](https://semver.madewithlove.com/?package=monolog%2Fmonolog&constraint=2.0.*).
 Isso significa qualquer versão no branch de desenvolvimento `2.0`, ou qualquer
 versão maior ou igual a `2.0` e menor que `2.1` (`>=2.0 <2.1`).
@@ -91,7 +92,7 @@ restrições de versão.
 
 > **Como o Composer baixa os arquivos certos?**
 > Quando você especifica uma dependência no `composer.json`, o Composer primeiro
-> pega o nome do pacote que você solicitou e o procura em todos os repositórios
+> pega o nome do pacote que você requisitou e o procura em todos os repositórios
 > que você registrou usando a chave [`repositories`](04-schema.md#repositories).
 > Se você não registrou nenhum repositório extra, ou se ele não encontrar um
 > pacote com esse nome nos repositórios que você especificou, ele recorre ao
@@ -176,7 +177,7 @@ presente resolve e instala todas as dependências que você listou no
 `composer.json`, mas o Composer usa as versões exatas listadas no
 `composer.lock` para garantir que as versões dos pacotes sejam consistentes para
 todas as pessoas que trabalham no seu projeto.
-Como resultado, você terá todas as dependências solicitadas pelo seu arquivo
+Como resultado, você terá todas as dependências requisitadas pelo seu arquivo
 `composer.json`, mas elas podem não estar nas versões mais recentes disponíveis
 (algumas das dependências listadas no arquivo `composer.lock` podem ter lançado
 versões mais recentes desde que o arquivo foi criado).
@@ -229,7 +230,7 @@ php composer.phar update monolog/monolog [...]
 Um repositório do Composer é basicamente uma fonte de pacotes: um lugar de onde
 você pode obter pacotes.
 O Packagist pretende ser o repositório central que todas as pessoas usam.
-Isso significa que é possível solicitar automaticamente qualquer pacote
+Isso significa que é possível requisitar automaticamente qualquer pacote
 disponível lá usando `require`, sem especificar mais detalhes sobre onde o
 Composer deve procurar o pacote.
 
