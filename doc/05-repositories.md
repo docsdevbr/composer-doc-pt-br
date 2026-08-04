@@ -410,8 +410,8 @@ descreve quais listas estão disponíveis.
   {
       "filter": {
           "malware": {
-              "vendor/package": ">=1.0.0,<1.2.0",
-              "other/package": "*"
+              "fornecedor/pacote": ">=1.0.0,<1.2.0",
+              "outro/pacote": "*"
           }
       }
   }
@@ -439,7 +439,7 @@ descreve quais listas estão disponíveis.
 
   ```json
   {
-      "packages": ["pkg://composer/vendor/package", "pkg://composer/other/package"],
+      "packages": ["pkg://composer/fornecedor/pacote", "pkg://composer/outro/pacote"],
       "lists": ["malware"]
   }
   ```
@@ -451,7 +451,7 @@ descreve quais listas estão disponíveis.
       "filter": {
           "malware": [
               {
-                  "package": "vendor/package",
+                  "package": "fornecedor/pacote",
                   "constraint": ">=1.0.0,<1.2.0",
                   "url": "https://example.org/filters/123",
                   "reason": "Malware",
@@ -474,7 +474,7 @@ Os arquivos de metadados por pacote devem incluir uma chave `filter` cujo valor
 ```json
 {
     "packages": {
-        "vendor/package": [{ ... }]
+        "fornecedor/pacote": [{ ... }]
     },
     "filter": {
         "malware": [
