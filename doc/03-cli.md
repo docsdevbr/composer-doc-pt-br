@@ -273,7 +273,7 @@ php composer.phar update vendor/pacote:2.0.1 vendor/pacote2:3.0.*
 * **--no-blocking:** desabilita todo o bloqueio de dependências baseado em
   políticas durante a execução deste comando.
   Veja também [COMPOSER_NO_BLOCKING](#composer-no-blocking).
-* **--lock:** sobrescreve o hash do arquivo lock para suprimir o aviso de que o
+* **--lock:** sobrescreve o hash do arquivo lock para suprimir o alerta de que o
   arquivo lock está desatualizado, sem atualizar as versões dos pacotes.
   Metadados dos pacotes, como mirrors e URLs, são atualizados caso tenham
   sofrido alterações.

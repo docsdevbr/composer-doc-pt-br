@@ -1281,7 +1281,7 @@ Armazena clones VCS para carregar metadados de repositório VCS para os tipos
 O padrão é `15552000` (6 meses).
 O Composer armazena em cache todos os pacotes `dist` (zip, tar, ...) que baixa.
 Por padrão, esses arquivos são removidos após seis meses sem uso.
-Esta opção permite ajustar essa duração (em segundos) ou desativá-la
+Esta opção permite ajustar essa duração (em segundos) ou desabilitá-la
 completamente, definindo-a como `0`.
 
 ## cache-files-maxsize
