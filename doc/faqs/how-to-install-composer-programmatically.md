@@ -5,15 +5,19 @@
 # Documentation licensed under the MIT License.
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
+
+source_url: https://github.com/composer/composer/blob/2.10.2/doc/faqs/how-to-install-composer-programmatically.md
+source_revision: defa1bb2ee520c276d839613d9287fcf441c79e4
+translation_status: ready
 ---
 
-# How do I install Composer programmatically?
+# Como instalo o Composer de forma programática?
 
-As noted on the download page, the installer script contains a
-checksum which changes when the installer code changes and as such
-it should not be relied upon in the long term.
+Conforme indicado na página de download, o script do instalador contém um
+checksum que muda quando o código do instalador é alterado; portanto, não se
+deve depender dele a longo prazo.
 
-An alternative is to use this script which only works with UNIX utilities:
+Uma alternativa é usar este script, que funciona apenas com utilitários UNIX:
 
 ```shell
 #!/bin/sh
@@ -35,17 +39,30 @@ rm composer-setup.php
 exit $RESULT
 ```
 
-The script will exit with 1 in case of failure, or 0 on success, and is quiet
-if no error occurs.
+O script encerrará com código `1` em caso de falha, ou `0` em caso de sucesso, e
+não gera saída se nenhum erro ocorrer.
 
-Alternatively, if you want to rely on an exact copy of the installer, you can fetch
-a specific version from GitHub's history. The commit hash should be enough to
-give it uniqueness and authenticity as long as you can trust the GitHub servers.
-For example:
+Alternativamente, se você quiser depender de uma cópia exata do instalador, pode
+obter uma versão específica do histórico do GitHub.
+O hash do commit deve ser suficiente para garantir unicidade e autenticidade,
+desde que você confie nos servidores do GitHub.
+Por exemplo:
 
 ```shell
-wget https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902cd7576b67264ad91c8a2700e2/web/installer -O - -q | php -- --quiet
+wget https://raw.githubusercontent.com/composer/getcomposer.org/f3108f64b4e1c1ce6eb462b159956461592b3e3e/web/installer -O - -q | php -- --quiet
 ```
 
-You may replace the commit hash by whatever the last commit hash is on
+Você pode substituir o hash do commit pelo hash do commit mais recente em
 https://github.com/composer/getcomposer.org/commits/main
+
+## Usando o utilitário de CLI do GitHub (`gh`)
+
+Você pode baixar e verificar o `composer.phar` usando o utilitário de CLI `gh`
+da seguinte forma:
+
+```shell
+gh release --repo composer/composer download --pattern composer.phar
+gh attestation verify --repo composer/composer composer.phar
+```
+
+Use o `composer.phar` como está ou mova-o para o local desejado posteriormente.
