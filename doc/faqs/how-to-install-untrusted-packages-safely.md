@@ -5,46 +5,71 @@
 # Documentation licensed under the MIT License.
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
+
+source_url: https://github.com/composer/composer/blob/2.10.2/doc/faqs/how-to-install-untrusted-packages-safely.md
+source_revision: 9da1948585f11e5af594d1fece682947f1b1fa99
+translation_status: ready
 ---
 
-# How do I install untrusted packages safely? Is it safe to run Composer as superuser or root?
+# Como instalo pacotes não confiáveis com segurança? É seguro executar o Composer como superusuário ou root?
 
-## Why am I seeing a "Do not run Composer as root/super user" warning/error?
+## Por que estou vendo um alerta/erro dizendo "Do not run Composer as root/super user"?
 
-It was always discouraged to run Composer as root for the reasons detailed below.
+Sempre foi desaconselhado executar o Composer como root, pelos motivos
+detalhados abaixo.
 
-As of Composer 2.4.2, plugins are disabled automatically when running as root and
-there is no sign that the user is consciously doing this. There are two ways this user consent
-can be given:
+A partir da versão 2.4.2 do Composer, os plugins são desabilitados
+automaticamente quando o programa é executado como root e não há indicação de
+que a pessoa usuária esteja fazendo isso conscientemente.
+Existem duas maneiras de conceder esse consentimento:
 
-- If you run interactively, Composer will prompt if you are sure that you want to continue
-  running as root. If you run non-interactively, plugins will be disabled, unless..
-- If you set the [COMPOSER_ALLOW_SUPERUSER](../03-cli.md#composer-allow-superuser) environment
-  variable to `1`, this also indicates that you intended to run Composer as root and are accepting
-  the risks of doing so.
+- Se você executar de forma interativa, o Composer perguntará se você tem
+  certeza de que deseja continuar a execução como root.
+  Se executar de forma não interativa, os plugins serão desabilitados, a menos
+  que...
+- Se você definir a variável de ambiente
+  [`COMPOSER_ALLOW_SUPERUSER`](../03-cli.md#composer-allow-superuser) como `1`,
+  isso também indica que você pretendia executar o Composer como root e aceita
+  os riscos associados a essa ação.
 
-## Is it safe to run Composer as superuser or root?
+## É seguro executar o Composer como superusuário ou root?
 
-Certain Composer commands, including `exec`, `install`, and `update` allow third party code to
-execute on your system. This is from its "plugins" and "scripts" features. Plugins and scripts have
-full access to the user account which runs Composer. For this reason, it is strongly advised to
-**avoid running Composer as super-user/root**. All commands also dispatch events which can be
-caught by plugins so unless explicitly disabled installed plugins will be loaded/executed by **every**
-Composer command.
+Certos comandos do Composer, incluindo `exec`, `install` e `update`, permitem a
+execução de código de terceiros no seu sistema.
+Isso ocorre devido aos recursos de "plugins" e "scripts".
+Plugins e scripts têm acesso total à conta de usuário que executa o Composer.
+Por esse motivo, recomenda-se fortemente **evitar executar o Composer como
+superusuário/root**.
+Todos os comandos também disparam eventos que podem ser capturados por plugins;
+portanto, a menos que sejam explicitamente desabilitados, os plugins instalados
+serão carregados/executados por **qualquer** comando do Composer.
 
-You can disable plugins and scripts during package installation or updates with the following
-syntax so only Composer's code, and no third party code, will execute:
+Você pode desativar plugins e scripts durante a instalação ou atualização de
+pacotes usando a seguinte sintaxe, garantindo que apenas o código do Composer, e
+nenhum código de terceiros, seja executado:
 
 ```shell
 php composer.phar install --no-plugins --no-scripts ...
 php composer.phar update --no-plugins --no-scripts ...
 ```
 
-Depending on the operating system we have seen cases where it is possible to trigger execution
-of files in the repository using specially crafted `composer.json`. So in general if you do want
-to install untrusted dependencies you should sandbox them completely in a container or equivalent.
+Dependendo do sistema operacional, já foram observados casos em que é possível
+acionar a execução de arquivos no repositório usando um arquivo `composer.json`
+especialmente elaborado.
+Portanto, de modo geral, se você precisar instalar dependências não confiáveis,
+deve isolá-las completamente em um contêiner ou ambiente equivalente.
 
-Also note that the `exec` command will always run third party code as the user which runs `composer`.
+Observe também que o comando `exec` sempre executará código de terceiros com as
+permissões do usuário que está executando o `composer`.
 
-See the [COMPOSER_ALLOW_SUPERUSER](../03-cli.md#composer-allow-superuser) environment variable for
-more info on how to disable the warnings.
+Consulte a variável de ambiente
+[`COMPOSER_ALLOW_SUPERUSER`](../03-cli.md#composer-allow-superuser) para mais
+informações sobre como desativar os alertas.
+
+## Executando o Composer dentro de contêineres Docker/Podman
+
+O Composer tenta detectar se está sendo executado em um contêiner e, caso
+positivo, permite a execução como root sem problemas adicionais.
+No entanto, se essa detecção falhar, você verá avisos e os plugins serão
+desativados, a menos que você defina a variável de ambiente
+[`COMPOSER_ALLOW_SUPERUSER`](../03-cli.md#composer-allow-superuser).
