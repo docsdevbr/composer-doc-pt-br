@@ -6,48 +6,45 @@
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
 
-source_url: https://github.com/composer/composer/blob/2.8/doc/08-community.md
-revision: 1c669428da698ace7657207088bbbbc906a9e4ff
-status: outdated
+source_url: https://github.com/composer/composer/blob/2.10.2/doc/08-community.md
+source_revision: 1c669428da698ace7657207088bbbbc906a9e4ff
+translation_status: ready
 ---
 
 # Comunidade
 
-Já existem muitas pessoas usando o Composer e muita delas estão contribuindo.
+Já existem muitas pessoas usando o Composer, e um número considerável delas
+está contribuindo para o projeto.
 
 ## Contribuindo
 
-Se você deseja contribuir com o Composer, leia os documentos [README][readme] e
-[CONTRIBUTING][contrib].
+Se você deseja contribuir com o Composer, por favor, leia os documentos
+[README](https://github.com/composer/composer) e
+[CONTRIBUTING](https://github.com/composer/composer/blob/main/.github/CONTRIBUTING.md).
 
 As diretrizes mais importantes são descritas a seguir:
 
-> Todas as contribuições de código - incluindo aquelas de pessoas com acesso
-> para fazer commit - devem passar por uma pull request e ser aprovadas por um
-> desenvolvedor principal antes de serem adicionadas a um merge. Isso é para
-> garantir a revisão adequada de todo o código.
+> Todas as contribuições de código, incluindo as de pessoas com acesso para
+> fazer commit, devem passar por um pull request e ser aprovadas por uma pessoa
+> desenvolvedora principal antes de serem integradas.
+> Isso visa garantir a revisão adequada de todo o código.
 >
-> Faça o fork do projeto, crie um feature branch e nos envie uma pull request.
+> Crie um fork do projeto, crie uma feature branch e envie-nos um pull request.
 >
-> Para garantir uma base de código consistente, verifique se o código segue os
-> [Padrões de Codificação PSR-2][psr2].
+> Para garantir uma base de código consistente, certifique-se de que o código
+> siga os
+> [Padrões de Codificação PSR-12](https://www.php-fig.org/psr/psr-12/).
 
-## IRC / Lista de Discussão
+## Suporte
 
-Listas de discussão para [suporte ao usuário][composer-users] e
-[desenvolvimento][composer-dev].
+O canal de IRC está localizado em irc.libera.chat:
+[#composer](ircs://irc.libera.chat:6697/composer).
 
-Canais IRC estão disponíveis no irc.freenode.org: [#composer][irc-composer] para
-usuários e [#composer-dev][irc-composer-dev] para desenvolvimento.
+O [Stack Overflow](https://stackoverflow.com/questions/tagged/composer-php) e o
+[GitHub Discussions](https://github.com/composer/composer/discussions) contêm
+uma coleção de perguntas relacionadas ao Composer.
 
-O Stack Overflow tem uma coleção crescente de [perguntas relacionadas ao
-Composer][so-composer].
+Para suporte pago, oferecemos assistência relacionada ao Composer via chat e
+e-mail aos clientes do [Private Packagist](https://packagist.com).
 
-[composer-dev]: https://groups.google.com/group/composer-dev
-[composer-users]: https://groups.google.com/group/composer-users
-[contrib]: https://github.com/composer/composer/blob/master/.github/CONTRIBUTING.md
-[irc-composer]: irc://irc.freenode.org/composer
-[irc-composer-dev]: irc://irc.freenode.org/composer-dev
-[psr2]: https://www.php-fig.org/psr/psr-2/
-[readme]: https://github.com/composer/composer
-[so-composer]: https://stackoverflow.com/questions/tagged/composer-php
+&larr; [Tempo de execução](07-runtime.md)
