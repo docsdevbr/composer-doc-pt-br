@@ -5,40 +5,52 @@
 # Documentation licensed under the MIT License.
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
+
+source_url: https://github.com/composer/composer/blob/2.10.2/doc/faqs/why-cant-composer-load-repositories-recursively.md
+source_revision: 7328f5e5db213cf6cd6860e9204a378636d612df
+translation_status: ready
 ---
 
-# Why can't Composer load repositories recursively?
+# Por que o Composer não consegue carregar repositórios recursivamente?
 
-You may run into problems when using custom repositories because Composer does
-not load the repositories of your requirements, so you have to redefine those
-repositories in all your `composer.json` files.
+Você pode encontrar problemas ao usar repositórios personalizados, pois o
+Composer não carrega os repositórios das suas dependências; assim, você precisa
+redefinir esses repositórios em todos os seus arquivos `composer.json`.
 
-Before going into details as to why this is like that, you have to understand
-that the main use of custom VCS & package repositories is to temporarily try
-some things, or use a fork of a project until your pull request is merged, etc.
-You should not use them to keep track of private packages. For that you should
-rather look into [Private Packagist](https://packagist.com) which lets you
-configure all your private packages in one place, and avoids the slow-downs
-associated with inline VCS repositories.
+Antes de entrar em detalhes sobre o motivo disso, é preciso entender que o uso
+principal de repositórios VCS e de pacotes personalizados é testar algo
+temporariamente ou usar um fork de um projeto até que seu pull request seja
+integrado, etc.
+Você não deve usá-los para gerenciar pacotes privados.
+Para isso, é melhor considerar o [Private Packagist](https://packagist.com), que
+permite configurar todos os seus pacotes privados em um único local e evita
+a lentidão associada a repositórios VCS definidos diretamente no arquivo.
 
-There are three ways the dependency solver could work with custom repositories:
+Existem três maneiras pelas quais o resolvedor de dependências poderia lidar com
+repositórios personalizados:
 
-- Fetch the repositories of root package, get all the packages from the defined
-repositories, then resolve requirements. This is the current state and it works well
-except for the limitation of not loading repositories recursively.
+- Buscar os repositórios do pacote raiz, obter todos os pacotes dos repositórios
+  definidos e, então, resolver as dependências.
+  Esse é o funcionamento atual e funciona bem, exceto pela limitação de não
+  carregar repositórios recursivamente.
 
-- Fetch the repositories of root package, while initializing packages from the
-defined repos, initialize recursively all repos found in those packages, and
-their package's packages, etc, then resolve requirements. It could work, but it
-slows down the initialization a lot since VCS repos can each take a few seconds,
-and it could end up in a completely broken state since many versions of a package
-could define the same packages inside a package repository, but with different
-dist/source. There are many ways this could go wrong.
+- Buscar os repositórios do pacote raiz e, ao inicializar pacotes dos
+  repositórios definidos, inicializar recursivamente todos os repositórios
+  encontrados nesses pacotes, e nos pacotes desses pacotes, etc., para então
+  resolver as dependências.
+  Isso poderia funcionar, mas torna a inicialização muito lenta, já que cada
+  repositório VCS pode levar alguns segundos.
+  Além disso, poderia resultar em um estado totalmente inconsistente, pois
+  várias versões de um pacote poderiam definir os mesmos pacotes em um
+  repositório de pacotes, mas com `dist`/`source` diferentes.
+  Há muitas formas de isso dar errado.
 
-- Fetch the repositories of root package, then fetch the repositories of the
-first level dependencies, then fetch the repositories of their dependencies, etc,
-then resolve requirements. This sounds more efficient, but it suffers from the
-same problems as the second solution, because loading the repositories of the
-dependencies is not as easy as it sounds. You need to load all the repos of all
-the potential matches for a requirement, which again might have conflicting
-package definitions.
+- Buscar os repositórios do pacote raiz, depois buscar os repositórios das
+  dependências de primeiro nível, depois buscar os repositórios das dependências
+  delas, etc., e então resolver as dependências.
+  Isso parece mais eficiente, mas apresenta os mesmos problemas da segunda
+  solução, pois carregar os repositórios das dependências não é tão simples
+  quanto parece.
+  É necessário carregar todos os repositórios de todas as possíveis
+  correspondências para uma dependência, o que, novamente, pode envolver
+  definições de pacotes conflitantes.
