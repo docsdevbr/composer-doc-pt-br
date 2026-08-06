@@ -5,37 +5,47 @@
 # Documentation licensed under the MIT License.
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
+
+source_url: https://github.com/composer/composer/blob/2.10.2/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md
+source_revision: bb128c465ca852076bd1bd70a77d7cc6d918d57b
+translation_status: ready
 ---
 
-# Should I commit the dependencies in my vendor directory?
+# Devo fazer o commit das dependências do meu diretório `vendor`?
 
-The general recommendation is **no**. The vendor directory (or wherever your
-dependencies are installed) should be added to `.gitignore`/`svn:ignore`/etc.
+A recomendação geral é **não**.
+O diretório `vendor` (ou onde quer que suas dependências estejam instaladas)
+deve ser adicionado ao `.gitignore`/`svn:ignore`/etc.
 
-The best practice is to then have all the developers use Composer to install
-the dependencies. Similarly, the build server, CI, deployment tools etc should
-be adapted to run Composer as part of their project bootstrapping.
+A melhor prática é fazer com que todas as pessoas desenvolvedoras usem o
+Composer para instalar as dependências.
+Da mesma forma, o servidor de construção, CI, ferramentas de implantação, etc.,
+devem ser adaptados para executar o Composer como parte da inicialização do
+projeto.
 
-While it can be tempting to commit it in some environment, it leads to a few
-problems:
+Embora possa ser tentador fazer o commit desse diretório em alguns ambientes,
+isso gera alguns problemas:
 
-- Large VCS repository size and diffs when you update code.
-- Duplication of the history of all your dependencies in your own VCS.
-- Adding dependencies installed via git to a git repo will show them as
-  submodules. This is problematic because they are not real submodules, and you
-  will run into issues.
+- Tamanho excessivo do repositório VCS e diffs grandes ao atualizar o código.
+- Duplicação do histórico de todas as suas dependências no seu próprio VCS.
+- Adicionar dependências instaladas via git a um repositório git fará com que
+  elas apareçam como submódulos.
+  Isso é problemático porque não são submódulos reais, o que causará problemas.
 
-If you really feel like you must do this, you have a few options:
+Se você realmente acha que precisa fazer isso, tem algumas opções:
 
-1. Limit yourself to installing tagged releases (no dev versions), so that you
-   only get zipped installs, and avoid problems with the git "submodules".
-2. Use --prefer-dist or set `preferred-install` to `dist` in your
-   [config](../04-schema.md#config).
-3. Remove the `.git` directory of every dependency after the installation, then
-   you can add them to your git repo. You can do that with `rm -rf vendor/**/.git`
-   in ZSH or `find vendor/ -type d -name ".git" -exec rm -rf {} \;` in Bash.
-   But this means you will have to delete those dependencies from disk before
-   running `composer update`.
-4. Add a .gitignore rule (`/vendor/**/.git`) to ignore all the vendor `.git` folders.
-   This approach does not require that you delete dependencies from disk prior to
-   running a `composer update`.
+1. Limite-se a instalar versões com tags (sem versões de desenvolvimento), para
+   obter apenas instalações via arquivo compactado (zip) e evitar problemas com
+   os "submódulos" do git.
+2. Use `--prefer-dist` ou defina `preferred-install` como `dist` na sua
+   [configuração](../04-schema.md#config).
+3. Remova o diretório `.git` de cada dependência após a instalação; assim, você
+   poderá adicioná-las ao seu repositório git.
+   Você pode fazer isso com `rm -rf vendor/**/.git` no ZSH ou
+   `find vendor/ -type d -name ".git" -exec rm -rf {} \;` no Bash.
+   No entanto, isso significa que você terá que excluir essas dependências do
+   disco antes de executar o `composer update`.
+4. Adicione uma regra ao `.gitignore` (`/vendor/**/.git`) para ignorar todas as
+   pastas `.git` dentro do diretório `vendor`.
+   Essa abordagem não exige a exclusão das dependências do disco antes de
+   executar o `composer update`.

@@ -172,8 +172,8 @@ ausentes e encerra a execução com o código `104`.
 
 Para evitar uma inesperada "tela branca da morte" com algum alerta obscuro de
 extensão PHP em produção, você pode executar `composer check-platform-reqs` como
-parte do seu processo de deploy/build; se isso retornar um código diferente de
-zero, você deve abortar.
+parte do seu processo de implantação/construção; se isso retornar um código
+diferente de zero, você deve abortar.
 
 O valor padrão é `php-only`, que verifica apenas a versão do PHP.
 
