@@ -5,123 +5,152 @@
 # Documentation licensed under the MIT License.
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
+
+source_url: https://github.com/composer/composer/blob/2.10.2/doc/faqs/how-to-use-composer-behind-a-proxy.md
+source_revision: bb8387e5a0680769be7a1e4a37f5057dbe135b28
+translation_status: ready
 ---
 
-# How to use Composer behind a proxy
+# Como usar o Composer atrás de um proxy
 
-Composer, like many other tools, uses environment variables to control the use of a proxy server and
-supports:
+O Composer, assim como muitas outras ferramentas, usa variáveis de ambiente para
+controlar o uso de um servidor proxy e oferece suporte a:
 
-- `http_proxy` - the proxy to use for HTTP requests
-- `https_proxy` - the proxy to use for HTTPS requests
-- `CGI_HTTP_PROXY` - the proxy to use for HTTP requests in a non-CLI context
-- `no_proxy` - domains that do not require a proxy
+- `http_proxy` - o proxy a ser usado para requisições HTTP.
+- `https_proxy` - o proxy a ser usado para requisições HTTPS.
+- `CGI_HTTP_PROXY` - o proxy a ser usado para requisições HTTP em um contexto
+  que não seja CLI.
+- `no_proxy` - domínios que não requerem proxy.
 
-These named variables are a convention, rather than an official standard, and their evolution and
-usage across different operating systems and tools is complex. Composer prefers the use of lowercase
-names, but accepts uppercase names where appropriate.
+Esses nomes de variáveis constituem uma convenção, e não um padrão oficial,
+sendo complexa a sua evolução e uso em diferentes sistemas operacionais e
+ferramentas.
+O Composer prefere o uso de nomes em minúsculas, mas aceita nomes em maiúsculas
+quando apropriado.
 
-## Usage
+## Uso
 
-Composer requires specific environment variables for HTTP and HTTPS requests. For example:
+O Composer requer variáveis de ambiente específicas para requisições HTTP e
+HTTPS.
+Por exemplo:
 
 ```
 http_proxy=http://proxy.com:80
 https_proxy=http://proxy.com:80
 ```
 
-Uppercase names can also be used.
+Nomes em maiúsculas também podem ser usados.
 
-### Non-CLI usage
+### Uso fora da CLI
 
-Composer does not look for `http_proxy` or `HTTP_PROXY` in a non-CLI context. If you are running it
-this way (i.e. integration into a CMS or similar use case) you must use `CGI_HTTP_PROXY` for HTTP
-requests:
+O Composer não busca por `http_proxy` ou `HTTP_PROXY` em um contexto que não
+seja CLI.
+Se você o estiver executando dessa forma (ou seja, integração em um CMS ou caso
+de uso semelhante), deve usar `CGI_HTTP_PROXY` para requisições HTTP:
 
 ```
 CGI_HTTP_PROXY=http://proxy.com:80
 https_proxy=http://proxy.com:80
 
-# cgi_http_proxy can also be used
+# cgi_http_proxy também pode ser usado
 ```
 
-> **Note:** CGI_HTTP_PROXY was introduced by Perl in 2001 to prevent request header manipulation and
-was popularized in 2016 when this vulnerability was widely reported: https://httpoxy.org
+> **Nota:** A variável CGI_HTTP_PROXY foi introduzida pelo Perl em 2001 para
+> evitar a manipulação de cabeçalhos de requisição e foi popularizada em 2016,
+> quando essa vulnerabilidade foi amplamente divulgada: https://httpoxy.org
 
-## Syntax
+## Sintaxe
 
-Use `scheme://host:port` as in the examples above. Although a missing scheme defaults to http and a
-missing port defaults to 80/443 for http/https schemes, other tools might require these values.
+Use `esquema://host:porta` conforme os exemplos acima.
+Embora a ausência do esquema assuma `http` como padrão e a ausência da porta
+assuma `80`/`443` para os esquemas `http`/`https`, outras ferramentas podem
+exigir esses valores.
 
-The host can be specified as an IP address using dotted quad notation for IPv4, or enclosed in
-square brackets for IPv6.
+O host pode ser especificado como um endereço IP usando a notação decimal
+pontilhada para IPv4 ou entre colchetes para IPv6.
 
-### Authorization
+### Autorização
 
-Composer supports Basic authorization, using the `scheme://user:pass@host:port` syntax. Reserved url
-characters in either the user name or password must be percent-encoded. For example:
+O Composer oferece suporte à autorização básica, usando a sintaxe
+`esquema://usuário:senha@host:porta`.
+Caracteres reservados da URL presentes no nome de usuário ou na senha devem ser
+codificados no formato com porcentagem.
+Por exemplo:
 
 ```
 user:  me@company
 pass:  p@ssw$rd
 proxy: http://proxy.com:80
 
-# percent-encoded authorization
+# autorização codificada por porcentagem
 me%40company:p%40ssw%24rd
 
 scheme://me%40company:p%40ssw%24rd@proxy.com:80
 ```
 
-> **Note:** The user name and password components must be percent-encoded individually and then
-combined with the colon separator. The user name cannot contain a colon (even if percent-encoded),
-because the proxy will split the components on the first colon it finds.
+> **Nota:** Os componentes de nome de usuário e senha devem ser codificados
+> individualmente no formato com porcentagem e, em seguida, combinados com o
+> separador de dois-pontos.
+> O nome de usuário não pode conter dois-pontos (mesmo que codificados), pois o
+> proxy separará os componentes no primeiro caractere de dois-pontos que
+> encontrar.
 
-## HTTPS proxy servers
+## Servidores proxy HTTPS
 
-Composer supports HTTPS proxy servers, where HTTPS is the scheme used to connect to the proxy, but
-only from PHP 7.3 with curl version 7.52.0 and above.
+O Composer oferece suporte a servidores proxy HTTPS, onde HTTPS é o esquema
+usado para a conexão com o proxy, mas apenas a partir do PHP 7.3 com a versão
+7.52.0 ou superior do cURL.
 
 ```
 http_proxy=https://proxy.com:443
 https_proxy=https://proxy.com:443
 ```
 
-## Bypassing the proxy for specific domains
+## Ignorando o proxy para domínios específicos
 
-Use the `no_proxy` (or `NO_PROXY`) environment variable to set a comma-separated list of domains
-that the proxy should **not** be used for.
+Use a variável de ambiente `no_proxy` (ou `NO_PROXY`) para definir uma lista
+separada por vírgulas de domínios para os quais o proxy **não** deve ser usado.
 
 ```
 no_proxy=example.com
-# Bypasses the proxy for example.com and its sub-domains
+# Ignora o proxy para example.com e seus subdomínios
 
 no_proxy=www.example.com
-# Bypasses the proxy for www.example.com and its sub-domains, but not for example.com
+# Ignora o proxy para www.example.com e seus subdomínios, mas não para example.com
 ```
 
-A domain can be restricted to a particular port (e.g. `:80`) and can also be specified as an IP
-address or an IP address block in CIDR notation.
+Um domínio pode ser restrito a uma porta específica (por exemplo, `:80`) e
+também pode ser especificado como um endereço IP ou um bloco de endereços IP na
+notação CIDR.
 
-IPv6 addresses do not need to be enclosed in square brackets, like they are for
-http_proxy/https_proxy values, although this format is accepted.
+Endereços IPv6 não precisam estar entre colchetes, como ocorre nos valores de
+`http_proxy`/`https_proxy`, embora esse formato seja aceito.
 
-Setting the value to `*` will bypass the proxy for all requests.
+Definir o valor como `*` fará com que o proxy seja ignorado para todas as
+requisições.
 
-> **Note:** A leading dot in the domain name has no significance and is removed prior to processing.
+> **Nota:** Um ponto inicial no nome do domínio não tem significado e é removido
+> antes do processamento.
 
-## Deprecated environment variables
+## Variáveis de ambiente obsoletas
 
-Composer originally provided `HTTP_PROXY_REQUEST_FULLURI` and `HTTPS_PROXY_REQUEST_FULLURI` to help
-mitigate issues with misbehaving proxies. These are no longer required or used.
+Originalmente, o Composer disponibilizava as variáveis
+`HTTP_PROXY_REQUEST_FULLURI` e `HTTPS_PROXY_REQUEST_FULLURI` para mitigar
+problemas com proxies que apresentavam comportamento inadequado.
+Elas não são mais necessárias nem usadas.
 
-## Requirement changes
+## Alterações nos requisitos
 
-Composer <2.8 used `http_proxy` for both HTTP and HTTPS requests if `https_proxy` was not set,
-but as of Composer 2.8.0 it requires [scheme-specific](#usage) environment variables.
+Versões do Composer anteriores à `2.8` usavam `http_proxy` tanto para
+requisições HTTP quanto HTTPS caso `https_proxy` não estivesse definido; no
+entanto, a partir da versão 2.8.0, o Composer exige variáveis de ambiente
+[específicas para o esquema](#uso).
 
-The reason for this change is to align Composer with current practice across other popular tools. To help
-with the transition, as of Composer 2.7.3 the original behaviour remains but a warning message is 
-shown instructing the user to add an `https_proxy` environment variable.
+O objetivo dessa mudança é alinhar o Composer às práticas atuais de outras
+ferramentas populares.
+Para facilitar a transição, a partir da versão 2.7.3 do Composer, o
+comportamento original é mantido, mas uma mensagem de alerta é exibida
+instruindo a pessoa usuária a adicionar uma variável de ambiente `https_proxy`.
 
-To prevent the original behaviour during the transition period, set an empty environment variable
-(`https_proxy=`).
+Para evitar o comportamento original durante o período de transição, defina uma
+variável de ambiente vazia (`https_proxy=`).

@@ -985,7 +985,7 @@ repositório monolítico.
 > usando junções NTFS, pois podem ser criados por usuários sem privilégios de
 > administrador.
 > O espelhamento sempre será usado em versões anteriores ao Windows 7 ou se
-> `proc_open` estiver desativado.
+> `proc_open` estiver desabilitado.
 
 ```json
 {

@@ -1009,7 +1009,7 @@ versões também impedirá o uso de pacotes abandonados.
 O padrão é `false`.
 Se definida como `true`, pacotes abandonados não poderão ser usados durante os
 comandos `composer update`, `require` ou `delete`.
-Aplica-se apenas se o bloqueio de versões não tiver sido desativado definindo
+Aplica-se apenas se o bloqueio de versões não tiver sido desabilitado definindo
 [`block-insecure`](#block-insecure) como `false`.
 
 ```json
