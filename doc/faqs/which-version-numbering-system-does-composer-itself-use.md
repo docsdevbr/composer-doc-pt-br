@@ -14,4 +14,4 @@ translation_status: ready
 # Qual sistema de numeração de versão o Composer usa?
 
 O Composer usa o
-[Versionamento Semântico (ou SemVer) 2.0.0](https://semver.org/spec/v2.0.0.html).
+[versionamento semântico (ou SemVer) 2.0.0](https://semver.org/spec/v2.0.0.html).
