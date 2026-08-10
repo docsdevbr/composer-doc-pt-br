@@ -6,91 +6,103 @@
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
 
-tagline: Cria apelidos de nomes de branch para versões
-version: ceec6ff8e2a2cdf5becf5eab25a3d379181c9115
+source_url: https://github.com/composer/composer/blob/2.10.2/doc/articles/aliases.md
+source_revision: bd4fd2cf94b9e7c72417bba963afec25130c7ce0
+translation_status: ready
+
+tagline: Associe nomes de branches a versões usando aliases
 ---
 
-# Apelidos
+# Aliases
 
-## Por que Apelidos?
+## Por que usar aliases?
 
-Ao usar um repositório VCS, serão obtidas apenas versões comparáveis dos
-branches que parecem versões, como `2.0` ou `2.0.x`. Para o branch `master`,
-será obtida uma versão `dev-master`. Para o branch `bugfix`, será obtida uma
-versão `dev-bugfix`.
+Ao usar um repositório VCS, você só obterá versões comparáveis para branches que
+se parecem com versões, como `2.0` ou `2.0.x`.
+Para o seu branch `main`, você obterá uma versão `dev-main`.
+Para o seu branch `bugfix`, você obterá uma versão `dev-bugfix`.
 
-Se o branch `master` for usado para criar tags de lançamento da linha de
-desenvolvimento `1.0`, ou seja, `1.0.1`, `1.0.2`, `1.0.3`, etc., qualquer pacote
-que dependa dele provavelmente exigirá a versão `1.0.*`.
+Se o seu branch `main` for usado para criar tags de lançamento da linha de
+desenvolvimento `1.0`, isto é, `1.0.1`, `1.0.2`, `1.0.3`, etc., qualquer pacote
+que dependa dele exigirá provavelmente a versão `1.0.*`.
 
-Se alguém quiser exigir o `dev-master` mais recente, terá um problema: outros
-pacotes podem exigir `1.0.*`, portanto, exigir essa versão de desenvolvimento
-levará a conflitos, pois `dev-master` não corresponde à restrição `1.0.*`.
+Se alguém quiser exigir a versão `dev-main` mais recente, terá um problema:
+outros pacotes podem exigir `1.0.*`, portanto, exigir essa versão de
+desenvolvimento causará conflitos, já que `dev-main` não satisfaz a restrição
+`1.0.*`.
 
-É aí que entram os apelidos.
+É aí que entram os aliases (apelidos).
 
-## Apelidos de branch
+## Alias de branch
 
-O branch `dev-master` está no repositório VCS principal. É relativamente comum
-que alguém queira a versão de desenvolvimento `master` mais recente. Assim, o
-Composer permite apelidar o branch `dev-master` como uma versão `1.0.x-dev`.
-Isso é feito especificando um campo `branch-alias` na seção `extra` do
+O branch `dev-main` existe no seu repositório VCS principal.
+É bastante comum que alguém queira a versão de desenvolvimento mais recente do
+branch principal.
+Assim, o Composer permite que você crie um alias do seu branch `dev-main` para
+uma versão `1.0.x-dev`.
+Isso é feito especificando um campo `branch-alias` dentro de`extra` no arquivo
 `composer.json`:
 
 ```json
 {
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0.x-dev"
+            "dev-main": "1.0.x-dev"
         }
     }
 }
 ```
 
-Se uma versão não-comparável (como `dev-develop`) for apelidada, o nome do
-branch deve ser prefixo com `dev-`. Uma versão comparável (ou seja, que começa
-com números e termina com `.x-dev`), também pode ser apelidada, mas apenas como
-uma versão mais específica.
-Por exemplo, `1.x-dev` pode ser apelidada como `1.2.x-dev`.
+Se você criar um alias para uma versão não comparável (como `dev-develop`), o
+prefixo `dev-` deve preceder o nome do branch.
+Você também pode criar um alias para uma versão comparável (ou seja, que comece
+com números e termine com `.x-dev`), mas apenas como uma versão mais específica.
+Por exemplo, um branch `1.x` ou `1.x-dev` poderia ter seu alias alterado de
+`1.x-dev` para `1.2.x-dev`, por ser mais específico.
 
-O apelido deve ser uma versão de desenvolvimento comparável e o campo
-`branch-alias` deve estar no branch ao qual faz referência. Para `dev-master`,
-é necessário fazer o commit no branch `master`.
+O alias deve ser uma versão de desenvolvimento comparável (você não pode definir
+um alias de `dev-main` para `dev-master`, por exemplo), e o `branch-alias` deve
+estar presente na branch à qual ele faz referência.
+Para criar um alias para `dev-main`, você precisa defini-lo e fazer o commit na
+branch `main`.
 
-Como resultado, qualquer pessoa agora pode exigir `1.0.*`, e a versão
-`dev-master` será instalada sem problemas.
+Como resultado, qualquer pessoa pode agora exigir a versão `1.0.*` e o sistema
+instalará automaticamente a `dev-main`.
 
-Para usar apelidos de branch, é necessário possuir o repositório do pacote que
-está sendo apelidado. Se quiser apelidar um pacote de terceiros sem manter um
-fork dele, use apelidos em linha como descrito abaixo.
+Para usar aliases de branch, você deve ser a pessoa proprietária do repositório
+do pacote que está recebendo o alias.
+Se você quiser criar um alias para um pacote de terceiros sem manter um fork
+dele, use aliases em linha, conforme descrito abaixo.
 
-## Exigindo apelidos em linha
+## Alias em linha no require
 
-Os apelidos de branch são ótimos para apelidar as linhas de desenvolvimento
-principais. Mas para usá-los, é preciso ter controle sobre o repositório de
-origem e fazer o commit das mudanças no controle de versão.
+Aliases de branch são excelentes para criar aliases de linhas principais de
+desenvolvimento.
+No entanto, para usá-los, é necessário ter controle sobre o repositório de
+origem e fazer o commit das alterações no controle de versão.
 
-Não é divertido quando queremos testar uma correção de uma falha de alguma
-biblioteca que é uma dependência do projeto local.
+Isso não é nada prático quando você quer testar a correção de uma falha em uma
+biblioteca que é dependência do seu projeto local.
 
-Por esse motivo, é possível criar apelidos de pacotes nos campos `require` e
-`require-dev`. Digamos que uma falha foi encontrada no pacote `monolog/monolog`.
-O repositório [Monolog][page-github-monolog] foi clonado no GitHub e o problema
-foi corrigido em um branch chamado `bugfix`. Agora, queremos instalar essa
-versão do monolog no projeto local.
+Por esse motivo, você pode definir aliases para pacotes diretamente nos campos
+`require` e `require-dev`.
+Suponha que você tenha encontrado uma falha no pacote `monolog/monolog`.
+Você clonou o [Monolog](https://github.com/Seldaek/monolog) no GitHub e corrigiu
+o problema em um branch chamado `bugfix`.
+Agora, você deseja instalar essa versão do Monolog no seu projeto local.
 
-O pacote `symfony/monolog-bundle` está sendo usado e requer o `monolog/monolog`
-na versão `1.*`. Então, é necessário que a versão `dev-bugfix` corresponda a
-essa restrição.
+Você está usando o `symfony/monolog-bundle`, que exige a versão `1.*` do
+`monolog/monolog`.
+Portanto, é necessário que a sua versão `dev-bugfix` atenda a essa restrição.
 
-Adicione isso ao `composer.json` na raiz do projeto:
+Adicione isto ao arquivo `composer.json` na raiz do seu projeto:
 
 ```json
 {
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/voce/monolog"
+            "url": "https://github.com/<você>/monolog"
         }
     ],
     "require": {
@@ -100,28 +112,28 @@ Adicione isso ao `composer.json` na raiz do projeto:
 }
 ```
 
-Ou deixe o Composer fazer o trabalho com:
+Ou deixe o Composer adicionar isso para você com:
 
 ```shell
 php composer.phar require "monolog/monolog:dev-bugfix as 1.0.x-dev"
 ```
 
-Isso buscará a versão `dev-bugfix` do `monolog/monolog` no GitHub e a apelidará
-como `1.0.x-dev`.
+Isso buscará a versão `dev-bugfix` do `monolog/monolog` no seu GitHub e criará
+um alias para `1.0.x-dev`.
 
-> **Nota:** Apelidos em linha são um recurso do [pacote raiz][root-package]. Se
-> um pacote com apelidos em linha for necessário, o apelido (à direita de `as`)
-> será usado como restrição de versão. A parte à esquerda de `as` será
-> descartada. Como consequência, se A requer B e B requer a versão
-> `monolog/monolog` `dev-bugfix as 1.0.x-dev`, a instalação de A fará B requerer
-> `1.0.x-dev`, que pode existir como um apelido de branch ou um branch `1.0`
-> real. Se não existir, ele deve ser apelidado novamente no `composer.json` de
-> A.
+> **Nota:** O alias em linha é um recurso exclusivo do arquivo raiz.
+> Se um pacote com aliases em linha for requerido, o alias (à direita de `as`)
+> é usado como a restrição de versão.
+> A parte à esquerda de `as` é descartada.
+> Consequentemente, se A requer B e B requer `monolog/monolog` na versão
+> `dev-bugfix as 1.0.x-dev`, a instalação de A fará com que B requeira
+> `1.0.x-dev`, que pode existir como um alias de branch ou como uma branch `1.0`
+> real.
+> Se não existir, o alias em linha deverá ser definido novamente no
+> `composer.json` de A.
 
-> **Nota:** Apelidos em linha devem ser evitados, especialmente em bibliotecas e
-> pacotes publicados. Se uma falha for encontrada, tente enviar a correção para
-> o repositório original.
-> Isso ajuda a evitar problemas para os usuários do pacote.
-
-[root-package]: ../04-schema.md#pacote-raiz
-[page-github-monolog]: https://github.com/Seldaek/monolog
+> **Nota:** O uso de aliases em linha deve ser evitado, especialmente para
+> pacotes ou bibliotecas publicados.
+> Se você encontrou uma falha, tente fazer com que sua correção seja integrada
+> ao projeto original.
+> Isso ajuda a evitar problemas para as pessoas usuárias do seu pacote.
