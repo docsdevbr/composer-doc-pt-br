@@ -6,60 +6,65 @@
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-docs-pt-br/blob/-/LICENSES/MIT.txt
 
-tagline: Acesse pacotes e repositórios privados
+source_url: https://github.com/composer/composer/blob/2.10.2/doc/articles/authentication-for-private-packages.md
+source_revision: 00b43d4ebd9c031e6f3be18113f948eee70efe8b
+translation_status: ready
 
-source_url: https://github.com/composer/composer/blob/2.8/doc/articles/authentication-for-private-packages.md
-revision: de3698f53588cff7a803137f4fc5b36f54574487
-status: wip
+tagline: Acesse pacotes e repositórios privados
 ---
 
 # Autenticação para pacotes e repositórios privados
 
-O [servidor de pacotes privado][1] ou sistema de controle de versão
-provavelmente está protegido com uma ou mais opções de autenticação.
-Para permitir que um projeto tenha acesso a esses pacotes e repositórios, o
-Composer deve ser informado sobre como se autenticar no servidor que os hospeda.
+Seu [servidor de pacotes privado](handling-private-packages.md) ou sistema de
+controle de versão provavelmente está protegido por uma ou mais opções de
+autenticação.
+Para permitir que seu projeto acesse esses pacotes e repositórios, você
+precisará informar ao Composer como se autenticar no servidor que os hospeda.
 
 ## Princípios de autenticação
 
-Sempre que o Composer encontrar um repositório protegido, ele tentará se
-autenticar primeiro usando credenciais já definidas.
-Quando nenhuma dessas credenciais puder ser aplicada, ele solicitará credenciais
-e as salvará (ou um token, se o Composer puder recuperar um).
+Sempre que o Composer encontra um repositório protegido, ele tenta autenticar-se
+usando primeiro as credenciais já definidas.
+Quando nenhuma dessas credenciais se aplica, ele solicita as credenciais e as
+salva (ou salva um token, caso consiga obtê-lo).
 
-| Tipo                         | Gerado por Prompt? |
-|------------------------------|:------------------:|
-| [`http-basic`][2]            |        sim         |
-| [`http-basic` em linha][3]   |        não         |
-| [HTTP Bearer][4]             |        não         |
-| [Cabeçalho personalizado][5] |        não         |
-| [`gitlab-oauth`][6]          |        sim         |
-| [`gitlab-token`][7]          |        sim         |
-| [`github-oauth`][8]          |        sim         |
-| [`bitbucket-oauth`][9]       |        sim         |
+| Tipo                                                                  | Gerado por solicitação? |
+|-----------------------------------------------------------------------|:-----------------------:|
+| [http-basic](#http-basic)                                             |           sim           |
+| [http-basic em linha](#http-basic-em-linha)                           |           não           |
+| [HTTP Bearer](#http-bearer)                                           |           não           |
+| [Cabeçalhos customizados](#cabeçalhos-customizados)                   |           não           |
+| [Cabeçalhos customizados em linha](#cabeçalhos-customizados-em-linha) |           não           |
+| [gitlab-oauth](#gitlab-oauth)                                         |           sim           |
+| [gitlab-token](#gitlab-token)                                         |           sim           |
+| [github-oauth](#github-oauth)                                         |           sim           |
+| [bitbucket-oauth](#bitbucket-oauth)                                   |           sim           |
+| [Certificados TLS de cliente](#certificados-tls-de-cliente)           |           não           |
+| [forgejo-token](#forgejo-token)                                       |           sim           |
 
-Às vezes, a autenticação automática não é possível ou alguém pode querer
-predefinir as credenciais de autenticação.
+Às vezes, a autenticação automática não é possível, ou você pode querer
+predefinir credenciais de autenticação.
 
 As credenciais podem ser armazenadas em 4 locais diferentes: em um arquivo
-`auth.json` do projeto, um arquivo `auth.json` global, no próprio
-`composer.json` ou na variável de ambiente `COMPOSER_AUTH`.
+`auth.json` do projeto, em um `auth.json` global, no próprio `composer.json` ou
+na variável de ambiente `COMPOSER_AUTH`.
 
-### Autenticação usando um arquivo `auth.json` por projeto {: #autenticacao-usando-um-arquivo-auth-json-por-projeto }
+### Autenticação por projeto no `auth.json`
 
-Neste método de armazenamento de autenticação, um arquivo `auth.json` estará na
-mesma pasta que o arquivo `composer.json` do projeto.
-Este arquivo pode ser criado e editado usando a linha de comando ou manualmente.
+Neste método de armazenamento de autenticação, um arquivo `auth.json` estará
+presente na mesma pasta que o arquivo `composer.json` do projeto.
+Você pode criar e editar esse arquivo usando a linha de comando ou
+editá-lo/criá-lo manualmente.
 
 > **Nota: Certifique-se de que o arquivo `auth.json` esteja no `.gitignore`**
-> para evitar o vazamento de credenciais no histórico do git.
+> para evitar expor credenciais no seu histórico do git.
 
-### Credenciais de autenticação global
+### Credenciais de autenticação globais
 
-Se não quiser fornecer credenciais para cada projeto em que trabalha, armazenar
-as credenciais globalmente pode ser uma ideia melhor.
-Essas credenciais são armazenadas em um arquivo `auth.json` global no diretório
-[`COMPOSER_HOME`][10].
+Se você não quiser fornecer credenciais para cada projeto em que trabalha,
+armazenar suas credenciais globalmente pode ser uma ideia melhor.
+Essas credenciais são armazenadas em um `auth.json` global no diretório inicial
+do Composer.
 
 #### Editando as credenciais globais na linha de comando
 
