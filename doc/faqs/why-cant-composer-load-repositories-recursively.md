@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT
 # Documentation licensed under the MIT License.
 # The original work was translated from English into Brazilian Portuguese.
-# https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
+# https://github.com/docsdevbr/composer-docs-pt-br/blob/-/LICENSES/MIT.txt
 
 source_url: https://github.com/composer/composer/blob/2.10.2/doc/faqs/why-cant-composer-load-repositories-recursively.md
 source_revision: 7328f5e5db213cf6cd6860e9204a378636d612df

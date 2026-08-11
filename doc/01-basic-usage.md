@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT
 # Documentation licensed under the MIT License.
 # The original work was translated from English into Brazilian Portuguese.
-# https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
+# https://github.com/docsdevbr/composer-docs-pt-br/blob/-/LICENSES/MIT.txt
 
 source_url: https://github.com/composer/composer/blob/2.10.2/doc/01-basic-usage.md
 source_revision: fb3e9282979ef69fda7ace6ceadb85afe339e6bc

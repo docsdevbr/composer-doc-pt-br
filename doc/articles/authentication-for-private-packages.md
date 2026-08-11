@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT
 # Documentation licensed under the MIT License.
 # The original work was translated from English into Brazilian Portuguese.
-# https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
+# https://github.com/docsdevbr/composer-docs-pt-br/blob/-/LICENSES/MIT.txt
 
 tagline: Acesse pacotes e repositórios privados
 

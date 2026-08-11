@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT
 # Documentation licensed under the MIT License.
 # The original work was translated from English into Brazilian Portuguese.
-# https://github.com/docsdevbr/composer-doc-pt-br/blob/-/LICENSES/MIT.txt
+# https://github.com/docsdevbr/composer-docs-pt-br/blob/-/LICENSES/MIT.txt
 
 source_url: https://github.com/composer/composer/blob/2.10.2/doc/faqs/how-do-i-install-a-package-to-a-custom-path-for-my-framework.md
 source_revision: 239638e687e8e67a2f1dadf225731fcd6309e8c4
