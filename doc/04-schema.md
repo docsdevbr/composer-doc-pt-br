@@ -7,7 +7,7 @@
 # https://github.com/docsdevbr/composer-docs-pt-br/blob/-/LICENSES/MIT.txt
 
 source_url: https://github.com/composer/composer/blob/2.10.3/doc/04-schema.md
-source_revision: f414237dd8ec058d30d99f2fe4eb15a1aafb65b1
+source_revision: 8fbad13554162188f900ff149454932500d508a8
 translation_status: ready
 ---
 
@@ -425,14 +425,28 @@ Exemplo:
 }
 ```
 
-> **Nota:** Esse recurso tem graves limitações técnicas, pois os metadados do
-> `composer.json` ainda serão lidos a partir do nome do branch que você
-> especificar antes do hash.
+> **Nota:** Este recurso possui limitações técnicas severas.
+> A referência altera apenas de qual commit foi feito o check out; ela é
+> aplicada no momento da instalação como uma substituição de baixo nível que o
+> resolvedor de dependências nunca chega a ver.
+> Como resultado:
+>
+> - Os metadados do `composer.json` do pacote (suas próprias entradas `require`,
+>   regras de autoload, etc.) são lidos a partir do branch especificado, em seu
+>   estado atual, e não do commit fixado.
+>   Portanto, as dependências que o Composer resolve podem diferir daquelas
+>   declaradas naquele commit.
+> - A substituição é confiável apenas para instalações a partir do código-fonte.
+>   Uma instalação de distribuição só consegue respeitar a referência quando o
+>   pacote é obtido de uma fonte capaz de gerar um arquivo compactado para um
+>   commit arbitrário (por exemplo, o GitHub); caso contrário, o commit fixado é
+>   ignorado durante o download dos arquivos.
+>
 > Portanto, você deve usar isso apenas como uma solução temporária durante o
-> desenvolvimento para corrigir problemas transitórios, até poder alternar para
-> versões de tag.
-> O time do Composer não suporta ativamente esse recurso e não aceita relatórios
-> de erros relacionados a ele.
+> desenvolvimento para contornar problemas passageiros, até que possa migrar
+> para versões com tag.
+> O time do Composer não oferece suporte ativo a este recurso e não aceitará
+> relatórios de erros relacionados a ele.
 
 Também é possível criar um alias em linha de uma restrição de pacote, para que
 ela corresponda a uma restrição que de outra forma não corresponderia.
