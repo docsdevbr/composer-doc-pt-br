@@ -7,7 +7,7 @@
 # https://github.com/docsdevbr/composer-docs-pt-br/blob/-/LICENSES/MIT.txt
 
 source_url: https://github.com/composer/composer/blob/2.10.3/doc/06-config.md
-source_revision: a199d6af88aa91f3ecb4a7089e4621c388232e98
+source_revision: 2ce09be45d1f93264540913317dd48eb2613d26d
 translation_status: ready
 ---
 
@@ -549,6 +549,67 @@ pacotes ou definidas explicitamente aqui).
 As URLs de origem devem usar `https://`. `http://` e outros esquemas são
 rejeitados tanto no momento da validação do esquema (`composer validate`) quanto
 no momento do carregamento da configuração.
+
+Uma fonte do tipo `url` é consultada da mesma forma que a
+[`api-url`](05-repositories.md#filter) de um repositório: o Composer envia uma
+requisição POST contendo as PURLs dos pacotes relevantes e o nome da política de
+dependência personalizada, aguardando o retorno das entradas de filtro
+correspondentes.
+A requisição não é armazenada em cache no lado do cliente, pois o corpo de cada
+requisição é diferente.
+As pessoas implementadoras devem estar cientes de que excesso de nomes de
+pacotes (algumas centenas seriam um número normal) podem ser enviadas.
+As PURLs enviadas representam o conjunto completo de nomes de pacotes candidatos
+coletados *antes* da resolução de dependências; portanto, eles identificam
+pacotes apenas pelo nome (sem restrições de versão nesta etapa), e nem todo
+pacote enviado será necessariamente selecionado pelo resolvedor posteriormente.
+
+O endpoint recebe um corpo JSON no seguinte formato:
+
+```json
+{
+    "packages": ["pkg://composer/fornecedor/pacote", "pkg://composer/outro/pacote"],
+    "lists": ["minha-política"]
+}
+```
+
+O corpo da requisição reutiliza o formato de transmissão da
+[`api-url`](05-repositories.md#filter) de um repositório do Composer.
+Nesse caso, um único endpoint pode atender a várias listas de filtros nomeadas
+(por exemplo, `malware` e `typosquatting`); assim, `lists` é um array que
+especifica quais delas o Composer deseja, e a resposta é um objeto `filter`
+indexado pelo nome da lista.
+Uma política de dependência personalizada não possui esse tipo de multiplexação:
+sua fonte `url` existe apenas para atender a essa política específica.
+Portanto, o Composer sempre envia o nome da política como o único elemento de
+`lists` (de modo que o array contém exatamente um valor neste caso), e o
+endpoint deve tratar qualquer nome de lista recebido como uma referência a essa
+política.
+O endpoint deve retornar um JSON no seguinte formato:
+
+```json
+{
+    "filter": [
+        {
+            "package": "fornecedor/pacote",
+            "constraint": ">=1.0.0,<1.2.0",
+            "url": "https://example.org/filters/123",
+            "reason": "Avaliado e rejeitado.",
+            "id": "PKFE-xxxx-xxxx-xxxx"
+        }
+    ]
+}
+```
+
+Como a fonte da `url` fornece apenas esta política específica, a resposta
+dispensa a estruturação por lista usada pela `api-url` de um repositório (na
+qual `filter` é um objeto que mapeia o nome de cada lista solicitada às suas
+entradas).
+Aqui, em vez disso, `filter` é um array simples de entradas que pertencem a essa
+política.
+Os campos `package` e `constraint` são obrigatórios em cada entrada; `url`,
+`reason` e `id` são opcionais.
+Entradas cujo pacote não corresponda a um pacote da requisição são ignoradas.
 
 Os nomes das políticas de dependência personalizadas não devem entrar em
 conflito com os nomes reservados `advisories`, `malware` ou `abandoned`, e não
