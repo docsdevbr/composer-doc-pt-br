@@ -6,7 +6,7 @@
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-docs-pt-br/blob/-/LICENSES/MIT.txt
 
-source_url: https://github.com/composer/composer/blob/2.10.2/doc/faqs/why-are-unbound-version-constraints-a-bad-idea.md
+source_url: https://github.com/composer/composer/blob/2.10.3/doc/faqs/why-are-unbound-version-constraints-a-bad-idea.md
 source_revision: 955194f8969bdbf110475f3eda604f869d059133
 translation_status: ready
 ---

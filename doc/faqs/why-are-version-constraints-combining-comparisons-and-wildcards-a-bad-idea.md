@@ -6,7 +6,7 @@
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-docs-pt-br/blob/-/LICENSES/MIT.txt
 
-source_url: https://github.com/composer/composer/blob/2.10.2/doc/faqs/why-are-version-constraints-combining-comparisons-and-wildcards-a-bad-idea.md
+source_url: https://github.com/composer/composer/blob/2.10.3/doc/faqs/why-are-version-constraints-combining-comparisons-and-wildcards-a-bad-idea.md
 source_revision: b12b50c679d6f18398fea165b4bbc5581104c2fa
 translation_status: ready
 ---

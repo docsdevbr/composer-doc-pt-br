@@ -6,7 +6,7 @@
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-docs-pt-br/blob/-/LICENSES/MIT.txt
 
-source_url: https://github.com/composer/composer/blob/2.10.2/doc/03-cli.md
+source_url: https://github.com/composer/composer/blob/2.10.3/doc/03-cli.md
 source_revision: d63e06ab5f6593d1c50859359aabd478865407bd
 translation_status: ready
 ---

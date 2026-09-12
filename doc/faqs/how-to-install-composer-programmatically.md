@@ -6,7 +6,7 @@
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-docs-pt-br/blob/-/LICENSES/MIT.txt
 
-source_url: https://github.com/composer/composer/blob/2.10.2/doc/faqs/how-to-install-composer-programmatically.md
+source_url: https://github.com/composer/composer/blob/2.10.3/doc/faqs/how-to-install-composer-programmatically.md
 source_revision: defa1bb2ee520c276d839613d9287fcf441c79e4
 translation_status: ready
 ---

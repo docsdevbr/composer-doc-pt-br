@@ -6,7 +6,7 @@
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-docs-pt-br/blob/-/LICENSES/MIT.txt
 
-source_url: https://github.com/composer/composer/blob/2.10.2/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md
+source_url: https://github.com/composer/composer/blob/2.10.3/doc/faqs/should-i-commit-the-dependencies-in-my-vendor-directory.md
 source_revision: bb128c465ca852076bd1bd70a77d7cc6d918d57b
 translation_status: ready
 ---

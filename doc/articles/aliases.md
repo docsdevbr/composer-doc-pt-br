@@ -6,7 +6,7 @@
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-docs-pt-br/blob/-/LICENSES/MIT.txt
 
-source_url: https://github.com/composer/composer/blob/2.10.2/doc/articles/aliases.md
+source_url: https://github.com/composer/composer/blob/2.10.3/doc/articles/aliases.md
 source_revision: bd4fd2cf94b9e7c72417bba963afec25130c7ce0
 translation_status: ready
 

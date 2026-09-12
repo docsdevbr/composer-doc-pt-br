@@ -6,7 +6,7 @@
 # The original work was translated from English into Brazilian Portuguese.
 # https://github.com/docsdevbr/composer-docs-pt-br/blob/-/LICENSES/MIT.txt
 
-source_url: https://github.com/composer/composer/blob/2.10.2/doc/articles/authentication-for-private-packages.md
+source_url: https://github.com/composer/composer/blob/2.10.3/doc/articles/authentication-for-private-packages.md
 source_revision: 00b43d4ebd9c031e6f3be18113f948eee70efe8b
 translation_status: ready
 
